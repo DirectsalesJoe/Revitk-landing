@@ -77,3 +77,4 @@ export const ProblemAgitation: React.FC = () => {
       </div>
     </section>
   );
+};

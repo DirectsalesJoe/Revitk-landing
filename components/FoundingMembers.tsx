@@ -90,3 +90,4 @@ export const FoundingMembers: React.FC = () => {
       </div>
     </section>
   );
+};
