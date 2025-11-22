@@ -13,6 +13,13 @@ export const Footer: React.FC = () => {
           </a>
           <span className="text-gray-600">|</span>
           <a 
+            href="/terms" 
+            className="text-gray-400 hover:text-white transition-colors duration-200 mx-3"
+          >
+            Terms & Conditions
+          </a>
+          <span className="text-gray-600">|</span>
+          <a 
             href="mailto:joe@revitk.com" 
             className="text-gray-400 hover:text-white transition-colors duration-200 mx-3"
           >
