@@ -45,7 +45,8 @@ export const ValueStack: React.FC = () => {
         </p>
       </div>
 
-      <div className="overflow-x-auto shadow-xl rounded-xl border border-gray-200">
+      {/* Desktop Table View - Hidden on Mobile */}
+      <div className="hidden md:block overflow-x-auto shadow-xl rounded-xl border border-gray-200">
         <table className="w-full min-w-[800px] bg-white text-left border-collapse">
           <thead>
             <tr className="bg-brand-dark text-white text-lg">
@@ -91,6 +92,73 @@ export const ValueStack: React.FC = () => {
              </tr>
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Card View - Visible Only on Mobile */}
+      <div className="md:hidden space-y-6">
+        {rows.map((row, idx) => {
+          if (row.isHeader) {
+            return (
+              <div key={idx} className="bg-gray-100 p-4 rounded-lg">
+                <h3 className="font-bold text-gray-600 uppercase tracking-wider text-sm">
+                  {row.title}
+                </h3>
+              </div>
+            );
+          }
+          return (
+            <div key={idx} className="bg-white shadow-md rounded-lg border border-gray-200 overflow-hidden">
+              <div className="bg-brand-dark text-white p-4 font-medium">
+                {row.name}
+              </div>
+              
+              <div className="p-4 space-y-3">
+                {/* DWY Option */}
+                <div className="border-b border-gray-200 pb-3">
+                  <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">Standard 'DWY' Programme</div>
+                  <div className="text-sm">
+                    {row.isCross ? (
+                      <span className="flex items-center text-red-400 gap-2">
+                        <X size={16}/> {row.dwy}
+                      </span>
+                    ) : (row.dwy === 'Included' || row.dwy === 'Done With You' ? (
+                      <span className="flex items-center text-green-600 gap-2">
+                        <Check size={16}/> {row.dwy}
+                      </span>
+                    ) : (
+                      row.dwy
+                    ))}
+                  </div>
+                </div>
+
+                {/* DFY Option */}
+                <div className="bg-red-50/30 p-3 rounded">
+                  <div className="text-xs uppercase tracking-wider text-brand-accent mb-2 font-bold">
+                    'DFY' Accelerator (Recommended)
+                  </div>
+                  <div className="text-sm">
+                    <span className={`flex items-center gap-2 ${row.boldDFY ? 'font-bold text-brand-dark' : 'text-gray-800'}`}>
+                      <Check className="text-brand-accent w-4 h-4" />
+                      {row.dfy}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Mobile Price Cards */}
+        <div className="grid grid-cols-1 gap-4 mt-8">
+          <div className="bg-gray-900 text-white p-6 rounded-lg shadow-lg">
+            <div className="text-sm uppercase tracking-wider mb-2">Standard 'DWY' Programme</div>
+            <div className="text-3xl font-bold">£7,500</div>
+          </div>
+          <div className="bg-brand-accent text-white p-6 rounded-lg shadow-lg">
+            <div className="text-sm uppercase tracking-wider mb-2">'DFY' Accelerator (Recommended)</div>
+            <div className="text-4xl font-bold">£15,000</div>
+          </div>
+        </div>
       </div>
     </section>
   );
