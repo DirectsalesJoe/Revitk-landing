@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
       </h1>
       
       <p className="text-xl md:text-2xl font-bold text-gray-700 mb-12">
-        You don't pay me more than £1 until you get results.
+        ...and don't pay me more than £1 until you get results
       </p>
 
       <div className="text-left max-w-3xl mx-auto space-y-6 md:space-y-8 text-lg md:text-xl leading-relaxed text-gray-800">
