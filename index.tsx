@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
+import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProblemAgitation } from './components/ProblemAgitation';
 import { SystemFailures } from './components/SystemFailures';
@@ -15,6 +16,7 @@ import { Footer } from './components/Footer';
 const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Header />
       <Hero />
       <ProblemAgitation />
       <SystemFailures />
