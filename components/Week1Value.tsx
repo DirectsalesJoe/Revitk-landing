@@ -42,6 +42,16 @@ export const Week1Value: React.FC = () => {
           <div className="space-y-4">
             <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
               <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
+              Wireframed Sales Playbook PDF
+            </h5>
+            <p className="ml-11">
+              Your complete sales process mapped: every stage, every asset you need, every transition point. This is your blueprint for what to build.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
+              <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
               Voice of Customer Analysis
             </h5>
             <p className="ml-11">
@@ -69,15 +79,7 @@ export const Week1Value: React.FC = () => {
             </p>
           </div>
           
-           <div className="space-y-4">
-            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
-              <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
-              AI Prospect Mind Maps
-            </h5>
-            <p className="ml-11">
-              Visual maps showing who influences who, where deals stall.
-            </p>
-          </div>
+
         </div>
 
         <div className="mt-16 text-center space-y-8">
