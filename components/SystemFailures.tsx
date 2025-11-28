@@ -7,12 +7,11 @@ export const SystemFailures: React.FC = () => {
         <div className="mb-16 text-center">
           <hr className="w-24 border-t-4 border-brand-accent mx-auto mb-8" />
           <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-            Here's What's Actually Happening <br className="hidden md:block"/>
-            (And Why Your Close Rate Is Stuck Under 10%)
+            Here's What's Actually Happening
           </h2>
           <p className="text-xl mt-6">
             You don't have a <span className="font-bold">sales problem.</span><br/>
-            You have <span className="font-bold">three system failures</span> that compound each other:
+            You have <span className="font-bold">four system failures</span>:
           </p>
         </div>
 
@@ -20,61 +19,93 @@ export const SystemFailures: React.FC = () => {
           {/* Failure 1 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-brand-accent">
             <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              Failure #1: You're Selling to Champions, Not Economic Buyers (And You're Not Equipping Champions to Sell UP)
+              Failure #1: Your Champions Can't Sell UP
             </h3>
             <div className="space-y-4 text-lg text-gray-800">
-              <p>Your demos are brilliant. Your champions love you. They "get it."</p>
-              <p>Then they disappear into the approval process and you never hear from them again.</p>
-              <p className="font-bold">Because your champion can't sell it to the CFO.</p>
-              <p>Sure, you gave them your standard proposal or <span className="font-bold bg-yellow-100 px-1">standard pitch deck.</span></p>
-              <p>But the CFO doesn't care about that.</p>
+              <p>Your demos are brilliant. Champions love you.</p>
+              <p>Then they disappear.</p>
+              <p>Because they can't sell it to the CFO.</p>
+              <p>Your proposal shows features and ROI.</p>
               <div className="bg-blue-50 p-6 rounded-md my-6">
-                <p className="font-bold mb-2">They care about:</p>
+                <p className="font-bold mb-2">The CFO cares about:</p>
                 <ul className="list-disc pl-5 space-y-2">
-                  <li>Return on <span className="font-bold">EFFORT</span> <em>(How much work is this going to take? Who's going to do it? We're already stretched thin.)</em></li>
-                  <li>Internal <span className="font-bold">POLITICS</span> <em>(The IT manager is going to push back. How do I handle that?)</em></li>
-                  <li><span className="font-bold">CREDIBILITY</span> <em>(Why should I believe you'll actually deliver these results?)</em></li>
-                  <li><span className="font-bold">RISK</span> <em>(What happens if this doesn't work? What's the cost of failure?)</em></li>
+                  <li><span className="font-bold">EFFORT</span> <em>(How much work? Who's doing it? We're stretched thin.)</em></li>
+                  <li><span className="font-bold">POLITICS</span> <em>(IT will push back. How do I handle that?)</em></li>
+                  <li><span className="font-bold">PROOF</span> <em>(Why should I believe you'll deliver?)</em></li>
+                  <li><span className="font-bold">RISK</span> <em>(What if this fails?)</em></li>
                 </ul>
               </div>
-              <p>Your pitch deck addresses none of that.</p>
-              <p>So when the CFO pushes back, your champion has no answers. They stumble. They waffle. They fail. And the deal dies.</p>
-              <p className="font-bold">Because they couldn't sell UP without the right tools.</p>
+              <p>Your pitch deck doesn't answer those questions.</p>
+              <p>So the CFO pushes back. Your champion stumbles. The deal dies.</p>
             </div>
           </div>
 
           {/* Failure 2 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-brand-dark">
             <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              Failure #2: You Can't Tell Good Leads from Bad Leads
+              Failure #2: You're Treating Quotes Like Boomerangs (They Won't Come Back)
             </h3>
             <div className="space-y-4 text-lg text-gray-800">
-              <p>You close 60% of your referrals. You close less than 10% of your outbound leads.</p>
-              <p>Your first thought: <em>"The leads are rubbish."</em></p>
-              <p>But here's the reality: <span className="font-bold">You don't have an objective qualification framework.</span></p>
-              <p>You waste 20+ hours a month chasing prospects who were never going to buy because you can't tell the difference between a real buyer and someone who's "just looking."</p>
+              <p>You send the proposal. You follow up once. Twice. Three times.</p>
+              <p className="italic">"Still reviewing it internally."</p>
+              <p>Translation: It's sitting in someone's inbox, forgotten.</p>
+              <p>Because there's no next step. No walk-through. No meeting booked.</p>
               <p className="text-2xl font-bold text-brand-accent py-4">
-                The truth: 50-60% of your pipeline shouldn't even be there.
+                IF THERE IS NO NEXT STEP, THERE IS NO NEXT STEP.
               </p>
-              <p>But without an objective qualification system, you keep chasing ghosts.</p>
+              <p className="font-bold">Your quotes aren't boomerangs. They don't come back on their own.</p>
+              <p>You say: "Have a look and let me know."</p>
+              <p>They say: "Looks great, I'll take it to the team."</p>
+              <p>Then they disappear—IT teams, security managers, budget committees.</p>
+              <p>And you gave them nothing to help. No technical FAQ. No security brief. No business case.</p>
+              <p>Of course they ghost you. You made it impossible to move forward without you.</p>
             </div>
           </div>
 
           {/* Failure 3 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-gray-400">
             <h3 className="text-2xl md:text-3xl font-bold mb-6">
-              Failure #3: You're Hiring People to Execute a System That Doesn't Exist
+              Failure #3: You Have No Idea When Deals Are at Risk
             </h3>
             <div className="space-y-4 text-lg text-gray-800">
-              <p>On day one they asked: <em>"What's the sales process?"</em></p>
-              <p>And you said: <em>"Just shadow me for a week. Here's the pitch deck. You'll pick it up."</em></p>
-              <p>So they get on calls and <span className="font-bold bg-yellow-100 px-1">just spout the pitch deck.</span></p>
-              <p>They talk for 20 minutes about features, history, and awards.</p>
-              <p className="font-bold text-xl italic border-l-4 border-brand-accent pl-4 my-4">"Telling isn't selling."</p>
-              <p>But they do it because <span className="font-bold">you gave them nothing else to execute.</span></p>
-              <p>No discovery framework. No demo script. Just a PDF and your best wishes.</p>
-              <p><span className="font-bold">So when you hire someone, they fail.</span> Because they can't replicate your intuition.</p>
-              <p>And improvisation doesn't scale. It doesn't train. It doesn't convert at 50%.</p>
+              <p>End of the month. Your rep says: "Yeah, it's all good. Should close this week."</p>
+              <p>It doesn't.</p>
+              <p>Last day of the quarter. Your forecast says £250K.</p>
+              <p>You hit £80K.</p>
+              <p>Because you can't tell when a deal is at risk.</p>
+              <p>Your reps say it's "looking good" because that's what the prospect said.</p>
+              <div className="bg-blue-50 p-6 rounded-md my-6">
+                <p className="font-bold mb-2">But you don't know if they've got seven critical pieces locked down:</p>
+                <ol className="list-decimal pl-5 space-y-2">
+                  <li>Who the economic buyer is (and if you've spoken to them)</li>
+                  <li>The QUANTIFIED cost of inaction</li>
+                  <li>Their budget and who approves it</li>
+                  <li>Why they should take action NOW</li>
+                  <li>Technical requirements and who signs off</li>
+                  <li>Decision making criteria</li>
+                  <li>Agreed next steps</li>
+                </ol>
+              </div>
+              <p className="font-bold text-xl">Without all seven, the deal is at risk. You just don't know it yet.</p>
+              <p>So you forecast deals that were never real. They slip. You blame the rep.</p>
+              <p>But the rep was just repeating what the prospect said because you never gave them a way to qualify properly.</p>
+            </div>
+          </div>
+
+          {/* Failure 4 */}
+          <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-red-500">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+              Failure #4: You're Hiring People to Execute a System That Doesn't Exist
+            </h3>
+            <div className="space-y-4 text-lg text-gray-800">
+              <p>Day one: "What's the sales process?"</p>
+              <p>Your answer: "Shadow me. Here's the pitch deck. You'll figure it out."</p>
+              <p>So they talk features for 20 minutes.</p>
+              <p className="font-bold text-xl italic border-l-4 border-brand-accent pl-4 my-4">Telling isn't selling.</p>
+              <p>But that's all you gave them.</p>
+              <p>No discovery questions. No demo script. Just a PDF.</p>
+              <p>When you hire someone, they fail. Because they can't copy your gut feel.</p>
+              <p className="font-bold text-xl text-brand-accent">You can't scale gut feel. You can't train it. It doesn't convert at 50%.</p>
             </div>
           </div>
         </div>

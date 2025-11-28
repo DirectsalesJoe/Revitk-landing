@@ -13,67 +13,76 @@ export const Week1Value: React.FC = () => {
         </div>
 
         <div className="text-lg text-gray-800 space-y-6 mb-12">
-          <p>The GTM Diagnostic Workshop used to be a standalone consulting offer we charged £3,500 for.</p>
-          <p>We'd spend a full day with a founder, audit their entire sales process, and deliver a comprehensive diagnostic report.</p>
-          <p>Founders would walk away with absolute clarity on what was broken and how to fix it.</p>
-          <p className="font-bold text-2xl">Now, it's your Week 1. And you're getting it for £1.</p>
+          <p>The GTM Diagnostic Workshop was a £3,500 offer.</p>
+          <p className="font-bold text-2xl">Now it's your Week 1. For £1.</p>
+        </div>
+
+        {/* GTM Dossier Image */}
+        <div className="mb-12">
+          <img 
+            src="/gtm-dossier.png" 
+            alt="GO-TO-MARKET DOSSIER - Diagnostic Scorecard showing critical flaws identified" 
+            className="w-full rounded-lg shadow-2xl"
+          />
         </div>
 
         <div className="space-y-10 bg-white p-8 md:p-12 rounded-xl shadow-md">
+          <h4 className="text-2xl md:text-3xl font-bold text-brand-dark mb-6">What's Included:</h4>
+          
           <div className="space-y-4">
-            <h4 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
+            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
               <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
               Complete GTM Diagnostic Report
-            </h4>
+            </h5>
             <p className="ml-11">
-              We'll analyse your entire sales process—CRM, messaging, workflows, pipeline—to uncover every single chance to increase revenue. Not vague observations. Specific, actionable opportunities.
+              We look at your entire sales process—CRM, messaging, workflows, pipeline. We find every way to increase revenue. Specific. Actionable.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
+            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
               <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
-              Voice of Customer Analysis (80+ Hours of Deep Market Research)
-            </h4>
+              Voice of Customer Analysis
+            </h5>
             <p className="ml-11">
-              We conduct intensive market research to understand the exact language your prospects use, the emotional triggers, objections, and what competitors are doing wrong.
+              80+ hours of research to understand the exact words prospects use, what triggers them, what they object to, where competitors are weak.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
+            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
               <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
-              Competitive Analysis & Objection Mitigation Strategy
-            </h4>
+              Competitive Analysis & Objection Plan
+            </h5>
             <p className="ml-11">
-              We'll identify every reason why prospects might choose NOT to buy from you and how to position against competitors without mentioning them.
+              Every reason prospects might say no, and how to position against competitors without naming them.
             </p>
           </div>
 
           <div className="space-y-4">
-            <h4 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
+            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
               <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
-              AI-Enhanced Persona Models (v2)
-            </h4>
+              AI-Enhanced Persona Models
+            </h5>
             <p className="ml-11">
-              Not just "Dave the CFO". We build psychological profiles that reveal emotional triggers, political dynamics, and career fears.
+              Not just "Dave the CFO." Psychology—what triggers them, political dynamics, career fears.
             </p>
           </div>
           
            <div className="space-y-4">
-            <h4 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
+            <h5 className="flex items-center gap-3 text-xl md:text-2xl font-bold text-brand-dark">
               <div className="bg-green-100 p-1 rounded-full"><Check className="text-green-600 w-6 h-6" /></div>
               AI Prospect Mind Maps
-            </h4>
+            </h5>
             <p className="ml-11">
-              Visual intelligence maps showing the buying committee structure, who influences whom, and where deals typically stall.
+              Visual maps showing who influences who, where deals stall.
             </p>
           </div>
         </div>
 
         <div className="mt-16 text-center space-y-8">
-          <p className="text-xl font-bold">At the End of Week 1, the Choice Is Yours</p>
-          <p className="text-lg">If you're not 100% convinced this is the answer you've been looking for, you can walk away with one click. No charge. No questions asked. You keep the full Diagnostic Report.</p>
+          <p className="text-xl md:text-2xl font-bold">At the End of Week 1, the Choice Is Yours</p>
+          <p className="text-lg">Not convinced? Walk away. No charge. No questions. You keep the full report.</p>
           
           <h3 className="text-3xl md:text-4xl font-black text-brand-dark tracking-wide uppercase py-4">
             You cannot lose.

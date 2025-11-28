@@ -115,7 +115,7 @@ export const ValueStack: React.FC = () => {
               <div className="p-4 space-y-3">
                 {/* DWY Option */}
                 <div className="border-b border-gray-200 pb-3">
-                  <div className="text-xs uppercase tracking-wider text-gray-500 mb-2">Standard 'DWY' Programme</div>
+                  <div className="text-sm font-bold uppercase tracking-wider text-gray-700 mb-2">Done With You (DWY)</div>
                   <div className="text-sm">
                     {row.isCross ? (
                       <span className="flex items-center text-red-400 gap-2">
@@ -132,9 +132,9 @@ export const ValueStack: React.FC = () => {
                 </div>
 
                 {/* DFY Option */}
-                <div className="bg-red-50/30 p-3 rounded">
-                  <div className="text-xs uppercase tracking-wider text-brand-accent mb-2 font-bold">
-                    'DFY' Accelerator (Recommended)
+                <div className="bg-red-50 p-3 rounded border-2 border-brand-accent">
+                  <div className="text-sm uppercase tracking-wider text-brand-accent mb-2 font-bold">
+                    Done For You (DFY) ⭐ Recommended
                   </div>
                   <div className="text-sm">
                     <span className={`flex items-center gap-2 ${row.boldDFY ? 'font-bold text-brand-dark' : 'text-gray-800'}`}>
