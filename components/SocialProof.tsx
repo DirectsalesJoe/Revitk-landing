@@ -49,7 +49,7 @@ export const SocialProof: React.FC = () => {
                 description="Steve Williams rolled out Joe's system to graduates. New team hit £1.2M monthly, including a £1M+ deal with oil and gas."
             />
              <VideoCard 
-                mediaId="38848fuss2"
+                mediaId="iyot7g3u08"
                 headline="Matej Closed Over £500K"
                 description="Increased close rate and prices sixfold. Calls it 'the founder's way of doing sales'."
             />
@@ -65,7 +65,7 @@ export const SocialProof: React.FC = () => {
              <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-100">
                 <div className="aspect-[9/16] bg-gray-900 rounded-md overflow-hidden mb-6">
                     {/* @ts-ignore */}
-                    <wistia-player media-id="iyot7g3u08" aspect="0.5625"></wistia-player>
+                    <wistia-player media-id="38848fuss2" aspect="0.5625"></wistia-player>
                 </div>
                 <h3 className="font-bold text-lg md:text-xl mb-4 leading-tight">Why A Top 1% Sales Veteran Hired Us</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">Brooks Van Norman, 25-year B2B veteran, learned 'million pound questions' he uses daily.</p>
