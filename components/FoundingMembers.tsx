@@ -46,7 +46,7 @@ export const FoundingMembers: React.FC = () => {
                     <p className="text-gray-500 text-sm uppercase tracking-wider font-extrabold mb-2">Spots Remaining</p>
                     <div className="flex items-center justify-center gap-2">
                         <Users className="w-10 h-10 text-brand-accent" />
-                        <span className="text-7xl font-black text-brand-dark tracking-tighter">7</span>
+                        <span className="text-7xl font-black text-brand-dark tracking-tighter">3</span>
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@ export const FoundingMembers: React.FC = () => {
                      <p className="text-gray-400 text-sm uppercase tracking-wider font-bold mb-3">Current Demand</p>
                      <div className="flex items-center justify-center gap-3 mb-4">
                         <Calendar className="w-8 h-8 text-gray-300" />
-                        <span className="text-5xl font-bold text-white">16</span>
+                        <span className="text-5xl font-bold text-white">18</span>
                      </div>
                      <div className="inline-flex items-center justify-center gap-2 bg-red-900/50 border border-red-500/50 rounded-full px-4 py-1.5 mx-auto">
                         <span className="relative flex h-2.5 w-2.5">
@@ -73,7 +73,7 @@ export const FoundingMembers: React.FC = () => {
             <p className="text-lg max-w-2xl mx-auto leading-relaxed opacity-90">
                 We're capping the cohort at 20 founders because of the extreme level of 1-on-1 support included. 
                 <br/><br/>
-                <span className="font-bold text-brand-accent">The Math:</span> We have 16 calls booked this week for the final 7 spots.
+                <span className="font-bold text-brand-accent">The Math:</span> We have 18 calls booked this week for the final 3 spots.
             </p>
             
             <p className="text-sm opacity-60 mt-6">Once we hit 20, the price returns to £15,000.</p>
