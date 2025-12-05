@@ -20,12 +20,20 @@ export const FoundingMembers: React.FC = () => {
             But right now, we're building our <span className="text-brand-accent font-bold">Founding Members cohort.</span>
         </p>
 
-        <p className="text-lg mb-8 opacity-80">
-            In exchange for your feedback and case studies, you get the entire £15,000 programme for £6,000.
-        </p>
+        <div className="bg-brand-accent/20 border-2 border-brand-accent rounded-xl p-6 md:p-8 mb-8">
+          <p className="text-2xl md:text-3xl font-bold mb-4">
+            GET EVERYTHING IN THE DFY PROGRAMME FOR £7,500
+          </p>
+          <p className="text-xl md:text-2xl mb-2">
+            Save £7,500 AND Get Started for £1
+          </p>
+          <p className="text-lg md:text-xl font-bold text-brand-accent">
+            PLUS 12 WEEKS FULL SUPPORT INCLUDED!!!
+          </p>
+        </div>
 
         <h3 className="text-4xl md:text-6xl font-extrabold text-brand-accent mb-12 tracking-tight">
-            Save £9,000 This Week.
+            Save £7,500 This Week.
         </h3>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 md:p-12 border border-white/20 mb-12">
@@ -74,9 +82,9 @@ export const FoundingMembers: React.FC = () => {
         <div className="text-left max-w-2xl mx-auto space-y-4 mb-16">
             <p className="font-bold text-xl">You get:</p>
             <ul className="space-y-3">
-                <li className="flex items-center gap-3"><span className="text-green-400">✅</span> The entire £15,000 'Done For You' Accelerator for £6,000</li>
+                <li className="flex items-center gap-3"><span className="text-green-400">✅</span> The entire £15,000 'Done For You' Accelerator for £7,500</li>
                 <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Every script written for you</li>
-                <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Direct access to Joe via WhatsApp for 8 weeks</li>
+                <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Direct access to Joe via WhatsApp for 12 weeks</li>
                 <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Week 1 GTM Diagnostic (normally £3,500) for £1</li>
             </ul>
         </div>
