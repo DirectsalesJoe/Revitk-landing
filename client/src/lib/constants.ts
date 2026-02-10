@@ -6,7 +6,7 @@ export const IMAGES = {
   salesPlaybookFlowchart: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/yagfnAWvVcBOHqJs.png',
   playbookCollection: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/zseSMmqVljbRPriF.png',
   diagnosticWorkshopScene: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/TubMZHnSTxkLJDwM.png',
-  salesBlueprintPremium: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/ICuMCXWruRdKQhgO.png',
+  salesBlueprintPremium: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/CwdrgWZqNPTQaEHW.png',
 
   // Phase 2 images
   trainingThumbnails: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/TQsiOGNTJtsVOsqE.png',

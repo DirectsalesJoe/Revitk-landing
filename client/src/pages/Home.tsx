@@ -18,6 +18,7 @@ import {
   Clock,
   Users,
   Zap,
+  Bot,
 } from 'lucide-react';
 
 // ─── Reusable Components ───────────────────────────────────────────
@@ -431,14 +432,15 @@ function Phase2Section() {
             <p className="font-body text-sm tracking-[0.2em] uppercase mb-3" style={{ color: '#E63946' }}>
               Beta Access Bonus
             </p>
-            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4 flex items-center justify-center gap-3">
+              <Bot className="w-8 h-8" style={{ color: '#C5A572' }} />
               AI Tools Library
             </h3>
             <p className="font-body text-base max-w-xl mx-auto mb-6" style={{ color: 'rgba(245,240,235,0.6)' }}>
               AI agents built to save you hours every week. Included as a bonus for programme members.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {['Business Case Generator', 'Pipeline Auditor', 'Cold Email Writer', 'Proposal Doctor', 'Follow-Up Email Writer', 'Call Analyser'].map((tool, i) => (
+              {['Business Case Generator', 'Pipeline Auditor', 'Cold Email Writer', 'Deal Coach', 'Proposal Doctor', 'Follow-Up Email Writer', 'Call Analyser'].map((tool, i) => (
                 <span key={i} className="px-4 py-2 font-body text-sm border" style={{ color: 'rgba(245,240,235,0.8)', borderColor: 'rgba(197,165,114,0.2)', backgroundColor: 'rgba(26,34,51,0.4)' }}>
                   {tool}
                 </span>
