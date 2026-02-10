@@ -215,7 +215,7 @@ function Phase1Section() {
             </p>
           </div>
           <div className="scroll-reveal">
-            <SectionImage src={IMAGES.diagnosticWorkshopScene} alt="Premium consulting diagnostic workshop with McKinsey-style scorecards" maxH="max-h-[420px]" />
+            <SectionImage src={IMAGES.diagnosticWorkshopScene} alt="Premium consulting diagnostic workshop with professional scorecards" maxH="max-h-[420px]" />
           </div>
         </div>
 
@@ -231,7 +231,7 @@ function Phase1Section() {
               </h3>
             </div>
             <p className="font-body text-base leading-relaxed mb-6 max-w-3xl" style={{ color: 'rgba(11,17,32,0.7)' }}>
-              Two deliverables. The diagnostic report reads like a McKinsey consulting output: temperature gauges, pie charts, RAG status, and written recommendations across every area of your sales process. The market research is 80+ hours of deep analysis packed into one physical dossier.
+              Absolute clarity with external-backed confidence. The diagnostic report gives you temperature gauges, pie charts, RAG status, and written recommendations across every area of your sales process. The market research is 80+ hours of deep analysis packed into one physical dossier.
             </p>
           </div>
 
