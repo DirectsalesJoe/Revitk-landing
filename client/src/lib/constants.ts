@@ -9,7 +9,7 @@ export const IMAGES = {
   salesBlueprintPremium: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/CwdrgWZqNPTQaEHW.png',
 
   // Phase 2 images
-  trainingThumbnails: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/TQsiOGNTJtsVOsqE.png',
+  trainingThumbnails: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/SUnKMVoDrfQDdphY.png',
   webinarMasterclass: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/nHdnCgjQUOfYbxZn.png',
 
   // Phase 3 images (updated with Joe's likeness)
