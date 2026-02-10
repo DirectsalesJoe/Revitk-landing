@@ -1,7 +1,7 @@
 // CDN Image URLs
 export const IMAGES = {
   // Phase 1 images
-  diagnosticReport: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/zFezhcPOMtcgOEHd.png',
+  diagnosticReport: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/aqazygdDuCYbvlWW.png',
   researchDossier: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/CfEMcFrMxFBUHJjh.png',
   salesPlaybookFlowchart: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/yagfnAWvVcBOHqJs.png',
   playbookCollection: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/zseSMmqVljbRPriF.png',
@@ -10,7 +10,7 @@ export const IMAGES = {
 
   // Phase 2 images
   trainingThumbnails: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/TQsiOGNTJtsVOsqE.png',
-  webinarMasterclass: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/NUBHGEazlzmrciAD.png',
+  webinarMasterclass: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/nHdnCgjQUOfYbxZn.png',
 
   // Phase 3 images (updated with Joe's likeness)
   coachingCallJoe: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/VULykyqIzIZxoAbr.png',
