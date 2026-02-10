@@ -38,10 +38,10 @@ function PhaseLabel({ number }: { number: string }) {
   );
 }
 
-function SectionImage({ src, alt, className = '', maxH = 'max-h-[500px]' }: { src: string; alt: string; className?: string; maxH?: string }) {
+function SectionImage({ src, alt, className = '', contain = false }: { src: string; alt: string; className?: string; contain?: boolean }) {
   return (
     <div className={`relative overflow-hidden rounded-sm shadow-2xl border ${className}`} style={{ borderColor: 'rgba(0,0,0,0.08)' }}>
-      <img src={src} alt={alt} className={`w-full h-auto object-cover object-top ${maxH}`} loading="lazy" />
+      <img src={src} alt={alt} className={`w-full h-auto ${contain ? 'object-contain' : 'object-cover object-top max-h-[420px]'}`} loading="lazy" />
     </div>
   );
 }
@@ -215,7 +215,7 @@ function Phase1Section() {
             </p>
           </div>
           <div className="scroll-reveal">
-            <SectionImage src={IMAGES.diagnosticWorkshopScene} alt="Premium consulting diagnostic workshop with professional scorecards" maxH="max-h-[420px]" />
+            <SectionImage src={IMAGES.diagnosticWorkshopScene} alt="Premium consulting diagnostic workshop with professional scorecards"  />
           </div>
         </div>
 
@@ -306,7 +306,7 @@ function Phase1Section() {
               </div>
             ))}
           </div>
-          <SectionImage src={IMAGES.salesBlueprintPremium} alt="Strategic Sales Process Blueprint — modular architecture from Prospect to Close" className="max-w-5xl mx-auto" maxH="max-h-[520px]" />
+          <SectionImage src={IMAGES.salesBlueprintPremium} alt="Strategic Sales Process Blueprint — modular architecture from Prospect to Close" className="max-w-5xl mx-auto" contain={true} />
         </div>
       </div>
     </section>
@@ -371,7 +371,7 @@ function Phase2Section() {
 
         {/* Hero image of all playbooks */}
         <div className="mb-16 scroll-reveal">
-          <SectionImage src={IMAGES.playbookCollection} alt="Complete collection of 9 sales playbooks" className="max-w-5xl mx-auto" />
+          <SectionImage src={IMAGES.playbookCollection} alt="Complete collection of 9 sales playbooks" className="max-w-5xl mx-auto" contain={true} />
         </div>
 
         {/* Playbook Grid - compact, benefit-driven, no "includes" */}
