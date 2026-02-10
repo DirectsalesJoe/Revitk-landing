@@ -87,7 +87,7 @@ function HeroSection() {
 
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '0.6s' }}>
             <p className="font-body text-lg md:text-xl max-w-2xl mb-10 leading-relaxed" style={{ color: 'rgba(245,240,235,0.8)' }}>
-              Built for your business. Not a course. Not a template library. A complete sales system, diagnosed, built, and coached into your team.
+              A complete sales system diagnosed, built, and coached into your team.
             </p>
           </div>
         </div>
@@ -119,7 +119,7 @@ function PhaseOverview() {
     {
       number: '03',
       title: 'Coaching & Implementation',
-      answer: 'Live coaching, deal reviews, and direct support until the system is embedded in your business.',
+      answer: 'Live coaching, deal reviews, and direct support until the system runs without us.',
       icon: Handshake,
     },
   ];
@@ -179,7 +179,7 @@ function Phase1Section() {
             <span className="italic" style={{ color: '#E63946' }}>absolute clarity.</span>
           </h2>
           <p className="font-body text-lg max-w-2xl leading-relaxed" style={{ color: 'rgba(11,17,32,0.7)' }}>
-            What is broken. What it is costing you. And the fastest path to more revenue.
+            What is broken. What it is costing you. The fastest path to more revenue.
           </p>
         </div>
 
@@ -227,7 +227,7 @@ function Phase1Section() {
                 <span className="font-body font-bold text-sm" style={{ color: '#E63946' }}>2</span>
               </div>
               <h3 className="font-display text-2xl md:text-3xl" style={{ color: '#0B1120' }}>
-                The Full Diagnostic Report + 80 Hours of Market Research
+                The Diagnostic Report & Market Research
               </h3>
             </div>
             <p className="font-body text-base leading-relaxed mb-6 max-w-3xl" style={{ color: 'rgba(11,17,32,0.7)' }}>
@@ -319,48 +319,39 @@ function Phase2Section() {
   const playbooks = [
     {
       title: 'Discovery Call Playbook',
-      desc: 'Word-for-word questions that uncover the real cost of doing nothing. How to qualify in 15 minutes or walk away from bad fits. How to label the problem so the prospect owns it.',
-      includes: '40+ page playbook, 45-min training video, live coaching walkthrough',
+      desc: 'Word-for-word questions that uncover the real cost of doing nothing and help you build the business case needed to get the deal over the line.',
     },
     {
       title: 'Demo Framework',
-      desc: 'How to show prospects exactly why they need you and avoid feature dumping in demos. The Pain, Proof, Tie-In framework: lead with their problem, prove you solve it, tie it back to their goals.',
-      includes: '35+ page playbook, 40-min training video, customised demo scripts',
+      desc: 'Show prospects exactly why they need you. No feature dumping. The Pain-Proof-Tie-In framework: lead with their problem, prove you solve it, tie it back to their goals.',
     },
     {
       title: 'The Proposal That Closes',
-      desc: 'The 9-checkpoint proposal structure. Start with their reality, not "About Us." Includes a Return on Effort calculator and champion enablement assets so they can sell you to the CFO.',
-      includes: 'Customised proposal template, one-page business case template, 30-min training video',
+      desc: 'A 9-point proposal template that requires minimal customisation and sells for you when you are not in the room.',
     },
     {
       title: 'Stakeholder Engagement Pack',
-      desc: 'The one-page business case your champion uses internally. Technical FAQ that pre-empts IT pushback. Risk mitigation plan. Effort breakdown showing who does what and how much time.',
-      includes: 'Ready-to-send templates, customisation guide, 20-min training video',
+      desc: 'The one-page business case your champion uses to sell you internally. Technical FAQ, risk plan, and effort breakdown included.',
     },
     {
       title: 'Cold Email Bible',
-      desc: '15+ cold email templates. LinkedIn outreach sequences. Pre-meeting nurture emails and SMS. AI email writing prompts tuned to your messaging.',
-      includes: 'Full script library, AI email prompts, 25-min training video',
+      desc: '15+ cold email templates, LinkedIn outreach sequences, and AI email prompts tuned to your messaging. Everything you need to start conversations.',
     },
     {
       title: 'Cold Calling Playbook',
-      desc: 'The Pattern Interrupt Framework for cold calls. How to get past gatekeepers. Opening lines that earn 30 more seconds. How to book the meeting in under 3 minutes.',
-      includes: 'Call scripts, objection responses, 25-min training video',
+      desc: 'The Pattern Interrupt Framework. Get past gatekeepers. Earn 30 more seconds. Book the meeting in under 3 minutes.',
     },
     {
       title: 'Appointment Setting Playbook',
-      desc: 'How to turn cold leads into booked meetings. Multi-channel sequences that combine email, phone, and LinkedIn. Follow-up cadences that get replies without being annoying.',
-      includes: 'Sequence templates, timing guides, 20-min training video',
+      desc: 'Turn cold leads into booked meetings. Multi-channel sequences combining email, phone, and LinkedIn with follow-up cadences that get replies.',
     },
     {
       title: 'Lead Nurture Playbook',
-      desc: 'What to do with leads who are not ready to buy yet. Email and SMS sequences that keep you top of mind. How to re-engage cold leads without starting from scratch.',
-      includes: 'Nurture sequence templates, re-engagement scripts, 20-min training video',
+      desc: 'What to do with leads who are not ready to buy yet. Email and SMS sequences that keep you top of mind and re-engage cold leads.',
     },
     {
       title: 'Objection Handling Toolkit',
-      desc: 'The 12 most common objections and how to handle each one. Root cause questioning to understand the real objection. How to turn objections into closing opportunities.',
-      includes: 'Objection scripts, response frameworks, 30-min training video',
+      desc: 'The 12 most common objections and how to handle each one. Root cause questioning to find the real objection and turn it into a close.',
     },
   ];
 
@@ -383,25 +374,20 @@ function Phase2Section() {
           <SectionImage src={IMAGES.playbookCollection} alt="Complete collection of 9 sales playbooks" className="max-w-5xl mx-auto" />
         </div>
 
-        {/* Playbook Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* Playbook Grid - compact, benefit-driven, no "includes" */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
           {playbooks.map((book, i) => (
             <div
               key={i}
-              className="group p-6 border transition-all duration-500 scroll-reveal"
+              className="group p-5 border transition-all duration-500 scroll-reveal"
               style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.05)' }}
               onMouseEnter={(e) => (e.currentTarget.style.borderColor = 'rgba(197,165,114,0.2)')}
               onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)')}
             >
-              <h3 className="font-display text-lg text-white mb-3">{book.title}</h3>
-              <p className="font-body text-sm leading-relaxed mb-4" style={{ color: 'rgba(245,240,235,0.65)' }}>
+              <h3 className="font-display text-lg text-white mb-2">{book.title}</h3>
+              <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(245,240,235,0.65)' }}>
                 {book.desc}
               </p>
-              <div className="pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-                <p className="font-body text-xs" style={{ color: 'rgba(197,165,114,0.7)' }}>
-                  <span className="font-semibold" style={{ color: '#C5A572' }}>Includes:</span> {book.includes}
-                </p>
-              </div>
             </div>
           ))}
         </div>
@@ -434,7 +420,7 @@ function Phase2Section() {
               20+ hours of tactical and strategic sales training. Live group sessions covering discovery, demos, proposals, objection handling, and more.
             </p>
           </div>
-          <SectionImage src={IMAGES.webinarMasterclass} alt="Group masterclass webinar with 20 participants" className="max-w-4xl mx-auto" />
+          <SectionImage src={IMAGES.webinarMasterclass} alt="Group masterclass webinar" className="max-w-4xl mx-auto" />
         </div>
 
         <GoldDivider />
@@ -448,11 +434,18 @@ function Phase2Section() {
             <h3 className="font-display text-2xl md:text-3xl text-white mb-4">
               AI Tools Library
             </h3>
-            <p className="font-body text-base max-w-xl mx-auto" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              Business case generator. Proposal doctor. Follow-up email writer. Call analyser. These tools are in beta and included as a bonus for programme members.
+            <p className="font-body text-base max-w-xl mx-auto mb-6" style={{ color: 'rgba(245,240,235,0.6)' }}>
+              AI agents built to save you hours every week. Included as a bonus for programme members.
             </p>
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+              {['Business Case Generator', 'Pipeline Auditor', 'Cold Email Writer', 'Proposal Doctor', 'Follow-Up Email Writer', 'Call Analyser'].map((tool, i) => (
+                <span key={i} className="px-4 py-2 font-body text-sm border" style={{ color: 'rgba(245,240,235,0.8)', borderColor: 'rgba(197,165,114,0.2)', backgroundColor: 'rgba(26,34,51,0.4)' }}>
+                  {tool}
+                </span>
+              ))}
+            </div>
           </div>
-          <SectionImage src={IMAGES.aiDashboard} alt="AI Tools Dashboard" className="max-w-4xl mx-auto" />
+          <SectionImage src={IMAGES.aiDashboard} alt="AI Tools Dashboard with Business Case Generator, Pipeline Auditor, and Cold Email Writer" className="max-w-4xl mx-auto" />
         </div>
       </div>
     </section>
@@ -472,7 +465,7 @@ function Phase3Section() {
             <span className="italic" style={{ color: '#E63946' }}>embedded in your business.</span>
           </h2>
           <p className="font-body text-lg max-w-2xl leading-relaxed" style={{ color: 'rgba(11,17,32,0.7)' }}>
-            Most programmes hand you assets and disappear. We coach you through live deals until the system is part of how your team sells.
+            Most programmes hand you assets and disappear. We coach you through live deals until the system runs without us.
           </p>
         </div>
 
@@ -511,7 +504,7 @@ function Phase3Section() {
             </div>
           </div>
           <div className="scroll-reveal">
-            <SectionImage src={IMAGES.loomReview} alt="Loom video deal review" />
+            <SectionImage src={IMAGES.loomReview} alt="Loom video deal review with Joe" />
           </div>
         </div>
 
@@ -566,7 +559,7 @@ function Phase3Section() {
             </div>
           </div>
           <div className="scroll-reveal">
-            <SectionImage src={IMAGES.slackSupport} alt="Slack support conversation" />
+            <SectionImage src={IMAGES.slackSupport} alt="Slack support conversation with Joe" />
           </div>
         </div>
 
@@ -620,12 +613,15 @@ function PricingSection() {
 
         {/* Two-tier pricing */}
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
-          {/* Minimum Package */}
+          {/* Essentials Package */}
           <div className="p-8 md:p-10 border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.08)' }}>
             <p className="font-body text-sm tracking-wider uppercase mb-4" style={{ color: 'rgba(245,240,235,0.5)' }}>Essentials Package</p>
-            <div className="mb-6">
+            <div className="mb-2">
               <span className="font-display text-4xl md:text-5xl text-white">£7,500</span>
             </div>
+            <p className="font-body text-sm mb-6" style={{ color: 'rgba(197,165,114,0.8)' }}>
+              8-week support
+            </p>
             <p className="font-body text-sm mb-6 leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
               The core programme. Group coaching, up to 3 playbooks, and group Slack support.
             </p>
@@ -657,7 +653,7 @@ function PricingSection() {
                 'AI tools beta access',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2 opacity-40">
-                  <span className="w-4 h-4 mt-0.5 flex-shrink-0 text-center font-body text-xs" style={{ color: 'rgba(245,240,235,0.3)' }}>✕</span>
+                  <span className="w-4 h-4 mt-0.5 flex-shrink-0 text-center font-body text-xs" style={{ color: 'rgba(245,240,235,0.3)' }}>&#x2715;</span>
                   <span className="font-body text-sm line-through" style={{ color: 'rgba(245,240,235,0.3)' }}>{item}</span>
                 </div>
               ))}
@@ -670,9 +666,12 @@ function PricingSection() {
               <span className="font-body text-xs font-bold text-white tracking-wider uppercase">Recommended</span>
             </div>
             <p className="font-body text-sm tracking-wider uppercase mb-4" style={{ color: '#C5A572' }}>Done-For-You Package</p>
-            <div className="mb-6">
+            <div className="mb-2">
               <span className="font-display text-4xl md:text-5xl text-white">£15,000</span>
             </div>
+            <p className="font-body text-sm mb-6" style={{ color: 'rgba(197,165,114,0.8)' }}>
+              12-week support
+            </p>
             <p className="font-body text-sm mb-6 leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
               Everything built for you. Every asset created. Every playbook customised. Full hands-on support.
             </p>
@@ -707,16 +706,16 @@ function PricingSection() {
               What the Done-For-You Package Looks Like
             </h3>
             <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              7 weeks of hands-on support. Everything built, customised, and coached into your team. Plus beta access to the AI tool suite.
+              12 weeks of hands-on support. Everything built, customised, and coached into your team.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
             {[
               { week: 'Week 1', title: 'Diagnostic + Blueprint', desc: 'GTM workshop, full diagnostic report, market research, wireframed sales playbook.' },
-              { week: 'Weeks 2-3', title: 'Core Playbooks Built', desc: 'Discovery, Demo, and Proposal playbooks. Fully customised. Scripts, frameworks, templates.' },
-              { week: 'Weeks 4-5', title: 'Full Arsenal Delivered', desc: 'Cold Email Bible, Cold Calling, Appointment Setting, Lead Nurture, Stakeholder, Objection Handling.' },
-              { week: 'Weeks 6-7', title: 'Coaching + Refinement', desc: 'Live deal reviews, group coaching, strategic consultation. Refine everything based on real results.' },
+              { week: 'Weeks 2-4', title: 'Core Playbooks Built', desc: 'Discovery, Demo, and Proposal playbooks. Fully customised. Scripts, frameworks, templates.' },
+              { week: 'Weeks 5-8', title: 'Full Arsenal Delivered', desc: 'Cold Email Bible, Cold Calling, Appointment Setting, Lead Nurture, Stakeholder, Objection Handling.' },
+              { week: 'Weeks 9-12', title: 'Coaching + Refinement', desc: 'Live deal reviews, group coaching, strategic consultation. Refine everything based on real results.' },
             ].map((item, i) => (
               <div key={i} className="p-6 border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.05)' }}>
                 <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#E63946' }}>{item.week}</p>
@@ -726,11 +725,19 @@ function PricingSection() {
             ))}
           </div>
 
-          <div className="p-6 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(197,165,114,0.2)' }}>
-            <p className="font-body text-sm mb-2" style={{ color: '#C5A572' }}>Plus</p>
-            <h4 className="font-display text-xl text-white mb-3">Beta Access to the AI Tool Suite</h4>
-            <p className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              Business case generator. Proposal doctor. Follow-up email writer. Call analyser. Included for all Done-For-You members.
+          {/* Special Offer */}
+          <div className="p-8 md:p-10 border-2 text-center" style={{ borderColor: 'rgba(197,165,114,0.4)', background: 'linear-gradient(135deg, rgba(26,34,51,0.5), rgba(26,34,51,0.3))' }}>
+            <p className="font-body text-sm tracking-[0.2em] uppercase mb-4" style={{ color: '#E63946' }}>
+              + For a Very Limited Time
+            </p>
+            <h4 className="font-display text-2xl md:text-3xl text-white mb-4">
+              Get the full Done-For-You package for £7,500
+            </h4>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              Everything in the £15,000 package. All 9 playbooks. All assets built for you. 12 weeks of hands-on support. One-on-one Slack. Deal clinics. Strategic consultations.
+            </p>
+            <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(197,165,114,0.9)' }}>
+              This pricing is available until we release the beta-tested version of the AI tools. Once the tools are live, the price goes back to £15,000.
             </p>
           </div>
         </div>
@@ -790,11 +797,11 @@ function FAQSection() {
   const faqs = [
     {
       q: 'What if I have tried sales training before?',
-      a: 'This is not training. We build your entire sales system. Scripts, frameworks, playbooks, proposals. All customised to your business. Then we coach you through live deals until it is embedded. The difference between reading a recipe and having a chef cook beside you.',
+      a: 'This is not training. We build your entire sales system. Scripts, frameworks, playbooks, proposals. All customised to your business. Then we coach you through live deals until it sticks.',
     },
     {
       q: 'Will this work for my industry?',
-      a: 'We have worked with 300+ founders across SaaS, professional services, tech, and consulting. The system is built around buyer psychology, not industry jargon. Every deliverable is customised to your specific market, prospects, and competitive landscape.',
+      a: 'We have worked with 300+ founders across SaaS, professional services, tech, and consulting. The system is built around buyer psychology. Every deliverable is customised to your specific market, prospects, and competitive landscape.',
     },
     {
       q: 'What is the time commitment?',
