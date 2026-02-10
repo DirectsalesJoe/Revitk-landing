@@ -80,9 +80,8 @@ function HeroSection() {
 
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transitionDelay: '0.4s' }}>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8">
-              Double your close rate.{' '}
-              <span className="italic" style={{ color: '#C5A572' }}>Identify and fix every bottleneck</span>{' '}
-              in your business in eight weeks.
+              Double your close rate in 8 weeks{' '}
+              <span className="italic" style={{ color: '#C5A572' }}>(and don't pay more than £1 until you get results).</span>
             </h1>
           </div>
 
