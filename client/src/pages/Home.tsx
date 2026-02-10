@@ -215,7 +215,7 @@ function Phase1Section() {
             </p>
           </div>
           <div className="scroll-reveal">
-            <SectionImage src={IMAGES.coachingCallJoe} alt="One-on-one GTM diagnostic workshop" maxH="max-h-[420px]" />
+            <SectionImage src={IMAGES.diagnosticWorkshopScene} alt="Premium consulting diagnostic workshop with McKinsey-style scorecards" maxH="max-h-[420px]" />
           </div>
         </div>
 
@@ -306,7 +306,7 @@ function Phase1Section() {
               </div>
             ))}
           </div>
-          <SectionImage src={IMAGES.salesPlaybookFlowchart} alt="Strategic Sales Process Blueprint" className="max-w-4xl" maxH="max-h-[480px]" />
+          <SectionImage src={IMAGES.salesBlueprintPremium} alt="Strategic Sales Process Blueprint — modular architecture from Prospect to Close" className="max-w-5xl mx-auto" maxH="max-h-[520px]" />
         </div>
       </div>
     </section>
