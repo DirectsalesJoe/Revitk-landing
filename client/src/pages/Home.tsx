@@ -433,20 +433,33 @@ function Phase2Section() {
             </p>
             <h3 className="font-display text-2xl md:text-3xl text-white mb-4 flex items-center justify-center gap-3">
               <Bot className="w-8 h-8" style={{ color: '#C5A572' }} />
-              AI Tools Library
+              AI Sales Agents
             </h3>
-            <p className="font-body text-base max-w-xl mx-auto mb-6" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              AI agents built to save you hours every week. Included as a bonus for programme members.
+            <p className="font-body text-base max-w-2xl mx-auto mb-4" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              Five purpose-built AI agents — trained on your voice, your brand, your customers, your solution, your case studies, the pain points you solve, and every aspect of the Sync Selling methodology.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              {['Business Case Generator', 'Pipeline Auditor', 'Cold Email Writer', 'Deal Coach', 'Proposal Doctor', 'Follow-Up Email Writer', 'Call Analyser'].map((tool, i) => (
-                <span key={i} className="px-4 py-2 font-body text-sm border" style={{ color: 'rgba(245,240,235,0.8)', borderColor: 'rgba(197,165,114,0.2)', backgroundColor: 'rgba(26,34,51,0.4)' }}>
-                  {tool}
-                </span>
+            <p className="font-display text-lg md:text-xl text-white mb-8 italic">
+              It's like having me sit next to you and walk through every single deal.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8 max-w-5xl mx-auto text-left">
+              {[
+                { name: 'Proposal Writer', desc: 'Generates tailored proposals using your methodology, case studies, and the prospect\'s specific pain points.' },
+                { name: 'Business Case Generator', desc: 'Builds ROI-backed business cases that get deals past procurement and budget holders.' },
+                { name: 'Email Follow-Up Generator', desc: 'Writes follow-up sequences in your voice that re-engage stalled deals and cold prospects.' },
+                { name: 'Deal Coach', desc: 'Analyses your live deals and tells you exactly what to do next — like a coach on demand.' },
+                { name: 'Copywriter', desc: 'Creates outbound messaging, LinkedIn content, and sales collateral in your brand voice.' },
+              ].map((tool, i) => (
+                <div key={i} className="p-4 border" style={{ borderColor: 'rgba(197,165,114,0.2)', backgroundColor: 'rgba(26,34,51,0.4)' }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Bot className="w-4 h-4 flex-shrink-0" style={{ color: '#C5A572' }} />
+                    <span className="font-body text-sm font-semibold text-white">{tool.name}</span>
+                  </div>
+                  <p className="font-body text-xs leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>{tool.desc}</p>
+                </div>
               ))}
             </div>
           </div>
-          <SectionImage src={IMAGES.aiDashboard} alt="AI Tools Dashboard with Business Case Generator, Pipeline Auditor, and Cold Email Writer" className="max-w-4xl mx-auto" />
+          <SectionImage src={IMAGES.aiDashboard} alt="AI Sales Agents Dashboard — Proposal Writer, Business Case Generator, Email Follow-Up Generator, Deal Coach, Copywriter" className="max-w-4xl mx-auto" />
         </div>
       </div>
     </section>
@@ -651,7 +664,7 @@ function PricingSection() {
                 'One-on-one Slack support',
                 'Deal clinics',
                 'Strategic one-on-one consultations',
-                'AI tools beta access',
+                'AI Sales Agents beta access',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2 opacity-40">
                   <span className="w-4 h-4 mt-0.5 flex-shrink-0 text-center font-body text-xs" style={{ color: 'rgba(245,240,235,0.3)' }}>&#x2715;</span>
@@ -687,7 +700,7 @@ function PricingSection() {
                 'Two strategic one-on-one consultations (Week 2 + Week 6)',
                 'Training video library',
                 'Access to 20 masterclass webinars',
-                'AI tools beta access',
+                'AI Sales Agents beta access (5 agents trained on your business)',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#C5A572' }} />
