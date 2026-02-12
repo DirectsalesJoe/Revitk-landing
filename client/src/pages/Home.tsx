@@ -9,6 +9,7 @@
 import { IMAGES } from '@/lib/constants';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useEffect, useState } from 'react';
+import { Link } from 'wouter';
 import {
   ChevronDown,
   Target,
@@ -64,10 +65,13 @@ function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 py-24 md:py-32">
         {/* Nav */}
         <div className="absolute top-0 left-0 right-0 py-6 px-4 md:px-8">
-          <div className="container mx-auto flex items-center gap-3">
-            <span className="font-body text-lg font-bold tracking-[0.15em] text-white uppercase">REVITK</span>
-            <span style={{ color: 'rgba(197,165,114,0.6)' }}>|</span>
-            <span className="font-body text-sm tracking-wide" style={{ color: 'rgba(197,165,114,0.8)' }}>The Sync Selling System</span>
+          <div className="container mx-auto flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="font-body text-lg font-bold tracking-[0.15em] text-white uppercase">REVITK</span>
+              <span style={{ color: 'rgba(197,165,114,0.6)' }}>|</span>
+              <span className="font-body text-sm tracking-wide" style={{ color: 'rgba(197,165,114,0.8)' }}>The Sync Selling System</span>
+            </div>
+            <Link href="/" className="font-body text-sm text-white hover:text-[#C5A572] transition-colors">← Back to Home</Link>
           </div>
         </div>
 

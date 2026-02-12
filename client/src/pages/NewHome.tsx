@@ -13,7 +13,7 @@ function NavBar() {
           <img
             src="/revitk-logo-white.png"
             alt="Revitk"
-            className="h-10 w-auto cursor-pointer"
+            className="h-12 w-auto cursor-pointer"
           />
         </Link>
         {/* Desktop nav */}
@@ -77,59 +77,55 @@ function NavBar() {
   );
 }
 
-/* ─── SECTION 1: HERO ─── */
+/* ─── SECTION 1: HERO (No photo — clean text only) ─── */
 function Hero() {
   return (
     <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12">
-        <div className="flex-1 text-center md:text-left">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Your Deals Aren't Dying Because of Your Product or Service. They're Drowning in the Lake of Maybe Because You Haven't Given Your Prospects the Tools They Need to Decide.
-          </h1>
-          <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 mb-4">
-            We build complete sales systems for B2B founders and sales teams. Bespoke playbooks, sales assets and training engineered for instant results.
-          </p>
-          <p className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] mb-8">
-            300+ founders coached. £185M+ in client revenue.
-          </p>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-          >
-            Book Your Free Qualification Call
-          </a>
-        </div>
-        <div className="flex-shrink-0">
-          <img
-            src="/joe-hero.png"
-            alt="Joe Milnes"
-            className="w-64 md:w-80 rounded-full"
-          />
-        </div>
+      <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
+        <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Close 1 in Every 2 Prospects You Quote in 8 Weeks
+        </h1>
+        <p className="font-[family-name:var(--font-body)] text-lg md:text-xl text-[#F5F0EB]/80 mb-4 max-w-3xl mx-auto">
+          We build complete sales systems for B2B founders and sales teams. Bespoke playbooks, sales assets and training engineered for instant results.
+        </p>
+        <p className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] mb-8">
+          300+ founders coached. £185M+ in client revenue.
+        </p>
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
+        >
+          Book Your Free Qualification Call
+        </a>
       </div>
     </section>
   );
 }
 
 /* ─── SECTION 2: PROBLEM IDENTIFICATION ─── */
+/* Each problem has a "symptom" (the title + opening) and a "root cause" (bolded) */
 const problems = [
   {
     title: "Deals die after great conversations",
-    body: "Your demo goes brilliantly. Your champion says \"let me get sign-off.\" Then silence. Weeks pass. The deal dies in a room you were never in, because your champion had no ammunition to sell you internally.",
+    symptom: 'Your demo goes brilliantly. Your champion says "let me get sign-off." Then silence. Weeks pass.',
+    rootCause: "The deal dies in a room you were never in, because your champion had no ammunition to sell you internally.",
   },
   {
     title: "Proposals disappear into inboxes",
-    body: "You send the quote. Follow up once. Twice. Three times. \"Still reviewing it internally.\" A quote is not a boomerang. If you lose control of the sales process, you can't win.",
+    symptom: 'You send the quote. Follow up once. Twice. Three times. "Still reviewing it internally."',
+    rootCause: "A quote is not a boomerang. If you lose control of the sales process, you can't win.",
   },
   {
     title: "Your pipeline is full of maybes",
-    body: "Nobody's actually saying no, but nobody's signing either. You might say \"yeah, we're still looking into it\" or \"I think we're still on for that,\" but you've got no way of telling which deals are closing this week. You didn't ask the questions you needed to build the case for the cost of inaction, so the prospect has no idea how much it's costing them to stay in their own muck.",
+    symptom: "Nobody's actually saying no, but nobody's signing either. You might say \"yeah, we're still looking into it\" or \"I think we're still on for that,\" but you've got no way of telling which deals are closing this week.",
+    rootCause: "You didn't ask the questions you needed to build the case for the cost of inaction, so the prospect has no idea how much it's costing them to stay in their own muck.",
   },
   {
     title: "You've wasted thousands on sales hires that didn't work out",
-    body: "If you haven't got a proven process and a way to measure how salespeople are performing on each and every part of it, how are you ever going to know where to coach, where to enable, and whether you've got the right people in the right seats?",
+    symptom: "",
+    rootCause: "If you haven't got a proven process and a way to measure how salespeople are performing on each and every part of it, how are you ever going to know where to coach, where to enable, and whether you've got the right people in the right seats?",
   },
 ];
 
@@ -147,7 +143,8 @@ function ProblemIdentification() {
                 {p.title}
               </h3>
               <p className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/80 leading-relaxed">
-                {p.body}
+                {p.symptom}{p.symptom ? " " : ""}
+                <span className="font-semibold text-[#0F1923]">{p.rootCause}</span>
               </p>
             </div>
           ))}
@@ -157,7 +154,7 @@ function ProblemIdentification() {
   );
 }
 
-/* ─── SECTION 3: HOW IT WORKS ─── */
+/* ─── SECTION 3: HOW YOU CAN WORK WITH US ─── */
 const phases = [
   {
     label: "Phase 01",
@@ -182,10 +179,10 @@ function HowItWorks() {
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
         <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-8" />
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-6 text-center">
-          How It Works
+          How You Can Work With Us
         </h2>
         <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 text-center max-w-3xl mx-auto mb-12">
-          We're selective about who we work with. If we don't think we can help, we'll tell you. If we do think we can help, we'll offer Phase 1 of our diagnostic, and you'll never pay more than £1 for the first stage.
+          We're selective about who we work with. If we don't think we can help, we'll tell you. If we do think we can help, we'll offer Phase 1 of our diagnostic, valued at well over £5,000, for £1.
         </p>
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {phases.map((phase, i) => (
@@ -224,25 +221,26 @@ function HowItWorks() {
 }
 
 /* ─── SECTION 4: RESULTS & SOCIAL PROOF ─── */
+/* CORRECTED MAPPING: wpge7ym6pc=Jordan, h4akkgj8si=Vohkus, iyot7g3u08=Matej, iu0mwb1pri=Steve */
 const testimonials = [
+  {
+    name: "Jordan, FE Growth Partner",
+    result: "Chose Joe to coach hundreds of founders at his £50M agency.",
+    mediaId: "wpge7ym6pc",
+  },
   {
     name: "Vohkus",
     result: "Took a team of graduates with zero experience to £1.2M monthly revenue in under a year. Including a £1M+ deal with oil and gas.",
-    mediaId: "wpge7ym6pc",
+    mediaId: "h4akkgj8si",
   },
   {
     name: "Matej",
     result: "Closed over £500K. Increased close rate and prices sixfold.",
-    mediaId: "h4akkgj8si",
+    mediaId: "iyot7g3u08",
   },
   {
     name: "Steve",
     result: "£100K in new business. £50K profit from four new clients.",
-    mediaId: "iyot7g3u08",
-  },
-  {
-    name: "Jordan, FE Growth Partner",
-    result: "Chose Joe to coach hundreds of founders at his £50M agency.",
     mediaId: "iu0mwb1pri",
   },
 ];
