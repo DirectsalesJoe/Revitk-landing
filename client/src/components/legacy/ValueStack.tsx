@@ -39,8 +39,8 @@ export const ValueStack: React.FC = () => {
   return (
     <section className="py-20 px-4 md:px-6 max-w-6xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">What Happens After Week 1: Your Programme Options</h2>
-        <p className="text-lg max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">What Happens After Week 1: Your Programme Options</h2>
+        <p className="text-lg max-w-3xl mx-auto text-gray-800">
           If you decide to continue, you have two options. A 'Done With You' programme, or for founders who need results now, the 'Done For You' Accelerator.
         </p>
       </div>

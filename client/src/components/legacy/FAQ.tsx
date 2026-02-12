@@ -24,7 +24,7 @@ const FAQItem: React.FC<{ question: string; answer: React.ReactNode }> = ({ ques
 export const FAQ: React.FC = () => {
   return (
     <section className="py-20 px-6 max-w-3xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">I Still Have Some Questions...</h2>
+      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-brand-dark">I Still Have Some Questions...</h2>
       
       <div className="space-y-2">
         <FAQItem 
@@ -77,7 +77,7 @@ export const FAQ: React.FC = () => {
       </div>
       
       <div className="mt-16 bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
-        <h3 className="font-bold text-xl mb-4">Optional Ongoing Support</h3>
+        <h3 className="font-bold text-xl mb-4 text-brand-dark">Optional Ongoing Support</h3>
         <p>After the 8-week programme, you can continue with a <strong>£400/month retainer</strong> for ongoing support, CRM access, and updates.</p>
       </div>
     </section>

@@ -11,7 +11,7 @@ const VideoCard: React.FC<{
                  {/* @ts-ignore - Custom Element */}
                 <wistia-player media-id={mediaId} aspect="1.7777777777777777"></wistia-player>
             </div>
-            <h3 className="font-bold text-lg md:text-xl mb-4 leading-tight">{headline}</h3>
+            <h3 className="font-bold text-lg md:text-xl mb-4 leading-tight text-brand-dark">{headline}</h3>
             <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
         </div>
     )
@@ -22,7 +22,7 @@ export const SocialProof: React.FC = () => {
     <section className="py-20 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 max-w-4xl mx-auto">
-             <h2 className="text-3xl md:text-4xl font-bold mb-6">
+             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
                 This Is The Same System That Took Vohkus From £40M to £100M
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 mb-8">
@@ -67,7 +67,7 @@ export const SocialProof: React.FC = () => {
                     {/* @ts-ignore */}
                     <wistia-player media-id="38848fuss2" aspect="0.5625"></wistia-player>
                 </div>
-                <h3 className="font-bold text-lg md:text-xl mb-4 leading-tight">Why A Top 1% Sales Veteran Hired Us</h3>
+                <h3 className="font-bold text-lg md:text-xl mb-4 leading-tight text-brand-dark">Why A Top 1% Sales Veteran Hired Us</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">Brooks Van Norman, 25-year B2B veteran, learned 'million pound questions' he uses daily.</p>
             </div>
         </div>

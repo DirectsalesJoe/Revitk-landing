@@ -6,10 +6,10 @@ export const SystemFailures: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="mb-16 text-center">
           <hr className="w-24 border-t-4 border-brand-accent mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 text-brand-dark">
             Here's What's Actually Happening
           </h2>
-          <p className="text-xl mt-6">
+          <p className="text-xl mt-6 text-brand-dark">
             You don't have a <span className="font-bold">sales problem.</span><br/>
             You have <span className="font-bold">four system failures</span>:
           </p>
@@ -18,7 +18,7 @@ export const SystemFailures: React.FC = () => {
         <div className="space-y-12">
           {/* Failure 1 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-brand-accent">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-brand-dark">
               Failure #1: Your Champions Can't Sell UP
             </h3>
             <div className="space-y-4 text-lg text-gray-800">
@@ -42,7 +42,7 @@ export const SystemFailures: React.FC = () => {
 
           {/* Failure 2 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-brand-dark">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-brand-dark">
               Failure #2: You're Treating Quotes Like Boomerangs (They Won't Come Back)
             </h3>
             <div className="space-y-4 text-lg text-gray-800">
@@ -64,7 +64,7 @@ export const SystemFailures: React.FC = () => {
 
           {/* Failure 3 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-gray-400">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-brand-dark">
               Failure #3: You Have No Idea When Deals Are at Risk
             </h3>
             <div className="space-y-4 text-lg text-gray-800">
@@ -94,7 +94,7 @@ export const SystemFailures: React.FC = () => {
 
           {/* Failure 4 */}
           <div className="bg-white p-8 md:p-10 rounded-lg shadow-sm border-l-8 border-red-500">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-brand-dark">
               Failure #4: You're Hiring People to Execute a System That Doesn't Exist
             </h3>
             <div className="space-y-4 text-lg text-gray-800">

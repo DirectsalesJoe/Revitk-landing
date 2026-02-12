@@ -43,8 +43,8 @@ export const SyncSolution: React.FC = () => {
         </div>
 
         <div className="text-center py-8">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">That's what the Sync Selling System does.</h3>
-          <p className="text-xl md:text-2xl mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 text-brand-dark">That's what the Sync Selling System does.</h3>
+          <p className="text-xl md:text-2xl mb-4 text-gray-800">
             We don't teach you. We don't coach you.
           </p>
           <p className="font-bold text-2xl md:text-3xl text-brand-accent mb-12">
