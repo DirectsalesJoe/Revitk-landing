@@ -4,13 +4,21 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
-
+import OriginalHome from "./pages/OriginalHome";
+import Offer from "./pages/Offer";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      {/* Original website with case study videos */}
+      <Route path={"/"} component={OriginalHome} />
+      {/* Dark Institutional offer page */}
+      <Route path={"/offer"} component={Offer} />
+      {/* Legal pages */}
+      <Route path={"/privacy"} component={Privacy} />
+      <Route path={"/terms"} component={Terms} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
