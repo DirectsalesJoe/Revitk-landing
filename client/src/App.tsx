@@ -4,6 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import NewHome from "./pages/NewHome";
 import OriginalHome from "./pages/OriginalHome";
 import Offer from "./pages/Offer";
 import Privacy from "./pages/Privacy";
@@ -13,8 +14,10 @@ import Answers from "./pages/Answers";
 function Router() {
   return (
     <Switch>
-      {/* Original website with case study videos */}
-      <Route path={"/"} component={OriginalHome} />
+      {/* New redesigned homepage with Dark Institutional branding */}
+      <Route path={"/"} component={NewHome} />
+      {/* Legacy homepage preserved at /legacy for safety */}
+      <Route path={"/legacy"} component={OriginalHome} />
       {/* Dark Institutional offer page */}
       <Route path={"/offer"} component={Offer} />
       {/* Hidden AI SEO answers page */}
