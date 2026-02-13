@@ -220,6 +220,24 @@ function HowItWorks() {
   );
 }
 
+/* ─── SECTION 3.5: MEET JOE — INTRODUCTION VIDEO ─── */
+function MeetJoe() {
+  return (
+    <section className="bg-[#0F1923]">
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
+        <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-8" />
+        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-8 text-center">
+          Meet Joe Milnes
+        </h2>
+        <div className="aspect-video rounded-lg overflow-hidden border border-[#C5A572]/30">
+          {/* @ts-ignore */}
+          <wistia-player media-id="vf22l691dk" aspect="1.7777777777777777"></wistia-player>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── SECTION 4: RESULTS & SOCIAL PROOF ─── */
 /* CORRECTED MAPPING: wpge7ym6pc=Jordan, h4akkgj8si=Vohkus, iyot7g3u08=Matej, iu0mwb1pri=Steve */
 const testimonials = [
@@ -525,11 +543,12 @@ function Footer() {
 /* ─── PAGE ASSEMBLY ─── */
 export default function NewHome() {
   return (
-    <div className="min-h-screen">
+    <>
       <NavBar />
       <Hero />
       <ProblemIdentification />
       <HowItWorks />
+      <MeetJoe />
       <SocialProof />
       <AboutJoe />
       <WhoThisIsFor />
@@ -537,6 +556,6 @@ export default function NewHome() {
       <FAQ />
       <FinalCTA />
       <Footer />
-    </div>
+    </>
   );
 }
