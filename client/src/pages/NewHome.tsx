@@ -83,7 +83,7 @@ function Hero() {
     <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
       <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
         <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          Close <span className="italic" style={{ color: '#C5A572' }}>1 in Every 2</span> Prospects You Quote in <span className="italic" style={{ color: '#C5A572' }}>8 Weeks</span>
+          We offer the <span className="italic" style={{ color: '#C5A572' }}>quickest and easiest</span> way to transform sales performance. <span className="italic" style={{ color: '#C5A572' }}>Risk free.</span>
         </h1>
         <p className="font-[family-name:var(--font-body)] text-lg md:text-xl text-[#F5F0EB]/80 mb-4 max-w-3xl mx-auto">
           We build complete sales systems for B2B founders and sales teams. Bespoke playbooks, sales assets and training engineered for instant results.
