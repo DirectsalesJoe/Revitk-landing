@@ -77,7 +77,7 @@ function NavBar() {
   );
 }
 
-/* ─── SECTION 1: HERO (No photo — clean text only) ─── */
+/* ─── SECTION 1: HERO (With Integrated Video) ─── */
 function Hero() {
   return (
     <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
@@ -88,9 +88,16 @@ function Hero() {
         <p className="font-[family-name:var(--font-body)] text-lg md:text-xl text-[#F5F0EB]/80 mb-4 max-w-3xl mx-auto">
           We build complete sales systems for B2B founders and sales teams. Bespoke playbooks, sales assets and training engineered for instant results.
         </p>
-        <p className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] mb-8">
+        <p className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] mb-12">
           300+ founders coached. £185M+ in client revenue.
         </p>
+        
+        {/* Integrated Introduction Video */}
+        <div className="max-w-3xl mx-auto mb-12 aspect-video rounded-lg overflow-hidden border border-[#C5A572]/30 shadow-2xl">
+          {/* @ts-ignore */}
+          <wistia-player media-id="vf22l691dk" aspect="1.7777777777777777"></wistia-player>
+        </div>
+
         <a
           href={BOOKING_URL}
           target="_blank"
@@ -220,24 +227,6 @@ function HowItWorks() {
   );
 }
 
-/* ─── SECTION 3.5: MEET JOE — INTRODUCTION VIDEO ─── */
-function MeetJoe() {
-  return (
-    <section className="bg-[#0F1923]">
-      <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
-        <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-8" />
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-8 text-center">
-          Meet the founder...
-        </h2>
-        <div className="aspect-video rounded-lg overflow-hidden border border-[#C5A572]/30">
-          {/* @ts-ignore */}
-          <wistia-player media-id="vf22l691dk" aspect="1.7777777777777777"></wistia-player>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── SECTION 4: RESULTS & SOCIAL PROOF ─── */
 /* CORRECTED MAPPING: wpge7ym6pc=Jordan, h4akkgj8si=Vohkus, iyot7g3u08=Matej, iu0mwb1pri=Steve */
 const testimonials = [
@@ -361,13 +350,13 @@ function WhoThisIsFor() {
         </h2>
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="font-[family-name:var(--font-body)] text-lg font-bold text-[#0F1923] mb-6">
+            <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#0F1923] mb-6">
               This is for you if:
             </h3>
             <ul className="space-y-4">
               {forYou.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-green-600 text-xl mt-0.5">✓</span>
+                  <span className="text-[#C5A572] mt-1">✓</span>
                   <span className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/80">
                     {item}
                   </span>
@@ -376,13 +365,13 @@ function WhoThisIsFor() {
             </ul>
           </div>
           <div>
-            <h3 className="font-[family-name:var(--font-body)] text-lg font-bold text-[#0F1923] mb-6">
+            <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#0F1923] mb-6">
               This isn't for you if:
             </h3>
             <ul className="space-y-4">
               {notForYou.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#E63946] text-xl mt-0.5">✗</span>
+                  <span className="text-[#E63946] mt-1">✗</span>
                   <span className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/80">
                     {item}
                   </span>
@@ -396,27 +385,28 @@ function WhoThisIsFor() {
   );
 }
 
-/* ─── SECTION 7: THE £1 DIAGNOSTIC ─── */
+/* ─── SECTION 7: THE DIAGNOSTIC OFFER ─── */
 function Diagnostic() {
   return (
     <section className="bg-[#0F1923]">
-      <div className="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
-        <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-8" />
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-8">
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
+        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-6">
           Start With a £1 Diagnostic. Decide After.
         </h2>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-4">
+        <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 mb-8">
           Before you commit to anything, we'll diagnose your entire sales process for £1.
         </p>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-4">
-          You get a 90-minute workshop with Joe, a full diagnostic report, 80+ hours of market research on your buyers and competitors, and a wireframed sales playbook showing exactly what needs to happen at each stage.
-        </p>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-4">
-          If you're not convinced, walk away. Keep the report. No charge beyond the £1.
-        </p>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-8">
-          85% of people who take the diagnostic continue into the full programme. We let the work speak for itself.
-        </p>
+        <div className="bg-white/5 border border-white/10 rounded-lg p-8 mb-10 text-left">
+          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-6">
+            You get a 90-minute workshop with Joe, a full diagnostic report, 80+ hours of market research on your buyers and competitors, and a wireframed sales playbook showing exactly what needs to happen at each stage.
+          </p>
+          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-6">
+            If you're not convinced, walk away. Keep the report. No charge beyond the £1.
+          </p>
+          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed">
+            85% of people who take the diagnostic continue into the full programme. We let the work speak for itself.
+          </p>
+        </div>
         <a
           href={BOOKING_URL}
           target="_blank"
@@ -434,24 +424,25 @@ function Diagnostic() {
 const faqs = [
   {
     q: "My industry is super niche. Will this work?",
-    a: "We've built systems for commercial solar, roofing, SaaS, recruitment, agencies, HVAC, and industrial equipment. The methodology works because it's built on how buyers make decisions, and buyers in every industry follow the same decision-making patterns.",
+    a: "Yes. Sync Selling is based on human psychology and decision-making, not industry-specific jargon. We've applied it successfully to everything from high-end SaaS to specialized engineering services.",
   },
   {
     q: "What's the time commitment?",
-    a: "The diagnostic takes 90 minutes. The full programme requires 3-4 hours per week for 8-12 weeks. Most founders tell us it saves them time because they stop chasing dead deals.",
+    a: "The diagnostic is 90 minutes. The full programme typically requires 2-3 hours per week from the founder or sales leader over 12 weeks. We build the assets for you, so the heavy lifting is on us.",
   },
   {
     q: "What if I want to hire a salesperson after this?",
-    a: "That's the point. The system we build is a complete playbook. Day one, your new hire has discovery scripts, demo frameworks, proposal templates, and objection handling toolkits. No more \"shadow me and figure it out.\"",
+    a: "This is the best time to do it. You'll have a proven process, a playbook, and a way to measure performance from day one. You'll be hiring into a system, not hoping for a hero.",
   },
   {
     q: "What does the call involve?",
-    a: "30 minutes with Joe. We'll work out if we can help. If we can, you'll know exactly what the first step looks like. If we can't, we'll tell you. No pressure, no hard sell.",
+    a: "A 30-minute qualification call to see if we're a fit. No hard sell. If we can help, we'll explain the diagnostic. If we can't, we'll point you in the right direction.",
   },
 ];
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <section className="bg-[#F5F0EB]">
       <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
@@ -460,20 +451,20 @@ function FAQ() {
         </h2>
         <div className="space-y-4">
           {faqs.map((faq, i) => (
-            <div key={i} className="border border-[#0F1923]/10 rounded-lg overflow-hidden">
+            <div key={i} className="border-b border-[#0F1923]/10">
               <button
-                className="w-full text-left px-6 py-5 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                className="w-full py-6 flex items-center justify-between text-left"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="font-[family-name:var(--font-body)] text-base font-bold text-[#0F1923] pr-4">
+                <span className="font-[family-name:var(--font-display)] text-lg font-bold text-[#0F1923]">
                   {faq.q}
                 </span>
-                <span className="text-[#0F1923]/50 text-xl flex-shrink-0">
+                <span className="text-2xl text-[#C5A572]">
                   {openIndex === i ? "−" : "+"}
                 </span>
               </button>
               {openIndex === i && (
-                <div className="px-6 pb-5 bg-white">
+                <div className="pb-6">
                   <p className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/70 leading-relaxed">
                     {faq.a}
                   </p>
@@ -490,8 +481,8 @@ function FAQ() {
 /* ─── SECTION 9: FINAL CTA ─── */
 function FinalCTA() {
   return (
-    <section className="bg-[#0B1120]">
-      <div className="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
+    <section className="bg-[#0F1923] border-t border-white/10">
+      <div className="max-w-4xl mx-auto px-6 py-20 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-8">
           If deals are stalling after great conversations, we should talk.
         </h2>
@@ -514,26 +505,16 @@ function FinalCTA() {
 /* ─── FOOTER ─── */
 function Footer() {
   return (
-    <footer className="bg-[#0F1923] border-t border-white/10">
-      <div className="max-w-6xl mx-auto px-6 py-8 text-center">
-        <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/50 mb-2">
-          Revitk Ltd | Company No. 15929263 | 107 Louth Road, Sheffield, S11 7AU
-        </p>
-        <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/50 mb-2">
-          <Link href="/privacy" className="hover:text-[#F5F0EB]/80 transition-colors">
-            Privacy Policy
-          </Link>
-          {" | "}
-          <Link href="/terms" className="hover:text-[#F5F0EB]/80 transition-colors">
-            Terms & Conditions
-          </Link>
-          {" | "}
-          <a href="mailto:joe@revitk.com" className="hover:text-[#F5F0EB]/80 transition-colors">
-            Contact Us
-          </a>
-        </p>
-        <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/50">
-          © 2026 Revitk. All rights reserved. The Sync Selling System.
+    <footer className="bg-[#0B1120] py-12 border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+        <img src="/revitk-logo-white.png" alt="Revitk" className="h-10 w-auto opacity-50" />
+        <div className="flex gap-8">
+          <a href="#" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Privacy Policy</a>
+          <a href="#" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Terms & Conditions</a>
+          <a href="#" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Contact Us</a>
+        </div>
+        <p className="text-[#F5F0EB]/30 text-xs">
+          © {new Date().getFullYear()} Revitk. All rights reserved.
         </p>
       </div>
     </footer>
@@ -546,7 +527,6 @@ export default function NewHome() {
     <>
       <NavBar />
       <Hero />
-      <MeetJoe />
       <ProblemIdentification />
       <HowItWorks />
       <SocialProof />
