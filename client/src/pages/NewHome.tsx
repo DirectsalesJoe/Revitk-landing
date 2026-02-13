@@ -227,7 +227,7 @@ function MeetJoe() {
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
         <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-8" />
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-8 text-center">
-          Meet Joe Milnes
+          Meet the founder...
         </h2>
         <div className="aspect-video rounded-lg overflow-hidden border border-[#C5A572]/30">
           {/* @ts-ignore */}
@@ -546,9 +546,9 @@ export default function NewHome() {
     <>
       <NavBar />
       <Hero />
+      <MeetJoe />
       <ProblemIdentification />
       <HowItWorks />
-      <MeetJoe />
       <SocialProof />
       <AboutJoe />
       <WhoThisIsFor />
