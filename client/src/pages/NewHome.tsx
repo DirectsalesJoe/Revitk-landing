@@ -509,9 +509,9 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
         <img src="/revitk-logo-white.png" alt="Revitk" className="h-10 w-auto opacity-50" />
         <div className="flex gap-8">
-          <a href="#" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Privacy Policy</a>
-          <a href="#" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Terms & Conditions</a>
-          <a href="#" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Contact Us</a>
+          <Link href="/privacy" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Privacy Policy</Link>
+          <Link href="/terms" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Terms & Conditions</Link>
+          <a href="mailto:joe@revitk.com" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]">Contact Us</a>
         </div>
         <p className="text-[#F5F0EB]/30 text-xs">
           © {new Date().getFullYear()} Revitk. All rights reserved.
