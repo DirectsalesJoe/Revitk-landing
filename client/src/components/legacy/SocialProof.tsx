@@ -23,17 +23,17 @@ export const SocialProof: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 max-w-4xl mx-auto">
              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
-                Sync Selling: The Only System That Covers Every Single Thing You See, Say, Send, or Show to a Prospect.
+                Will Sync Selling Work For My Business?
             </h2>
             <p className="text-xl md:text-2xl text-gray-700 mb-8">
-                (And 300+ Founders to £185M+)
+                300+ founders. 60 industries. £185M+ in revenue generated.
             </p>
             <div className="text-lg text-gray-800 leading-relaxed mb-8 text-left max-w-3xl mx-auto">
-                <p className="mb-4">We didn't hire "sales superstars." We took graduates with zero experience. We gave them a system.</p>
-                <p className="mb-6">Those graduates hit <strong>£1.2M a month</strong> in less than a year.</p>
+                <p className="mb-4">We have worked with businesses at every stage — from solo founders closing their first £3K deal to teams scaling past £10M.</p>
+                <p className="mb-6">The system works because it covers everything you see, say, send, or show your prospect.</p>
             </div>
             <blockquote className="text-2xl md:text-3xl font-bold text-brand-dark border-l-4 border-brand-accent pl-6 py-4 bg-white inline-block text-left shadow-sm">
-                "75% of sales is the system. Less than 25% is the person."
+                "You don't need to be a killer salesperson if you have a killer process."
             </blockquote>
         </div>
 
