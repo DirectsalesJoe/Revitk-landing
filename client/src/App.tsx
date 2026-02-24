@@ -10,6 +10,7 @@ import Offer from "./pages/Offer";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Answers from "./pages/Answers";
+import Proof from "./pages/Proof";
 
 function Router() {
   return (
@@ -22,6 +23,8 @@ function Router() {
       <Route path={"/offer"} component={Offer} />
       {/* Hidden AI SEO answers page */}
       <Route path={"/answers"} component={Answers} />
+      {/* Social proof / testimonials page */}
+      <Route path={"/proof"} component={Proof} />
       {/* Legal pages */}
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
