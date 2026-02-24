@@ -614,6 +614,24 @@ function Phase3Section() {
 // ─── Pricing Section ───────────────────────────────────────────────
 
 function PricingSection() {
+  // Comparison table rows: [label, diy value, dfy value]
+  const tableRows: Array<{ section?: string; label?: string; diy?: string; dfy?: string }> = [
+    { section: 'Core System & Foundation' },
+    { label: 'GTM Diagnostic & Blueprint', diy: '✔', dfy: '✔' },
+    { label: 'Sync Selling AI Toolkit', diy: '✔', dfy: '✔' },
+    { section: 'Playbook & Asset Creation' },
+    { label: 'Discovery Playbook', diy: 'DIY using Sync Selling AI', dfy: 'Fully Built For You' },
+    { label: 'Demo & Proposal Playbook', diy: 'DIY using Sync Selling AI', dfy: 'Fully Built For You' },
+    { label: 'Cold Outreach Playbooks', diy: 'DIY using Sync Selling AI', dfy: 'Fully Built For You' },
+    { label: 'All 9 Sales Playbooks', diy: 'DIY using Sync Selling AI', dfy: 'All Built For You' },
+    { section: 'Coaching & Support' },
+    { label: 'Group Coaching Calls', diy: '16 Calls', dfy: '16 Calls' },
+    { label: 'AI-Powered Community Support', diy: '✔', dfy: '✔' },
+    { label: 'Unlimited 1-on-1 Deal Reviews', diy: '✖', dfy: '✔' },
+    { label: 'Direct 1-on-1 Slack with Joe', diy: '✖', dfy: '✔' },
+    { label: '2x Strategic 1-on-1 Consultations', diy: '✖', dfy: '✔' },
+  ];
+
   return (
     <section className="py-24 md:py-32 relative grain-overlay" style={{ backgroundColor: '#0B1120' }}>
       <div className="container mx-auto px-4 relative z-10">
@@ -622,97 +640,77 @@ function PricingSection() {
             Programme Investment
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-white mb-4">
-            Two Packages. Pick the One That Fits.
+            Choose Your Path.
           </h2>
           <p className="font-body text-base max-w-xl mx-auto" style={{ color: 'rgba(245,240,235,0.5)' }}>
-            Limited to the first 20.
+            All prices exclude VAT. Limited to the first 20.
           </p>
         </div>
 
-        {/* Two-tier pricing */}
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
-          {/* Essentials Package */}
-          <div className="p-8 md:p-10 border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.08)' }}>
-            <p className="font-body text-sm tracking-wider uppercase mb-4" style={{ color: 'rgba(245,240,235,0.5)' }}>Essentials Package</p>
-            <div className="mb-2">
-              <span className="font-display text-4xl md:text-5xl text-white">£7,500</span>
-            </div>
-            <p className="font-body text-sm mb-6" style={{ color: 'rgba(197,165,114,0.8)' }}>
-              8-week support
-            </p>
-            <p className="font-body text-sm mb-6 leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              The core programme. Group coaching, up to 3 playbooks, and group Slack support.
-            </p>
-            <div className="space-y-3 mb-6">
-              {[
-                'GTM Diagnostic Workshop (one-on-one)',
-                'Full Diagnostic Report + Market Research',
-                'Wireframed Sales Playbook',
-                'Up to 3 playbooks (Discovery, Proposal, + 1 more)',
-                'Group coaching calls (16 total)',
-                'Group Slack support',
-                'Training video library',
-                'Access to 20 masterclass webinars',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: 'rgba(245,240,235,0.4)' }} />
-                  <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.7)' }}>{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="space-y-3">
-              {[
-                'Done-for-you asset creation',
-                'All 9 playbooks',
-                'Unlimited deal reviews',
-                'One-on-one Slack support',
-                'Deal clinics',
-                'Strategic one-on-one consultations',
-                'AI Sales Agents beta access',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2 opacity-40">
-                  <span className="w-4 h-4 mt-0.5 flex-shrink-0 text-center font-body text-xs" style={{ color: 'rgba(245,240,235,0.3)' }}>&#x2715;</span>
-                  <span className="font-body text-sm line-through" style={{ color: 'rgba(245,240,235,0.3)' }}>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Done-For-You Package */}
-          <div className="relative p-8 md:p-10 border-2" style={{ background: 'linear-gradient(135deg, rgba(26,34,51,0.5), rgba(26,34,51,0.3))', borderColor: 'rgba(197,165,114,0.4)' }}>
-            <div className="absolute -top-3 left-6 px-4 py-1" style={{ backgroundColor: '#E63946' }}>
-              <span className="font-body text-xs font-bold text-white tracking-wider uppercase">Recommended</span>
-            </div>
-            <p className="font-body text-sm tracking-wider uppercase mb-4" style={{ color: '#C5A572' }}>Done-For-You Package</p>
-            <div className="mb-2">
-              <span className="font-display text-4xl md:text-5xl text-white">£15,000</span>
-            </div>
-            <p className="font-body text-sm mb-6" style={{ color: 'rgba(197,165,114,0.8)' }}>
-              12-week support
-            </p>
-            <p className="font-body text-sm mb-6 leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              Everything built for you. Every asset created. Every playbook customised. Full hands-on support.
-            </p>
-            <div className="space-y-3">
-              {[
-                'Everything in the Essentials package',
-                'All 9 playbooks, fully customised to your business',
-                'Done-for-you asset creation (proposals, scripts, templates)',
-                'Unlimited deal reviews with Loom feedback',
-                'One-on-one Slack support with Joe directly',
-                'Deal clinics: live workshopping of your stuck deals',
-                'Two strategic one-on-one consultations (Week 2 + Week 6)',
-                'Training video library',
-                'Access to 20 masterclass webinars',
-                'AI Sales Agents beta access (5 agents trained on your business)',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#C5A572' }} />
-                  <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.8)' }}>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+        {/* Comparison Table */}
+        <div className="max-w-5xl mx-auto mb-16 scroll-reveal overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                <th className="text-left p-4 font-body text-sm" style={{ color: 'rgba(245,240,235,0.4)', width: '40%' }}></th>
+                {/* Minimum Package */}
+                <th className="p-4 text-center border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.08)', width: '30%' }}>
+                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Minimum Package</p>
+                  <p className="font-display text-3xl text-white">£7,500</p>
+                  <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
+                </th>
+                {/* Done-For-You Package */}
+                <th className="relative p-4 text-center border-2" style={{ background: 'linear-gradient(135deg, rgba(26,34,51,0.5), rgba(26,34,51,0.3))', borderColor: 'rgba(197,165,114,0.4)', width: '30%' }}>
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 whitespace-nowrap" style={{ backgroundColor: '#E63946' }}>
+                    <span className="font-body text-xs font-bold text-white tracking-wider uppercase">Recommended</span>
+                  </div>
+                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#C5A572' }}>Done-For-You</p>
+                  <p className="font-display text-3xl text-white">£15,000</p>
+                  <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {tableRows.map((row, i) => {
+                if (row.section) {
+                  return (
+                    <tr key={i}>
+                      <td colSpan={3} className="pt-6 pb-2 px-4">
+                        <p className="font-body text-xs tracking-[0.15em] uppercase font-semibold" style={{ color: '#E63946' }}>{row.section}</p>
+                      </td>
+                    </tr>
+                  );
+                }
+                const isDiyCheck = row.diy === '✔';
+                const isDfyCheck = row.dfy === '✔';
+                const isDiyX = row.diy === '✖';
+                const isDfyX = row.dfy === '✖';
+                return (
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
+                    <td className="py-3 px-4 font-body text-sm" style={{ color: 'rgba(245,240,235,0.7)' }}>{row.label}</td>
+                    <td className="py-3 px-4 text-center border-x" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
+                      {isDiyCheck ? (
+                        <CheckCircle2 className="w-4 h-4 mx-auto" style={{ color: 'rgba(245,240,235,0.5)' }} />
+                      ) : isDiyX ? (
+                        <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.2)' }}>—</span>
+                      ) : (
+                        <span className="font-body text-xs" style={{ color: 'rgba(245,240,235,0.5)' }}>{row.diy}</span>
+                      )}
+                    </td>
+                    <td className="py-3 px-4 text-center border-x" style={{ borderColor: 'rgba(197,165,114,0.15)' }}>
+                      {isDfyCheck ? (
+                        <CheckCircle2 className="w-4 h-4 mx-auto" style={{ color: '#C5A572' }} />
+                      ) : isDfyX ? (
+                        <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.2)' }}>—</span>
+                      ) : (
+                        <span className="font-body text-xs font-semibold" style={{ color: '#C5A572' }}>{row.dfy}</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
 
         <GoldDivider />
@@ -724,16 +722,16 @@ function PricingSection() {
               What the Done-For-You Package Looks Like
             </h3>
             <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              12 weeks of hands-on support. Everything built, customised, and coached into your team.
+              12 weeks of hands-on support. Everything built, customised, and coached into your business.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 mb-12">
             {[
               { week: 'Week 1', title: 'Diagnostic + Blueprint', desc: 'GTM workshop, full diagnostic report, market research, wireframed sales playbook.' },
-              { week: 'Weeks 2-4', title: 'Core Playbooks Built', desc: 'Discovery, Demo, and Proposal playbooks. Fully customised. Scripts, frameworks, templates.' },
-              { week: 'Weeks 5-8', title: 'Full Arsenal Delivered', desc: 'Cold Email Bible, Cold Calling, Appointment Setting, Lead Nurture, Stakeholder, Objection Handling.' },
-              { week: 'Weeks 9-12', title: 'Coaching + Refinement', desc: 'Live deal reviews, group coaching, strategic consultation. Refine everything based on real results.' },
+              { week: 'Weeks 2–4', title: 'Core Playbooks Built', desc: 'Discovery, Demo, and Proposal playbooks. Fully customised. Scripts, frameworks, templates.' },
+              { week: 'Weeks 5–8', title: 'Full Arsenal Delivered', desc: 'Cold Email Bible, Cold Calling, Appointment Setting, Lead Nurture, Stakeholder, Objection Handling.' },
+              { week: 'Weeks 9–12', title: 'Coaching + Refinement', desc: 'Live deal reviews, group coaching, strategic consultation. Refine everything based on real results.' },
             ].map((item, i) => (
               <div key={i} className="p-6 border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.05)' }}>
                 <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#E63946' }}>{item.week}</p>
@@ -742,21 +740,35 @@ function PricingSection() {
               </div>
             ))}
           </div>
+        </div>
 
-          {/* Special Offer */}
-          <div className="p-8 md:p-10 border-2 text-center" style={{ borderColor: 'rgba(197,165,114,0.4)', background: 'linear-gradient(135deg, rgba(26,34,51,0.5), rgba(26,34,51,0.3))' }}>
-            <p className="font-body text-sm tracking-[0.2em] uppercase mb-4" style={{ color: '#E63946' }}>
-              + For a Very Limited Time
+        <GoldDivider />
+
+        {/* Bespoke Team Package */}
+        <div className="max-w-4xl mx-auto scroll-reveal">
+          <div className="p-8 md:p-12 border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.08)' }}>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
+              <div>
+                <p className="font-body text-xs tracking-[0.2em] uppercase mb-2" style={{ color: '#C5A572' }}>Bespoke</p>
+                <h3 className="font-display text-2xl md:text-3xl text-white">Team Implementation</h3>
+              </div>
+              <div className="text-left md:text-right">
+                <p className="font-display text-3xl md:text-4xl text-white">£25,000+</p>
+                <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
+              </div>
+            </div>
+            <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'rgba(245,240,235,0.6)' }}>
+              Need to embed the Sync Selling System across your entire sales team? This is a fully bespoke engagement built around your business, your people, and your goals. Every engagement is scoped individually.
             </p>
-            <h4 className="font-display text-2xl md:text-3xl text-white mb-4">
-              Get the full Done-For-You package for £7,500
-            </h4>
-            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
-              Everything in the £15,000 package. All 9 playbooks. All assets built for you. 12 weeks of hands-on support. One-on-one Slack. Deal clinics. Strategic consultations.
-            </p>
-            <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(197,165,114,0.9)' }}>
-              This pricing is available until we release the beta-tested version of the AI tools. Once the tools are live, the price goes back to £15,000.
-            </p>
+            <a
+              href="https://app.revitk.com/widget/bookings/syncselling"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 font-body font-semibold text-sm tracking-wider uppercase text-white transition-opacity hover:opacity-80"
+              style={{ backgroundColor: '#E63946' }}
+            >
+              Enquire About Team Implementation
+            </a>
           </div>
         </div>
 

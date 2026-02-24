@@ -4,7 +4,7 @@ export const Hero: React.FC = () => {
   return (
     <section className="pt-16 pb-12 md:pt-24 md:pb-20 max-w-4xl mx-auto px-6 text-center">
       <h1 className="text-3xl md:text-5xl lg:text-[60px] font-extrabold leading-[1.2] text-brand-dark mb-6">
-        Close One in Every Two Prospects You Quote in Eight Weeks, <span className="underline decoration-brand-accent decoration-4 underline-offset-4">Guaranteed.</span>
+        ClosTransform Your Sales Performance in 7 Days. <span class="underline decoration-brand-accent decoration-4 underline-offset-4">Risk Free.</span>
       </h1>
       
       <p className="text-xl md:text-2xl font-bold text-gray-700 mb-12">
