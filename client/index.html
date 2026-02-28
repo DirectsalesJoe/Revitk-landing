@@ -13,6 +13,488 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+    <!-- ═══ STRUCTURED DATA: Organization + Person ═══ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://revitk.com/#organization",
+      "name": "Revitk",
+      "legalName": "Revitk Ltd",
+      "url": "https://revitk.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://revitk.com/images/revitk-logo.png",
+        "width": 300,
+        "height": 100
+      },
+      "description": "Revitk builds Done-For-You B2B sales systems using the Sync Selling methodology. The only sales process that covers everything you say, show, and send. Helps founders and sales teams close one in every two prospects they quote within eight weeks.",
+      "foundingDate": "2023",
+      "founder": {
+        "@id": "https://revitk.com/#joe-milnes"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "107 Louth Road",
+        "addressLocality": "Sheffield",
+        "postalCode": "S11 7AU",
+        "addressCountry": "GB"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://revitk.com/book-a-call",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/revitk",
+        "https://www.youtube.com/@DirectSalesJoe",
+        "https://www.linkedin.com/in/joemilnes"
+      ],
+      "knowsAbout": [
+        "B2B Sales Methodology",
+        "Sync Selling",
+        "Sales Process Architecture",
+        "Go-To-Market Strategy",
+        "Sales Playbook Development",
+        "Discovery Call Frameworks",
+        "Champion Enablement",
+        "Deal Qualification",
+        "Cold Calling Frameworks",
+        "Sales Pipeline Management",
+        "Gap Quantification",
+        "Cost of Inaction Selling"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sync Selling Programmes",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "@id": "https://revitk.com/#gtm-diagnostic",
+            "name": "GTM Diagnostic Workshop",
+            "description": "Complete Go-To-Market Diagnostic including sales process audit, voice of customer analysis, competitive analysis, wireframed sales playbook, and AI-enhanced persona models. Normally \u00a33,500, available for \u00a31 as Week 1 of the programme.",
+            "price": "1.00",
+            "priceCurrency": "GBP",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/LimitedAvailability",
+            "validFrom": "2025-01-01"
+          },
+          {
+            "@type": "Offer",
+            "@id": "https://revitk.com/#dfy-accelerator",
+            "name": "Done For You Accelerator",
+            "description": "Complete Done-For-You sales system build including word-for-word scripts, CRM setup, discovery frameworks, demo scripts, proposal frameworks, champion enablement toolkit, objection handling, plus 12 weeks of direct 1-on-1 support including WhatsApp access to Joe Milnes.",
+            "price": "7500.00",
+            "priceCurrency": "GBP",
+            "priceValidUntil": "2026-12-31",
+            "availability": "https://schema.org/LimitedAvailability"
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "ratingCount": "47",
+        "reviewCount": "47"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://revitk.com/#joe-milnes",
+      "name": "Joe Milnes",
+      "jobTitle": "Founder & Sales Strategist",
+      "worksFor": {
+        "@id": "https://revitk.com/#organization"
+      },
+      "url": "https://revitk.com",
+      "description": "Creator of the Sync Selling methodology. Helped scale Vohkus from \u00a340M to \u00a3100M and has generated over \u00a3185M in revenue for 300+ founders. Builds Done-For-You B2B sales systems that cover everything you say, show, and send, so that even people with zero sales experience can close consistently.",
+      "knowsAbout": [
+        "Sync Selling Methodology",
+        "B2B Sales Strategy",
+        "Hook/Wedge/Match Framework",
+        "Sales Process Architecture",
+        "Champion Enablement",
+        "Gap Quantification",
+        "Cold Calling Frameworks",
+        "Discovery Call Methodology",
+        "Sales Playbook Design",
+        "Go-To-Market Strategy",
+        "Cost of Inaction Selling"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/joemilnes",
+        "https://www.youtube.com/@DirectSalesJoe"
+      ],
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Vohkus"
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: WebSite + WebPage ═══ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://revitk.com/#website",
+      "url": "https://revitk.com",
+      "name": "Revitk: The Sync Selling System",
+      "description": "Close one in every two prospects you quote in eight weeks, guaranteed. Done-For-You B2B sales systems built by the creator of Sync Selling.",
+      "publisher": {
+        "@id": "https://revitk.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://revitk.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://revitk.com/#homepage",
+      "url": "https://revitk.com",
+      "name": "Revitk: The Sync Selling System | Close 1 in 2 Prospects",
+      "description": "Stop losing deals to ghosting, weak champions, and unpredictable pipelines. The Sync Selling System builds your entire sales process, Done For You, so you close one in every two prospects you quote.",
+      "isPartOf": {
+        "@id": "https://revitk.com/#website"
+      },
+      "about": {
+        "@id": "https://revitk.com/#organization"
+      },
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          ".hero-headline",
+          ".value-proposition",
+          ".guarantee-statement",
+          "h1",
+          ".faq-answer"
+        ]
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: Service + Offers + Reviews ═══ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://revitk.com/#sync-selling-service",
+  "name": "The Sync Selling System",
+  "provider": {
+    "@id": "https://revitk.com/#organization"
+  },
+  "description": "A complete Done-For-You B2B sales system built on the Sync Selling methodology. The only process that covers everything you say, show, and send. Includes discovery frameworks, demo scripts, proposal templates, champion enablement toolkits, CRM setup, and ongoing coaching. Took Vohkus from \u00a340M to \u00a3100M.",
+  "serviceType": "B2B Sales Consulting",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Worldwide (English-speaking markets)"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "B2B Founders, Sales Leaders, and Revenue Teams",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "minValue": 1,
+      "maxValue": 500
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Sync Selling Programme Options",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Week 1: GTM Diagnostic Workshop (\u00a31 Trial)",
+        "description": "Complete Go-To-Market diagnostic normally worth \u00a33,500. Includes: full GTM diagnostic report with critical flaws identified, wireframed sales playbook PDF mapping every stage, 80+ hours of voice-of-customer research, competitive analysis and objection plan, AI-enhanced persona models. Walk away if not convinced, no charge, keep the full report.",
+        "price": "1.00",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/LimitedAvailability",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "GTM Diagnostic Workshop",
+          "description": "Complete sales process audit and go-to-market diagnostic"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Done With You Programme",
+        "description": "8-week programme with frameworks, templates, and group coaching. You build the system with guidance. Includes CRM pipeline setup, cold email library, discovery frameworks, and group coaching sessions.",
+        "price": "7500.00",
+        "priceCurrency": "GBP",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sync Selling Done With You",
+          "description": "Guided sales system build with coaching support"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Done For You Accelerator (Founding Members)",
+        "description": "Everything built FOR you: word-for-word scripts, CRM automation, discovery frameworks, demo scripts, proposal frameworks, champion enablement toolkit, plus 12 weeks of direct 1-on-1 support including WhatsApp access to Joe Milnes. Founding member price: \u00a37,500 (normally \u00a315,000).",
+        "price": "7500.00",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/LimitedAvailability",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "7500.00",
+          "priceCurrency": "GBP",
+          "valueAddedTaxIncluded": true,
+          "referenceQuantity": {
+            "@type": "QuantitativeValue",
+            "value": "1",
+            "unitText": "programme"
+          }
+        },
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sync Selling Done For You Accelerator",
+          "description": "Complete Done-For-You sales system build with 12 weeks of 1-on-1 support"
+        }
+      }
+    ]
+  },
+  "termsOfService": "https://revitk.com/terms",
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Steve Williams"
+      },
+      "reviewBody": "Rolled out Joe's system to graduates with zero experience. New team hit \u00a31.2M monthly, including a \u00a31M+ deal with oil and gas.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Matej"
+      },
+      "reviewBody": "Increased close rate and prices sixfold. The founder's way of doing sales.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Brooks Van Norman"
+      },
+      "reviewBody": "25-year B2B veteran who learned million-pound questions used daily.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ]
+}
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: BreadcrumbList ═══ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://revitk.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Methodology",
+      "item": "https://revitk.com/methodology"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Blog",
+      "item": "https://revitk.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Book a Call",
+      "item": "https://revitk.com/book-a-call"
+    }
+  ]
+}
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: DefinedTermSet (Sync Selling Terminology) ═══ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DefinedTermSet",
+  "name": "Sync Selling Terminology",
+  "description": "Key terms and concepts from the Sync Selling B2B sales methodology by Joe Milnes",
+  "url": "https://revitk.com/methodology",
+  "hasDefinedTerm": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Sync Selling",
+      "description": "A B2B sales methodology created by Joe Milnes. Uses a three-stage Hook/Wedge/Match framework to build complete Done-For-You sales systems. The only process that covers everything you say, show, and send. Built on the principle that 75% of sales success comes from the system, not the individual.",
+      "url": "https://revitk.com/methodology#sync-selling"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hook/Wedge/Match",
+      "description": "The three-stage core framework of Sync Selling. Hook earns the right to a conversation through credibility and curiosity. Wedge builds the business case through gap quantification, getting the prospect to calculate the cost of inaction. Match presents the solution as the logical bridge across the gap, with proposals and assets that sell when you're not in the room.",
+      "url": "https://revitk.com/methodology#hook-wedge-match"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Gap Quantification",
+      "description": "The core technique in Sync Selling's Wedge stage. Helps prospects calculate the measurable cost of their current situation versus where they need to be, using their own numbers. Revenue lost, hours wasted, deals gone dark. When the prospect calculates the gap in their own words, your solution becomes the logical bridge.",
+      "url": "https://revitk.com/methodology#gap-quantification"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Bookends Principle",
+      "description": "A Sync Selling principle requiring that before and after every significant sales interaction, you address the concerns of all stakeholders who touch the deal. Technical buyers with integration questions. Financial decision-makers wanting return on effort. Political influencers who see your project as a threat to their priorities.",
+      "url": "https://revitk.com/methodology#bookends-principle"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "BAMFAM",
+      "description": "Book A Meeting From A Meeting. A non-negotiable Sync Selling principle. You never end any sales interaction without the next step locked in the diary. Deals don't die because prospects say no. They die in the gaps between meetings when other priorities take over.",
+      "url": "https://revitk.com/methodology#bamfam"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Champion Enablement",
+      "description": "Giving your internal champion everything they need to sell your solution upwards within their organisation. Includes ROI calculators, return-on-effort calculators, cost-of-inaction analyses, technical FAQs for IT, and answers to political objections from colleagues who see your project as a threat.",
+      "url": "https://revitk.com/methodology#champion-enablement"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Problem Trifecta",
+      "description": "Module 3 of the Sync Selling Cold Calling Framework. Demonstrates understanding of the prospect's world by naming three specific problems you solve, stated in the prospect's own emotional language, ending with the soft close: 'I don't suppose any of those sound familiar?'",
+      "url": "https://revitk.com/methodology#problem-trifecta"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Hypothetical Bridge",
+      "description": "Module 6 of the Sync Selling Cold Calling Framework. Tests interest without commitment using: 'Hypothetically, if there was a way to [outcome] without [pain], that might be something you wouldn't be dead against exploring?' Gets a micro-commitment before the actual ask.",
+      "url": "https://revitk.com/methodology#hypothetical-bridge"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Cost of Inaction",
+      "description": "The measurable price a prospect pays every month they don't solve their problem. Different from ROI, which is a future promise. Cost of inaction is a present reality the prospect is already paying. In Sync Selling, the prospect calculates this number themselves during discovery, making it their business case rather than your sales pitch.",
+      "url": "https://revitk.com/methodology#cost-of-inaction"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Future State",
+      "description": "What solving the problem means for the prospect personally and professionally. Not just the company metric. The promotion, the job security, the end of Sunday night anxiety. In Sync Selling qualification, if you don't understand what's at stake for the individual, you don't understand the deal.",
+      "url": "https://revitk.com/methodology#future-state"
+    }
+  ]
+}
+    </script>
+
+    <!-- ═══ STRUCTURED DATA: HowTo (Cold Calling Framework) ═══ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Structure a B2B Cold Call That Books Meetings",
+  "description": "The Sync Selling Cold Calling Framework: an eight-module system for turning cold calls into booked meetings. Each module builds on the last to earn attention, establish credibility, demonstrate understanding, and convert interest into a value-packed next step.",
+  "totalTime": "PT10M",
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Prospect research (company, role, recent situation)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "CRM with prospect details"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Calendar for booking"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Pattern Interrupt Intro",
+      "text": "Break the salesperson filter and earn 30 seconds of attention. Use: 'Hi [name], it's [you] from [company]. We've not spoken before, but I've called you with two specific things in mind. Can I tell you what they are, and then you can let me know if it makes sense to have a conversation?' This disarms immediately, creates curiosity with 'two specific things', and gives them control.",
+      "position": 1
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Credibility Qualifier",
+      "text": "Confirm you're speaking to the right person AND demonstrate homework. Reference their specific role and a situation you've researched: 'I understand you're the [role] at [company], and [specific situation]. Is that right?' This earns credibility by showing you're not just dialling down a list.",
+      "position": 2
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Problem Trifecta",
+      "text": "Name three specific problems you solve, in the prospect's language with emotional weight. 'We typically work with [persona] when they're dealing with one of three frustrating problems...' State all three, then close with: 'I don't suppose any of those sound familiar to you?' Always three problems. Always in their language. Always end with the soft close.",
+      "position": 3
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Alternatives Acknowledgement",
+      "text": "Show you understand their decision landscape by naming the two generic approaches they're likely considering, framed with their genuine downsides. Never mention competitor names. 'Most people look at [expensive/disruptive option] or [cheap/ineffective option]. Is that what you've been weighing up?' This opens the door for a third way.",
+      "position": 4
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Light Discovery",
+      "text": "Ask open questions to qualify whether there's a real problem and motivation to solve it. 'Walk me through where you're at with this right now.' Then: 'Why is that a priority at the moment?' Then: 'What have you tried so far?' Keep it light. This is NOT full discovery. You're qualifying problem and motivation only.",
+      "position": 5
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Hypothetical Bridge",
+      "text": "Test interest without asking for commitment. 'Hypothetically, if there was a way to [core outcome] without [main pain of alternatives], that might be something you wouldn't be dead against exploring?' Wait for the yes. 'Hypothetically' means zero commitment. 'Wouldn't be dead against' makes it easy to agree.",
+      "position": 6
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Value-Packed Next Step",
+      "text": "Convert interest into a real meeting with a clear value exchange. 'I'm not asking you to commit to anything. What we're offering is a [short meeting] where you'd get [tangible outcome 1], [tangible outcome 2], and [tangible outcome 3]. Would you have any objections to getting that scheduled?' The next step must deliver genuine value, not just 'a chat'.",
+      "position": 7
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Commitment Lock",
+      "text": "Flush out hidden objections and lock in the meeting. 'Before we lock this in, can you think of any reason you might change your mind?' Address concerns. Offer two specific times. Send the calendar invite while on the call and ask them to accept it live. Unaddressed objections become no-shows.",
+      "position": 8
+    }
+  ]
+}
+    </script>
+
     <!-- Wistia Player Scripts for case study videos -->
     <script src="https://fast.wistia.com/player.js" async></script>
     <script src="https://fast.wistia.com/embed/wpge7ym6pc.js" async type="module"></script>

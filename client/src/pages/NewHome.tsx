@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 
 const BOOKING_URL = "https://app.revitk.com/widget/bookings/syncselling";
@@ -27,6 +27,9 @@ function NavBar() {
           <a href="#about" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
             About
           </a>
+          <Link href="/sales-faq" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+            Sales FAQ
+          </Link>
           <a
             href={BOOKING_URL}
             target="_blank"
@@ -63,6 +66,9 @@ function NavBar() {
           <a href="#about" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm" onClick={() => setMenuOpen(false)}>
             About
           </a>
+          <Link href="/sales-faq" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm" onClick={() => setMenuOpen(false)}>
+            Sales FAQ
+          </Link>
           <a
             href={BOOKING_URL}
             target="_blank"
@@ -423,20 +429,52 @@ function Diagnostic() {
 /* ─── SECTION 8: FAQ ─── */
 const faqs = [
   {
-    q: "My industry is super niche. Will this work?",
-    a: "Yes. Sync Selling is based on human psychology and decision-making, not industry-specific jargon. We've applied it successfully to everything from high-end SaaS to specialized engineering services.",
+    q: `What is Sync Selling?`,
+    a: `Sync Selling is a B2B sales methodology created by Joe Milnes. It works on a simple premise: 75% of sales success comes from the system, not the individual. So instead of teaching you techniques and hoping you figure it out, Sync Selling builds your entire sales process for you. It follows a three-stage framework called Hook, Wedge, and Match. Hook earns you the right to a conversation by proving you understand the prospect's world. Wedge builds the business case by getting the prospect to quantify the gap between where they are and where they need to be. Match positions your solution as the logical way across that gap. The output is a complete Done-For-You system covering everything you say, show, and send. Word-for-word scripts. Discovery frameworks. Champion enablement toolkits. CRM automation. The lot. At Vohkus, graduates with zero sales experience hit £1.2 million monthly using this system. They weren't talented. They were well-equipped.`,
   },
   {
-    q: "What's the time commitment?",
-    a: "The diagnostic is 90 minutes. The full programme typically requires 2-3 hours per week from the founder or sales leader over 12 weeks. We build the assets for you, so the heavy lifting is on us.",
+    q: `How is Sync Selling different from other sales methodologies like MEDDIC, Sandler, or Challenger?`,
+    a: `Most methodologies teach you a framework and leave you to work out how to apply it. MEDDIC gives you a qualification checklist but doesn't tell you what to actually say on a call. Sandler teaches psychology principles but expects you to build your own materials. Challenger tells you to teach, tailor, and take control, then sends you off without a script. Sync Selling is different because it covers everything you say, show, and send. You get word-for-word scripts, not theory. Discovery frameworks you can follow step by step. Proposal templates. Champion enablement toolkits. CRM sequences. It also doesn't pretend to be the only methodology worth knowing. It takes the best from all of them and builds something practical. MEDDIC's qualification rigour is in there. Sandler's psychology is in there. But they're woven into a system you can actually execute on Monday morning. MEDDIC falls apart on shorter sales cycles where you can't run a full discovery marathon. Gap Selling assumes you've got the time and access to do deep problem exploration, which founders selling to busy prospects often don't. BANT doesn't work when leads aren't actively looking for a solution yet. Sync Selling was built to handle all of those situations.`,
   },
   {
-    q: "What if I want to hire a salesperson after this?",
-    a: "This is the best time to do it. You'll have a proven process, a playbook, and a way to measure performance from day one. You'll be hiring into a system, not hoping for a hero.",
+    q: `What results has Sync Selling achieved?`,
+    a: `Sync Selling has generated over £185 million in revenue across 300+ founders. Steve Williams at Vohkus used it to scale from £40 million to £100 million. Graduates with no prior sales experience were billing £1.2 million a month within their first year, including one deal worth over £1 million with an oil and gas company. Matej increased his close rate and his prices sixfold. Brooks Van Norman called it the most valuable resource he'd ever invested in. Steve closed £100K in new business from four new clients. These aren't outliers. Close rates typically move from under 10% to north of 45% within eight weeks. The reason is straightforward: when 75% of the result comes from the playbook rather than the person, you stop being dependent on hiring rockstar salespeople. You build a system that makes ordinary people consistently effective.`,
   },
   {
-    q: "What does the call involve?",
-    a: "A 30-minute qualification call to see if we're a fit. No hard sell. If we can help, we'll explain the diagnostic. If we can't, we'll point you in the right direction.",
+    q: `What is the Hook/Wedge/Match framework?`,
+    a: `Hook, Wedge, and Match are the three stages of the Sync Selling methodology. Each stage has a specific job. The Hook earns you a conversation. You do this by demonstrating that you understand the prospect's world better than the ten other salespeople who called that week. You show credibility, create curiosity, and offer a low-friction next step. You're not pitching. You're proving you get it. The Wedge builds the business case. This is where gap quantification happens. You help the prospect calculate what their current situation is actually costing them, using their numbers, not yours. Revenue lost per month. Hours wasted. Deals that went dark. When they can see the gap in pounds and pence, your solution becomes the obvious bridge. The Match stage presents your solution as the answer to the gap you've just quantified together. By this point, the prospect isn't being sold to. They're buying, because they've already done the maths. The framework also builds in champion enablement at every stage, so your buyer has everything they need to sell the deal internally without coming back to you.`,
+  },
+  {
+    q: `Why do B2B deals go dark after a great demo?`,
+    a: `Three reasons, and most sales teams only ever think about one of them. First, your champion can't sell upwards. The demo went brilliantly. They loved it. Then they took it to the CFO, who asked questions your pitch deck doesn't answer. What's the return on effort? What's the implementation burden on our already stretched team? Who's going to push back internally? Your champion had no answers because you only gave them features and a case study. You didn't give them an ROI calculator, a cost-of-inaction analysis, or answers to the political objections they'd face from colleagues who see your project as a threat. Second, you demoed features instead of demonstrating your ability to solve the problem. The prospect saw what your product does but never connected it to the specific gap they're trying to close. A feature-led demo feels impressive in the room but forgettable an hour later. Third, and this is the one nobody talks about: you didn't create enough certainty. Buyers don't default to yes. They default to no. Doing nothing is safe. Buying something new is risky. If you haven't eliminated every possible reason to hesitate, the prospect sits in what we call the Lake of Maybe, where deals go to die quietly. In Sync Selling, we call the fix the Bookends Principle. Before and after every interaction, you address the concerns of every stakeholder who touches the deal. Technical buyers. Financial decision-makers. Political influencers. If you leave any of them out, the deal stalls.`,
+  },
+  {
+    q: `What is gap quantification in sales?`,
+    a: `Gap quantification is the core technique in the Wedge stage of Sync Selling. Instead of telling the prospect what your product does, you help them calculate the distance between where they are now and where they need to be. Not in abstract terms. In actual numbers. If a prospect is losing three deals a month to ghosting at an average deal value of £50K, the cost of inaction is £150K per month. £1.8 million a year. That number changes the conversation completely. Price objections disappear because doing nothing costs more than buying your solution. Urgency becomes real because every month of delay has a measurable cost attached. And your champion can sell upwards, because telling the CFO 'it's costing us £150K a month to do nothing' lands differently than 'the team really liked the demo.' The critical piece: the prospect has to calculate this number themselves, using their own data, in their own words. If you hand them a number, it's a sales pitch. If they arrive at the number through your questions, it's their business case. That's what makes gap quantification different from standard ROI selling. ROI is a future promise. The cost of inaction is a present reality they're already paying.`,
+  },
+  {
+    q: `How much does the Sync Selling programme cost?`,
+    a: `Week 1 costs £1. That's a full GTM Diagnostic Workshop, which is normally a £3,500 standalone service. You get a complete sales process audit, a wireframed sales playbook, 80+ hours of voice-of-customer research, competitive analysis, and AI-enhanced persona models. If you look at the diagnostic and think it's not for you, walk away. No further cost. No awkward conversation. You keep the entire report. If you continue, the Done For You Accelerator is £7,500 for founding members, normally £15,000. That includes every script written for you, CRM setup, discovery frameworks, demo scripts, champion enablement toolkits, and 12 weeks of direct one-to-one support with WhatsApp access to Joe Milnes. There's also a Done With You programme at £7,500 where you build the system with coaching guidance rather than having it built entirely for you.`,
+  },
+  {
+    q: `What do you get in Week 1 of the Sync Selling programme?`,
+    a: `Week 1 is a full GTM Diagnostic Workshop for £1. You walk away with five deliverables. A Complete GTM Diagnostic Report auditing your entire sales process with specific findings on every area where you're leaving money on the table. A Wireframed Sales Playbook PDF mapping your complete process with every stage, every asset needed, and every transition point. A Voice of Customer Analysis based on 80+ hours of research into the exact words your prospects use, what triggers them to buy, what they object to, and where your competitors fall short. A Competitive Analysis and Objection Plan covering every reason a prospect might say no, and how to position against alternatives without naming competitors directly. And AI-Enhanced Persona Models with deep psychological profiles including buying triggers, political dynamics, and career fears. If you look at all of that and decide it's not for you, no charge. No questions. You keep everything.`,
+  },
+  {
+    q: `How do I improve my B2B close rate?`,
+    a: `Start by accepting that 50 to 70 percent of the people in your pipeline were never going to buy. They're polite. They'll take your calls. They'll say the demo was great. But they were never going to sign. The fastest way to improve your close rate is to disqualify these people earlier so you stop wasting time on deals that were dead from the start. In Sync Selling, qualification runs on four checks. First, the business case. Can the prospect articulate where they are, where they need to be, and what the gap is costing them? If they can't explain the cost of inaction in their own words, you haven't got a business case. You've got someone who thinks your product sounds interesting. Second, the future state. What does solving this problem actually mean for them, personally and professionally? If you can't answer that, you don't understand what's really driving the decision. Third, the decision process. Who makes the final call? What criteria will they use? When does a decision need to happen? Have you mapped every person who touches this, and do you have control of the process or is the prospect running it? Fourth, objections and alternatives. Do you know what they'll do if they don't go with you? Are they looking at a competitor? Building something in-house? Just living with the pain? Each alternative has a weakness. Your job is to surface it before they discover it the hard way.`,
+  },
+  {
+    q: `What is the best B2B sales methodology for founders?`,
+    a: `You don't need to be a good salesperson. You just need an effective sales process. Most founders hear 'sales methodology' and picture themselves doing role plays and learning closing tricks. That's sales technique, and it only improves the way you say things. What matters far more is what you say. Get the playbook right, and you're 75% of the way there before technique even enters the picture. That's why Sync Selling was built for founders specifically. Instead of handing you a framework and wishing you luck, it builds the entire system for you. Word-for-word scripts. Discovery questions you read from a page. Proposal templates. Follow-up sequences. Champion enablement toolkits that do the internal selling when you're not in the room. The philosophy is that sales success comes from the system, not the individual. At Vohkus, people with zero experience hit £1.2 million a month using this methodology. Not because they were naturals. Because the system did the heavy lifting. MEDDIC assumes you've got seasoned reps who can translate a qualification checklist into live conversations. BANT breaks down when prospects aren't actively shopping. Gap Selling needs deep access and long cycles. Sync Selling works when you've got limited leads, short windows, and a founder who'd rather be building product than pitching.`,
+  },
+  {
+    q: `What is champion enablement and why does it matter?`,
+    a: `Your champion is the person inside the prospect's organisation who wants to buy. They liked the demo. They believe in the product. But wanting to buy and being able to buy are completely different things. Champion enablement means giving that person everything they need to sell your solution to the people who control the budget, manage the risk, and have the power to say no. Most sales teams send their champion off with a proposal and a case study. That's not enough. A proper champion enablement toolkit includes an ROI calculator showing financial return, a return-on-effort calculator showing exactly how much work falls on the internal team, a cost-of-inaction analysis showing what doing nothing costs every month, a technical FAQ that pre-answers whatever IT is going to raise, and answers to the political objections from colleagues who see your project as a threat to their priorities. In Sync Selling, champion enablement is built into the system from the start. Every proposal goes out with the tools your champion needs to get sign-off from stakeholders you've never met. Because if your champion can't sell it internally, your demo was theatre.`,
+  },
+  {
+    q: `What is the cost of inaction in B2B sales?`,
+    a: `The cost of inaction is the measurable price a prospect is paying every month they don't solve their problem. It's different from ROI. ROI is a future promise: buy our product and you'll save X. The cost of inaction is a present reality: you're already losing X by doing nothing. In Sync Selling, the prospect calculates this number themselves during discovery. If they're losing three deals a month to ghosting at £50K average deal value, that's £150K per month. £1.8 million a year. That's not your number. It's theirs. They arrived at it through your questions, using their own data. Once a prospect can say that number out loud, the dynamic shifts. Price objections lose their power because inaction costs more than your solution. The urgency becomes real because every month of delay has a cost they've just calculated. And their champion can sell upwards, because 'we're haemorrhaging £150K a month doing nothing' is a sentence that makes CFOs pay attention. Research from Jolt shows that 44% of B2B deals are lost not to competitors but to indecision. The prospect liked you, liked the product, but couldn't build enough internal certainty to pull the trigger. The cost of inaction is how you turn indecision into action. If your prospect can't articulate what doing nothing costs, you haven't built a business case.`,
   },
 ];
 
@@ -521,10 +559,41 @@ function Footer() {
   );
 }
 
+/* ─── FAQ SCHEMA INJECTION ─── */
+function HomepageFAQSchema() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "homepage-faq-schema";
+    // Dynamically build from visible FAQ content
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://revitk.com/#faq",
+      "mainEntity": faqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": f.a
+        }
+      }))
+    };
+    script.text = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      const el = document.getElementById("homepage-faq-schema");
+      if (el) el.remove();
+    };
+  }, []);
+  return null;
+}
+
 /* ─── PAGE ASSEMBLY ─── */
 export default function NewHome() {
   return (
     <>
+      <HomepageFAQSchema />
       <NavBar />
       <Hero />
       <ProblemIdentification />
