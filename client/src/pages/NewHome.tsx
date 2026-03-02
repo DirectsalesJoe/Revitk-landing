@@ -4,7 +4,7 @@ import { Link } from "wouter";
 const BOOKING_URL = "https://app.revitk.com/widget/bookings/syncselling";
 
 /* ─── NAVIGATION BAR ─── */
-function NavBar() {
+export function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="sticky top-0 z-50 bg-[#0F1923]/95 backdrop-blur-sm border-b border-white/10">
@@ -27,6 +27,9 @@ function NavBar() {
           <a href="#about" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
             About
           </a>
+          <Link href="/articles" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+            Articles
+          </Link>
           <Link href="/sales-faq" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
             Sales FAQ
           </Link>
@@ -66,6 +69,9 @@ function NavBar() {
           <a href="#about" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm" onClick={() => setMenuOpen(false)}>
             About
           </a>
+          <Link href="/articles" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm" onClick={() => setMenuOpen(false)}>
+            Articles
+          </Link>
           <Link href="/sales-faq" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm" onClick={() => setMenuOpen(false)}>
             Sales FAQ
           </Link>
@@ -541,7 +547,7 @@ function FinalCTA() {
 }
 
 /* ─── FOOTER ─── */
-function Footer() {
+export function Footer() {
   return (
     <footer className="bg-[#0B1120] py-12 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">

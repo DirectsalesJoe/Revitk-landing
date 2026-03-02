@@ -12,6 +12,8 @@ import Terms from "./pages/Terms";
 import Answers from "./pages/Answers";
 import Proof from "./pages/Proof";
 import SalesFAQ from "./pages/SalesFAQ";
+import Articles from "./pages/Articles";
+import SalesProcessArticle from "./pages/SalesProcessArticle";
 
 function Router() {
   return (
@@ -26,6 +28,8 @@ function Router() {
       <Route path={"/answers"} component={Answers} />
       {/* Sales FAQ page - visible FAQ content for SEO schema */}
       <Route path={"/sales-faq"} component={SalesFAQ} />
+      <Route path={"/articles"} component={Articles} />
+      <Route path={"/articles/building-a-sales-process"} component={SalesProcessArticle} />
       {/* Social proof / testimonials page */}
       <Route path={"/proof"} component={Proof} />
       {/* Legal pages */}
