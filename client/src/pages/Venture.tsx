@@ -2,7 +2,7 @@
  * VENTURE COMMUNITY ACCELERATOR — Exclusive Programme Page
  * Hidden page at /venture — not linked from main navigation
  * Design: "Dark Institutional" — matches existing Revitk brand
- * Audience: Pre-revenue startups going for investment, building first sales motion
+ * Audience: Pre-seed startups looking to make their business investor-ready
  */
 
 import { IMAGES } from '@/lib/constants';
@@ -74,7 +74,7 @@ function HeroSection() {
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border" style={{ borderColor: 'rgba(197,165,114,0.3)', backgroundColor: 'rgba(197,165,114,0.08)' }}>
               <Shield className="w-4 h-4" style={{ color: '#C5A572' }} />
               <span className="font-body text-xs tracking-[0.2em] uppercase" style={{ color: '#C5A572' }}>
-                Exclusive for Venture Community Accelerator Members
+                Available Through Your Venture Community Expert Add-Ons
               </span>
             </div>
           </div>
@@ -87,14 +87,14 @@ function HeroSection() {
 
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transitionDelay: '0.4s' }}>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8">
-              Build your first sales motion{' '}
-              <span className="italic" style={{ color: '#C5A572' }}>before you run out of runway.</span>
+              A systemised way to acquire customers.{' '}
+              <span className="italic" style={{ color: '#C5A572' }}>The strongest signal you can send to investors.</span>
             </h1>
           </div>
 
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '0.6s' }}>
             <p className="font-body text-lg md:text-xl max-w-2xl mb-6 leading-relaxed" style={{ color: 'rgba(245,240,235,0.8)' }}>
-              A complete sales system — diagnosed, built, and coached into your startup. Over 90% off the standard programme. Normally £7,500–£15,000.
+              The only sales programme designed for busy founders who need a systemised, efficient way to scale. Over 90% off. Normally £7,500–£15,000.
             </p>
           </div>
 
@@ -126,17 +126,15 @@ function ProblemSection() {
             The Reality
           </p>
           <h2 className="font-display text-3xl md:text-5xl mb-8 leading-tight" style={{ color: '#0B1120' }}>
-            You have raised the money.{' '}
-            <span className="italic" style={{ color: '#E63946' }}>Now you need to sell.</span>
+            You are building the product, pitching investors, and doing the sales.{' '}
+            <span className="italic" style={{ color: '#E63946' }}>All at once.</span>
           </h2>
 
-          <div className="space-y-6 mb-12">
+          <div className="space-y-5 mb-12">
             {[
-              'You have been to trade shows, got contacts, followed up — but nothing converts.',
-              'You are making it up as you go. No process. No playbook. No system.',
-              'Investors want to see traction. You need pipeline, not just product.',
+              'No process. No playbook. No system. You are making it up as you go.',
+              'Investors want traction. There is no better indicator than profitable customer acquisition.',
               'You cannot afford to hire a sales team yet — but you cannot afford to wait either.',
-              'Every month without revenue is runway burning.',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#E63946' }} />
@@ -147,7 +145,7 @@ function ProblemSection() {
 
           <div className="p-6 border-l-2" style={{ backgroundColor: 'rgba(11,17,32,0.03)', borderColor: '#C5A572' }}>
             <p className="font-body text-base leading-relaxed" style={{ color: '#0B1120' }}>
-              The Sync Selling Programme gives you the complete sales system that most startups spend 12–18 months figuring out on their own. You get it in 8 weeks.
+              The Sync Selling Programme gives you the complete sales system most startups spend 12–18 months figuring out. You get it in 8 weeks.
             </p>
           </div>
         </div>
@@ -167,11 +165,11 @@ function CaseStudySection() {
             Case Study — Cohort 1
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
-            AddParts: From No Sales Process to{' '}
-            <span className="italic" style={{ color: '#C5A572' }}>£320K Raise</span>
+            AddParts — From Cohort 1 (Successfully Raised £300k){' '}
+            <span className="italic" style={{ color: '#C5A572' }}>Share Their Experience</span>
           </h2>
           <p className="font-body text-base max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(245,240,235,0.7)' }}>
-            AddParts joined the Sync Selling Programme as a pre-revenue startup in digital spare parts manufacturing. Here is what happened.
+            Pre-revenue startup. No sales process. Joined the Sync Selling Programme. Here is what happened.
           </p>
         </div>
 
@@ -191,9 +189,9 @@ function CaseStudySection() {
         {/* Key Results */}
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16 scroll-reveal">
           {[
-            { metric: '£320,000', label: 'Raised from a single UK VC', icon: TrendingUp },
+            { metric: '£300,000', label: 'Raised from a single UK VC', icon: TrendingUp },
             { metric: '10%', label: 'Equity given — strong valuation', icon: Shield },
-            { metric: '8 weeks', label: 'From no process to investor-ready', icon: Rocket },
+            { metric: '8 weeks', label: 'No process to investor-ready', icon: Rocket },
           ].map((item, i) => (
             <div key={i} className="text-center p-8 border" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(255,255,255,0.05)' }}>
               <item.icon className="w-8 h-8 mx-auto mb-4" style={{ color: '#C5A572' }} />
@@ -261,7 +259,7 @@ function WhatYouGetSection() {
             <span className="italic" style={{ color: '#E63946' }}>Over 90% off.</span>
           </h2>
           <p className="font-body text-base max-w-2xl mx-auto leading-relaxed" style={{ color: 'rgba(11,17,32,0.7)' }}>
-            Venture Community Accelerator members get access to the full Sync Selling Programme — the same system used by 300+ B2B founders generating £185M+ in revenue.
+            Available through your Venture Community Expert Add-Ons. The same system used by 300+ B2B founders generating £185M+ in revenue.
           </p>
         </div>
 
@@ -274,19 +272,19 @@ function WhatYouGetSection() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: 'The 90-Minute GTM Diagnostic Workshop',
-                desc: 'One-on-one with Joe Milnes. 25+ years of B2B sales experience. 35 pressure points tested across your sales process. You walk out knowing exactly what to fix first.',
-                outcome: 'Know where your deals will die before they start',
+                title: '90-Minute GTM Diagnostic',
+                desc: 'One-on-one with Joe Milnes. 35 pressure points tested. Walk out knowing exactly what to fix first.',
+                outcome: 'Know where your deals die before they start',
               },
               {
-                title: 'The Diagnostic Report & Market Research',
-                desc: '80+ hours of deep analysis. Buyer personas, voice of customer research, competitive landscape, objection mapping. All packed into one dossier.',
+                title: 'Diagnostic Report & Market Research',
+                desc: '80+ hours of analysis. Buyer personas, competitive landscape, objection mapping. One dossier.',
                 outcome: 'Understand your buyers better than they understand themselves',
               },
               {
                 title: 'Wireframed Sales Playbook',
-                desc: 'Your complete sales process mapped out. Every stage, every script, every framework. Entry and exit criteria so you know when to move forward and when to walk away.',
-                outcome: 'A repeatable process your team can follow from day one',
+                desc: 'Your complete sales process mapped. Every stage, every framework. Entry and exit criteria.',
+                outcome: 'A repeatable process from day one',
               },
             ].map((item, i) => (
               <div key={i} className="p-6 bg-white border scroll-reveal" style={{ borderColor: 'rgba(11,17,32,0.1)' }}>
@@ -313,19 +311,19 @@ function WhatYouGetSection() {
             Sales Arsenal & Training
           </h3>
           <p className="font-body text-base mb-8 max-w-2xl leading-relaxed" style={{ color: 'rgba(11,17,32,0.7)' }}>
-            Nine playbooks covering every stage of the sales process. Built for your business, your market, your buyers.
+            Nine playbooks. Every stage of the sales process. Built for your business, your market, your buyers.
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
             {[
-              { title: 'Discovery Call Playbook', desc: 'Questions that uncover the real cost of doing nothing. Build the business case needed to close.' },
-              { title: 'Demo Framework', desc: 'The Pain-Proof-Tie-In framework. Lead with their problem, prove you solve it, tie it back to their goals.' },
-              { title: 'The Proposal That Closes', desc: 'A 9-point template that sells for you when you are not in the room. Minimal customisation required.' },
-              { title: 'Stakeholder Engagement Pack', desc: 'The one-page business case your champion uses to sell you internally. Risk plan and effort breakdown included.' },
-              { title: 'Cold Email Bible', desc: '15+ templates, LinkedIn sequences, and AI prompts tuned to your messaging. Start conversations at scale.' },
-              { title: 'Cold Calling Playbook', desc: 'The Pattern Interrupt Framework. Get past gatekeepers. Book the meeting in under 3 minutes.' },
-              { title: 'Appointment Setting Playbook', desc: 'Multi-channel sequences combining email, phone, and LinkedIn. Follow-up cadences that get replies.' },
-              { title: 'Lead Nurture Playbook', desc: 'Email and SMS sequences that keep you top of mind and re-engage cold leads when they are ready.' },
-              { title: 'Objection Handling Toolkit', desc: 'The 12 most common objections and how to handle each one. Root cause questioning to find the real blocker.' },
+              { title: 'Discovery Call Playbook', desc: 'Uncover the real cost of doing nothing. Build the business case to close.' },
+              { title: 'Demo Framework', desc: 'Lead with their problem. Prove you solve it. Tie it back to their goals.' },
+              { title: 'The Proposal That Closes', desc: '9-point template that sells when you are not in the room.' },
+              { title: 'Stakeholder Engagement Pack', desc: 'The one-page business case your champion uses to sell you internally.' },
+              { title: 'Cold Email Bible', desc: '15+ templates, LinkedIn sequences, and AI prompts tuned to your messaging.' },
+              { title: 'Cold Calling Playbook', desc: 'The Pattern Interrupt Framework. Get past gatekeepers. Book the meeting.' },
+              { title: 'Appointment Setting Playbook', desc: 'Multi-channel sequences. Email, phone, LinkedIn. Follow-up cadences that get replies.' },
+              { title: 'Lead Nurture Playbook', desc: 'Stay top of mind. Re-engage cold leads when they are ready.' },
+              { title: 'Objection Handling Toolkit', desc: '12 most common objections. Root cause questioning to find the real blocker.' },
             ].map((book, i) => (
               <div
                 key={i}
@@ -343,12 +341,12 @@ function WhatYouGetSection() {
             <div className="p-6 bg-white border" style={{ borderColor: 'rgba(11,17,32,0.1)' }}>
               <Clock className="w-6 h-6 mb-3" style={{ color: '#E63946' }} />
               <h4 className="font-display text-lg mb-2" style={{ color: '#0B1120' }}>Training Video Library</h4>
-              <p className="font-body text-sm" style={{ color: 'rgba(11,17,32,0.6)' }}>Each playbook comes with a training video. Watch it, apply it, bring questions to the group call.</p>
+              <p className="font-body text-sm" style={{ color: 'rgba(11,17,32,0.6)' }}>Each playbook comes with a training video. Watch, apply, bring questions to the group call.</p>
             </div>
             <div className="p-6 bg-white border" style={{ borderColor: 'rgba(11,17,32,0.1)' }}>
               <Users className="w-6 h-6 mb-3" style={{ color: '#E63946' }} />
               <h4 className="font-display text-lg mb-2" style={{ color: '#0B1120' }}>20 Masterclass Webinars</h4>
-              <p className="font-body text-sm" style={{ color: 'rgba(11,17,32,0.6)' }}>20+ hours of tactical and strategic sales training. Discovery, demos, proposals, objection handling, and more.</p>
+              <p className="font-body text-sm" style={{ color: 'rgba(11,17,32,0.6)' }}>20+ hours of tactical and strategic sales training.</p>
             </div>
           </div>
         </div>
@@ -360,28 +358,28 @@ function WhatYouGetSection() {
             Coaching & Implementation
           </h3>
           <p className="font-body text-base mb-8 max-w-2xl leading-relaxed" style={{ color: 'rgba(11,17,32,0.7)' }}>
-            We stay until the system runs without us. Live coaching, deal reviews, and direct support.
+            We stay until the system runs without us.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
                 title: 'Unlimited Deal Reviews',
-                desc: 'Send us your live deals. Get Loom video feedback within 48 hours. Discovery calls, demos, proposals, stuck deals — no limit.',
+                desc: 'Send live deals. Get Loom video feedback within 48 hours. No limit.',
                 icon: Target,
               },
               {
-                title: 'Two Group Coaching Calls Per Week',
-                desc: 'Tuesday Deal Clinics: bring your stuck deals, workshop them live. Thursday Tactical Training: deep-dive on one skill per week.',
+                title: 'Two Group Calls Per Week',
+                desc: 'Tuesday Deal Clinics. Thursday Tactical Training. Bring your stuck deals, workshop them live.',
                 icon: Users,
               },
               {
                 title: 'One-on-One Slack Support',
-                desc: 'Direct access to Joe. Need a gut-check before a big call? Need a script tweaked? Same day response, usually within 2 hours.',
+                desc: 'Direct access to Joe. Same day response, usually within 2 hours.',
                 icon: Zap,
               },
               {
-                title: 'Two Strategic One-on-One Consultations',
-                desc: '60-minute deep-dive sessions at Week 2 and Week 6. Pipeline review, process refinement, hiring strategy.',
+                title: 'Two Strategic 1-on-1 Consultations',
+                desc: '60-minute deep-dives at Week 2 and Week 6. Pipeline review, process refinement, hiring strategy.',
                 icon: Crosshair,
               },
             ].map((item, i) => (
@@ -405,7 +403,7 @@ function WhatYouGetSection() {
               Sync Selling AI — Five Purpose-Built Sales Agents
             </h4>
             <p className="font-body text-sm leading-relaxed mb-6" style={{ color: 'rgba(11,17,32,0.7)' }}>
-              Trained on your voice, your brand, your customers, your solution, and the Sync Selling methodology. Like having a sales coach sit next to you on every deal.
+              Trained on your voice, your brand, your customers, and the Sync Selling methodology.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
               {['Proposal Writer', 'Business Case Generator', 'Email Follow-Up Generator', 'Deal Coach', 'Copywriter'].map((tool, i) => (
@@ -430,11 +428,11 @@ function WhyStartupsSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16 scroll-reveal">
           <p className="font-body text-sm tracking-[0.2em] uppercase mb-4" style={{ color: '#C5A572' }}>
-            Built for Where You Are
+            Built for Busy Founders
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
-            Why this works for{' '}
-            <span className="italic" style={{ color: '#C5A572' }}>early-stage startups.</span>
+            Why this works{' '}
+            <span className="italic" style={{ color: '#C5A572' }}>at your stage.</span>
           </h2>
         </div>
 
@@ -442,19 +440,19 @@ function WhyStartupsSection() {
           {[
             {
               title: 'You are the salesperson right now',
-              desc: 'Most founders are selling without a system. This programme gives you the process, the scripts, and the confidence to convert — so you stop winging it.',
+              desc: 'This programme gives you the process, the scripts, and the confidence to convert — so you stop winging it.',
             },
             {
               title: 'Investors want traction, not just product',
-              desc: 'A clear go-to-market strategy and sales process makes your pitch stronger. AddParts built theirs on the programme — then raised £320K.',
+              desc: 'A systemised customer acquisition process is the strongest signal you can send. AddParts built theirs on the programme — then raised £300K.',
             },
             {
               title: 'You cannot afford to get sales wrong',
-              desc: 'Every month without revenue is runway burning. This programme compresses 12–18 months of sales learning into 8 weeks.',
+              desc: 'This programme compresses 12–18 months of sales learning into 8 weeks.',
             },
             {
-              title: 'You need a system your first hire can follow',
-              desc: 'When you do hire a salesperson, they need a playbook — not "figure it out." This programme builds that playbook before you hire.',
+              title: 'Your first hire needs a playbook',
+              desc: 'When you hire a salesperson, they need a system — not "figure it out." This builds that before you hire.',
             },
           ].map((item, i) => (
             <div key={i} className="p-6 border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.05)' }}>
@@ -475,13 +473,13 @@ function ValueSummarySection() {
     { item: 'GTM Diagnostic Workshop (1-on-1)', value: '£1,500' },
     { item: 'Diagnostic Report & Market Research', value: '£3,000' },
     { item: 'Wireframed Sales Playbook', value: '£1,000' },
-    { item: '9 Sales Playbooks (Discovery, Demo, Proposal, Cold Email, Cold Calling, Appointment Setting, Lead Nurture, Stakeholder, Objection Handling)', value: '£4,500' },
+    { item: '9 Sales Playbooks', value: '£4,500' },
     { item: 'Training Video Library', value: '£500' },
     { item: '20 Masterclass Webinars (20+ hours)', value: '£1,000' },
-    { item: 'Unlimited Deal Reviews (Loom video feedback)', value: '£1,500' },
+    { item: 'Unlimited Deal Reviews', value: '£1,500' },
     { item: '16 Group Coaching Calls', value: '£1,000' },
     { item: 'One-on-One Slack Support', value: '£500' },
-    { item: '2x Strategic One-on-One Consultations', value: '£500' },
+    { item: '2x Strategic 1-on-1 Consultations', value: '£500' },
     { item: 'Beta Access: 5 AI Sales Agents', value: '£500' },
   ];
 
@@ -519,7 +517,7 @@ function ValueSummarySection() {
                 <p className="font-display text-2xl" style={{ color: '#0B1120', textDecoration: 'line-through', textDecorationColor: '#E63946' }}>£15,500+</p>
               </div>
               <div className="text-center sm:text-right">
-                <p className="font-body text-sm font-semibold" style={{ color: '#E63946' }}>Included with your Venture Community membership</p>
+                <p className="font-body text-sm font-semibold" style={{ color: '#E63946' }}>Available through your Venture Community Expert Add-Ons</p>
                 <p className="font-body text-xs mt-1" style={{ color: 'rgba(11,17,32,0.5)' }}>Over 90% off — exclusive to accelerator members</p>
               </div>
             </div>
@@ -546,10 +544,10 @@ function AboutSection() {
             </p>
             <h3 className="font-display text-2xl md:text-3xl text-white mb-4">Joe Milnes</h3>
             <p className="font-body text-base leading-relaxed mb-4" style={{ color: 'rgba(245,240,235,0.7)' }}>
-              25 years in B2B sales. Took over a sales team with no pipeline, no playbook, and no process. Ten months later they were generating £1.2 million a month — including a £1M+ deal with oil and gas.
+              25 years in B2B sales. Took over a team with no pipeline, no playbook, no process. Ten months later: £1.2 million a month — including a £1M+ deal in oil and gas.
             </p>
             <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
-              Helped scale a business from £40M to £100M before exit. Coached 300+ founders across 60+ industries. Generated over £185M in client revenue.
+              Scaled a business from £40M to £100M before exit. 300+ founders coached. £185M+ in client revenue.
             </p>
             <div className="grid grid-cols-3 gap-4">
               {[
@@ -578,14 +576,14 @@ function CTASection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center scroll-reveal">
           <p className="font-body text-sm tracking-[0.2em] uppercase mb-6" style={{ color: '#C5A572' }}>
-            Exclusive for Venture Community Accelerator Members
+            Available Through Your Venture Community Expert Add-Ons
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-white mb-6">
             Ready to build your{' '}
             <span className="italic" style={{ color: '#C5A572' }}>sales engine?</span>
           </h2>
           <p className="font-body text-base leading-relaxed mb-10" style={{ color: 'rgba(245,240,235,0.6)' }}>
-            Book a call with Joe to get started. Mention your Venture Community membership to unlock the exclusive rate.
+            Book a call with Joe to get started.
           </p>
           <a
             href="https://app.revitk.com/widget/bookings/syncselling"
