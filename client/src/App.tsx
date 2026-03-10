@@ -14,6 +14,7 @@ import Proof from "./pages/Proof";
 import SalesFAQ from "./pages/SalesFAQ";
 import Articles from "./pages/Articles";
 import SalesProcessArticle from "./pages/SalesProcessArticle";
+import Venture from "./pages/Venture";
 
 function Router() {
   return (
@@ -32,6 +33,8 @@ function Router() {
       <Route path={"/articles/building-a-sales-process"} component={SalesProcessArticle} />
       {/* Social proof / testimonials page */}
       <Route path={"/proof"} component={Proof} />
+      {/* Hidden Venture Community Accelerator page */}
+      <Route path={"/venture"} component={Venture} />
       {/* Legal pages */}
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
