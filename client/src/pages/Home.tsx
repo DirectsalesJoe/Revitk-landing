@@ -85,7 +85,7 @@ function HeroSection() {
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transitionDelay: '0.4s' }}>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8">
               Double your close rate in 8 weeks{' '}
-              <span className="italic" style={{ color: '#C5A572' }}>(and don't pay more than £1 until you get results).</span>
+              <span className="italic" style={{ color: '#C5A572' }}>(completely risk-free until you see results).</span>
             </h1>
           </div>
 
@@ -783,7 +783,7 @@ function PricingSection() {
             {[
               {
                 num: '1',
-                title: 'Secure Your Spot for £1',
+                title: 'Secure Your Spot — Risk-Free',
                 desc: 'Register your card. You will not be charged the full amount until after Week 1.',
               },
               {
@@ -794,7 +794,7 @@ function PricingSection() {
               {
                 num: '3',
                 title: 'You Decide',
-                desc: 'Not convinced? Walk away. No charge beyond the £1. You keep the diagnostic report. Convinced? We charge the remaining balance and start building your system.',
+                desc: 'Not convinced? Walk away. No charge. No awkward conversation. You keep the diagnostic report. Convinced? We start building your system.',
               },
             ].map((step) => (
               <div key={step.num} className="flex gap-6 items-start">

@@ -59,7 +59,7 @@ export const FAQ: React.FC = () => {
             question="I'm Worried I'll Invest £6K and Nothing Will Change"
             answer={
                 <>
-                    <p className="mb-4">That's why we built the £1 trial. You get Week 1—the full GTM Diagnostic—before you commit to anything.</p>
+                    <p className="mb-4">That's why we made it completely risk-free. You get Week 1—the full GTM Diagnostic—before you commit to anything.</p>
                     <p className="mb-4">If at the end of Week 1 you think: "This isn't for me," you walk away. One click. No charge.</p>
                     <p className="font-bold">You literally cannot lose.</p>
                 </>

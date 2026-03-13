@@ -172,5 +172,5 @@ Done-For-You Package — £15,000 (12-week support)
 
 ## Slide 20: Close
 **Heading:** Double your close rate in 8 weeks.
-**Subheading:** (And don't pay more than £1 until you get results.)
+**Subheading:** (Risk-free. You only continue if the diagnostic proves we can help.)
 **Visual:** Clean, dark, authoritative. Same energy as the title slide. No CTA — this is a presentation piece.

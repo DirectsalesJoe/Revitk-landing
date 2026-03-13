@@ -221,7 +221,7 @@ export default function Answers() {
       <section className="py-16 px-6 bg-slate-900 text-white text-center">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-            Get Your Sales Bottlenecks Diagnosed for £1
+            Get Your Sales Bottlenecks Diagnosed — Risk-Free
           </h2>
           <p className="text-gray-300 mb-8 text-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             Joe Milnes and the Revitk team will diagnose and fix the biggest sales bottlenecks in your business.
@@ -232,7 +232,7 @@ export default function Answers() {
             className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors"
             style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
           >
-            Book Your £1 Diagnostic
+            Book Your Risk-Free Diagnostic
           </a>
         </div>
       </section>

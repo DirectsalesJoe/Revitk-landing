@@ -201,7 +201,7 @@ function HowItWorks() {
           How You Can Work With Us
         </h2>
         <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 text-center max-w-3xl mx-auto mb-12">
-          We're selective about who we work with. If we don't think we can help, we'll tell you. If we do think we can help, we'll offer Phase 1 of our diagnostic, valued at well over £5,000, for £1.
+          We're selective about who we work with. If we don't think we can help, we'll tell you. If we do think we can help, we'll offer Phase 1 of our diagnostic, valued at well over £5,000, completely risk-free.
         </p>
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {phases.map((phase, i) => (
@@ -403,17 +403,17 @@ function Diagnostic() {
     <section className="bg-[#0F1923]">
       <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
         <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-6">
-          Start With a £1 Diagnostic. Decide After.
+          Start With a Risk-Free Diagnostic. Decide After.
         </h2>
         <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 mb-8">
-          Before you commit to anything, we'll diagnose your entire sales process for £1.
+          Before you commit to anything, we'll diagnose your entire sales process — completely risk-free.
         </p>
         <div className="bg-white/5 border border-white/10 rounded-lg p-8 mb-10 text-left">
           <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-6">
             You get a 90-minute workshop with Joe, a full diagnostic report, 80+ hours of market research on your buyers and competitors, and a wireframed sales playbook showing exactly what needs to happen at each stage.
           </p>
           <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-6">
-            If you're not convinced, walk away. Keep the report. No charge beyond the £1.
+            If you're not convinced, walk away. Keep the report. No charge. No awkward conversation.
           </p>
           <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed">
             85% of people who take the diagnostic continue into the full programme. We let the work speak for itself.
@@ -460,11 +460,11 @@ const faqs = [
   },
   {
     q: `How much does the Sync Selling programme cost?`,
-    a: `Week 1 costs £1. That's a full GTM Diagnostic Workshop, which is normally a £3,500 standalone service. You get a complete sales process audit, a wireframed sales playbook, 80+ hours of voice-of-customer research, competitive analysis, and AI-enhanced persona models. If you look at the diagnostic and think it's not for you, walk away. No further cost. No awkward conversation. You keep the entire report. If you continue, the Done For You Accelerator is £7,500 for founding members, normally £15,000. That includes every script written for you, CRM setup, discovery frameworks, demo scripts, champion enablement toolkits, and 12 weeks of direct one-to-one support with WhatsApp access to Joe Milnes. There's also a Done With You programme at £7,500 where you build the system with coaching guidance rather than having it built entirely for you.`,
+    a: `Week 1 is a full GTM Diagnostic Workshop, risk-free. It's normally a £3,500 standalone service. You get a complete sales process audit, a wireframed sales playbook, 80+ hours of voice-of-customer research, competitive analysis, and AI-enhanced persona models. If you look at the diagnostic and think it's not for you, walk away. No further cost. No awkward conversation. You keep the entire report. If you continue, the Done For You Accelerator is £7,500 for founding members, normally £15,000. That includes every script written for you, CRM setup, discovery frameworks, demo scripts, champion enablement toolkits, and 12 weeks of direct one-to-one support with WhatsApp access to Joe Milnes. There's also a Done With You programme at £7,500 where you build the system with coaching guidance rather than having it built entirely for you.`,
   },
   {
     q: `What do you get in Week 1 of the Sync Selling programme?`,
-    a: `Week 1 is a full GTM Diagnostic Workshop for £1. You walk away with five deliverables. A Complete GTM Diagnostic Report auditing your entire sales process with specific findings on every area where you're leaving money on the table. A Wireframed Sales Playbook PDF mapping your complete process with every stage, every asset needed, and every transition point. A Voice of Customer Analysis based on 80+ hours of research into the exact words your prospects use, what triggers them to buy, what they object to, and where your competitors fall short. A Competitive Analysis and Objection Plan covering every reason a prospect might say no, and how to position against alternatives without naming competitors directly. And AI-Enhanced Persona Models with deep psychological profiles including buying triggers, political dynamics, and career fears. If you look at all of that and decide it's not for you, no charge. No questions. You keep everything.`,
+    a: `Week 1 is a full GTM Diagnostic Workshop, completely risk-free. You walk away with five deliverables. A Complete GTM Diagnostic Report auditing your entire sales process with specific findings on every area where you're leaving money on the table. A Wireframed Sales Playbook PDF mapping your complete process with every stage, every asset needed, and every transition point. A Voice of Customer Analysis based on 80+ hours of research into the exact words your prospects use, what triggers them to buy, what they object to, and where your competitors fall short. A Competitive Analysis and Objection Plan covering every reason a prospect might say no, and how to position against alternatives without naming competitors directly. And AI-Enhanced Persona Models with deep psychological profiles including buying triggers, political dynamics, and career fears. If you look at all of that and decide it's not for you, you walk away. No charge. No questions. You keep everything.`,
   },
   {
     q: `How do I improve my B2B close rate?`,

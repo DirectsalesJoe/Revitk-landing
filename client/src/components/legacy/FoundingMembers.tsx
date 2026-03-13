@@ -25,7 +25,7 @@ export const FoundingMembers: React.FC = () => {
             GET EVERYTHING IN THE DFY PROGRAMME FOR £7,500
           </p>
           <p className="text-xl md:text-2xl mb-2">
-            Save £7,500 AND Get Started for £1
+            Save £7,500 AND Get Started Risk-Free
           </p>
           <p className="text-lg md:text-xl font-bold text-brand-accent">
             PLUS 12 WEEKS FULL SUPPORT INCLUDED!!!
@@ -85,7 +85,7 @@ export const FoundingMembers: React.FC = () => {
                 <li className="flex items-center gap-3"><span className="text-green-400">✅</span> The entire £15,000 'Done For You' Accelerator for £7,500</li>
                 <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Every script written for you</li>
                 <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Direct access to Joe via WhatsApp for 12 weeks</li>
-                <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Week 1 GTM Diagnostic (normally £3,500) for £1</li>
+                <li className="flex items-center gap-3"><span className="text-green-400">✅</span> Week 1 GTM Diagnostic (normally £3,500) completely risk-free</li>
             </ul>
         </div>
 

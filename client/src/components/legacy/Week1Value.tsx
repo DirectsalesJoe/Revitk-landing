@@ -8,13 +8,13 @@ export const Week1Value: React.FC = () => {
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-brand-dark">What You Get in Week 1</h2>
           <h3 className="text-3xl md:text-5xl font-extrabold text-brand-accent leading-tight">
-            (We Used to Charge £3,500 for This. You're Getting It for £1.)
+            (We Used to Charge £3,500 for This. You're Getting It Risk-Free.)
           </h3>
         </div>
 
         <div className="text-lg text-gray-800 space-y-6 mb-12">
           <p>The GTM Diagnostic Workshop was a £3,500 offer.</p>
-          <p className="font-bold text-2xl">Now it's your Week 1. For £1.</p>
+          <p className="font-bold text-2xl">Now it's your Week 1. Completely risk-free.</p>
         </div>
 
         {/* GTM Dossier Image */}
