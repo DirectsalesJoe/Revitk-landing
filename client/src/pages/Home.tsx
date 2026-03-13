@@ -84,8 +84,7 @@ function HeroSection() {
 
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(30px)', transitionDelay: '0.4s' }}>
             <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-8">
-              Double your close rate in 8 weeks{' '}
-              <span className="italic" style={{ color: '#C5A572' }}>(completely risk-free until you see results).</span>
+              Close 1 In Every 2 Prospects You Quote In 8 Weeks...
             </h1>
           </div>
 
@@ -411,24 +410,6 @@ function Phase2Section() {
 
         <GoldDivider />
 
-        {/* Bonus: 20 Masterclass Webinars */}
-        <div className="mb-20 scroll-reveal">
-          <div className="text-center mb-8">
-            <p className="font-body text-sm tracking-[0.2em] uppercase mb-3" style={{ color: '#E63946' }}>
-              Bonus
-            </p>
-            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">
-              Access to 20 Masterclass Webinars
-            </h3>
-            <p className="font-body text-base max-w-xl mx-auto" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              20+ hours of tactical and strategic sales training. Live group sessions covering discovery, demos, proposals, objection handling, and more.
-            </p>
-          </div>
-          <SectionImage src={IMAGES.webinarMasterclass} alt="Group masterclass webinar" className="max-w-4xl mx-auto" />
-        </div>
-
-        <GoldDivider />
-
         {/* Bonus: AI Tools (Beta Access) */}
         <div className="scroll-reveal">
           <div className="text-center mb-8">
@@ -464,6 +445,39 @@ function Phase2Section() {
             </div>
           </div>
           <SectionImage src={IMAGES.aiDashboard} alt="AI Sales Agents Dashboard — Proposal Writer, Business Case Generator, Email Follow-Up Generator, Deal Coach, Copywriter" className="max-w-4xl mx-auto" />
+        </div>
+
+        <GoldDivider />
+
+        {/* Bonus: Hiring Playbook & Exclusive Recruiter Rates */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center scroll-reveal">
+          <div>
+            <p className="font-body text-sm tracking-[0.2em] uppercase mb-3" style={{ color: '#E63946' }}>
+              Bonus
+            </p>
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">
+              Hiring Playbook & Exclusive Recruiter Rates
+            </h3>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              Don't make the same mistake that 65% of founders do with their first sales hires. Steal our step-by-step hiring playbook so you know who to hire at what level, how to structure commission, and how to test whether they're going to be good at interviewing or actually execute in the job.
+            </p>
+            <div className="space-y-3">
+              {[
+                'Who to hire at each stage of growth',
+                'How to structure commission and OTE',
+                'Interview vs. execution testing frameworks',
+                'Exclusive recruiter rates through our network',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#C5A572' }} />
+                  <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.8)' }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <SectionImage src={IMAGES.hiringPlaybook} alt="The Sales Hiring Playbook — who to hire, commission structures, interview vs execution testing" />
+          </div>
         </div>
       </div>
     </section>
@@ -581,21 +595,21 @@ function Phase3Section() {
           </div>
         </div>
 
-        {/* 4. Strategic One-on-One Consultations */}
+        {/* 4. Monthly Executive CEO Strategy Sessions */}
         <div className="scroll-reveal">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-8 flex items-center justify-center" style={{ backgroundColor: 'rgba(230,57,70,0.1)' }}>
               <span className="font-body font-bold text-sm" style={{ color: '#E63946' }}>4</span>
             </div>
-            <h3 className="font-display text-2xl md:text-3xl" style={{ color: '#0B1120' }}>Two Strategic One-on-One Consultations</h3>
+            <h3 className="font-display text-2xl md:text-3xl" style={{ color: '#0B1120' }}>Monthly Executive CEO Strategy Sessions</h3>
           </div>
           <p className="font-body text-base leading-relaxed mb-6 max-w-2xl" style={{ color: 'rgba(11,17,32,0.7)' }}>
-            60-minute deep-dive sessions with Joe at Week 2 and Week 6.
+            60-minute deep-dive sessions with Joe. Strategic, not tactical. The conversations that change the trajectory of your business.
           </p>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
               { icon: Target, title: 'Pipeline Review', desc: 'Which deals are real. Which are fantasy.' },
-              { icon: Users, title: 'Hiring Strategy', desc: 'When to bring on a salesperson. What to look for.' },
+              { icon: Users, title: 'People Strategy', desc: 'Who to hire, when, and how to structure your team for growth.' },
               { icon: Zap, title: 'Process Refinement', desc: 'What is working. What is not.' },
             ].map((item, i) => (
               <div key={i} className="p-6 bg-white border" style={{ borderColor: 'rgba(11,17,32,0.1)' }}>
@@ -629,7 +643,7 @@ function PricingSection() {
     { label: 'AI-Powered Community Support', diy: '✔', dfy: '✔' },
     { label: 'Unlimited 1-on-1 Deal Reviews', diy: '✖', dfy: '✔' },
     { label: 'Direct 1-on-1 Slack with Joe', diy: '✖', dfy: '✔' },
-    { label: '2x Strategic 1-on-1 Consultations', diy: '✖', dfy: '✔' },
+    { label: 'Monthly Executive CEO Strategy Sessions', diy: '✖', dfy: '✔' },
   ];
 
   return (

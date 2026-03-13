@@ -20,6 +20,7 @@ export const IMAGES = {
 
   // Bonus images
   aiDashboard: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/mtycEXeXYWNpAhHk.png',
+  hiringPlaybook: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/ApEsnGZZMEOqEtkq.png',
 
   // Hero
   heroBg: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663199092863/jyFvYnVkEfXiyULH.png',
