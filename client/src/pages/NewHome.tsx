@@ -443,10 +443,10 @@ const faqs: { q: string; a: string[] }[] = [
     ],
   },
   {
-    q: `How is Sync Selling different from MEDDIC, Sandler, or Challenger?`,
+    q: `Why is Sync Selling different?`,
     a: [
       `Most methodologies teach you a framework and leave you to figure out the rest. MEDDIC gives you a checklist but doesn't tell you what to say. Sandler teaches psychology but expects you to build your own materials. Challenger tells you to "teach, tailor, take control" then waves goodbye.`,
-      `Sync Selling builds everything for you. Scripts, discovery frameworks, proposals, CRM sequences. It also borrows the best bits from other methodologies and weaves them into something you can actually use on Monday morning.`,
+      `Sync Selling covers everything you say, send, or show to a prospect during the sales process. Word-for-word scripts, discovery frameworks, proposals, champion toolkits, CRM sequences. It also borrows the best bits from other methodologies and weaves them into something you can actually use on Monday morning.`,
       `MEDDIC falls apart on short sales cycles. Gap Selling needs deep access you often don't have. BANT breaks when prospects aren't actively shopping. Sync Selling was built for all of those situations.`,
     ],
   },
