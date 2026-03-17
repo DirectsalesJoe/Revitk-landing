@@ -628,22 +628,24 @@ function Phase3Section() {
 // ─── Pricing Section ───────────────────────────────────────────────
 
 function PricingSection() {
-  // Comparison table rows: [label, diy value, dfy value]
-  const tableRows: Array<{ section?: string; label?: string; diy?: string; dfy?: string }> = [
+  // Comparison table rows: [label, founder value, growth value]
+  const tableRows: Array<{ section?: string; label?: string; founder?: string; growth?: string }> = [
     { section: 'Core System & Foundation' },
-    { label: 'GTM Diagnostic & Blueprint', diy: '✔', dfy: '✔' },
-    { label: 'Sync Selling AI Toolkit', diy: '✔', dfy: '✔' },
+    { label: 'GTM Diagnostic & Blueprint', founder: '✔', growth: '✔' },
+    { label: 'Sync Selling AI Toolkit', founder: '✔', growth: '✔' },
     { section: 'Playbook & Asset Creation' },
-    { label: 'Discovery Playbook', diy: 'DIY using Sync Selling AI', dfy: 'Fully Built For You' },
-    { label: 'Demo & Proposal Playbook', diy: 'DIY using Sync Selling AI', dfy: 'Fully Built For You' },
-    { label: 'Cold Outreach Playbooks', diy: 'DIY using Sync Selling AI', dfy: 'Fully Built For You' },
-    { label: 'All 9 Sales Playbooks', diy: 'DIY using Sync Selling AI', dfy: 'All Built For You' },
+    { label: 'Discovery Playbook', founder: 'Fully Built For You', growth: 'Fully Built For You' },
+    { label: 'Demo & Proposal Playbook', founder: 'Fully Built For You', growth: 'Fully Built For You' },
+    { label: 'Cold Outreach Playbooks', founder: 'Fully Built For You', growth: 'Fully Built For You' },
+    { label: 'All 9 Sales Playbooks', founder: 'Fully Built For You', growth: 'Fully Built For You' },
     { section: 'Coaching & Support' },
-    { label: 'Group Coaching Calls', diy: '16 Calls', dfy: '16 Calls' },
-    { label: 'AI-Powered Community Support', diy: '✔', dfy: '✔' },
-    { label: 'Unlimited 1-on-1 Deal Reviews', diy: '✖', dfy: '✔' },
-    { label: 'Direct 1-on-1 Slack with Joe', diy: '✖', dfy: '✔' },
-    { label: 'Monthly Executive CEO Strategy Sessions', diy: '✖', dfy: '✔' },
+    { label: 'Group Coaching Calls', founder: '16 Calls', growth: '16 Calls' },
+    { label: 'AI-Powered Community Support', founder: '✔', growth: '✔' },
+    { label: 'Unlimited 1-on-1 Deal Reviews', founder: '✔', growth: '✔' },
+    { label: 'Direct 1-on-1 Slack with Joe', founder: '✔', growth: '✔' },
+    { label: 'Monthly Executive CEO Strategy Sessions', founder: '✔', growth: '✔' },
+    { section: 'Team Workshops' },
+    { label: '3 Personalised Sales Workshops', founder: '✖', growth: '✔' },
   ];
 
   return (
@@ -667,20 +669,22 @@ function PricingSection() {
             <thead>
               <tr>
                 <th className="text-left p-4 font-body text-sm" style={{ color: 'rgba(245,240,235,0.4)', width: '40%' }}></th>
-                {/* Minimum Package */}
+                {/* Founder Package */}
                 <th className="p-4 text-center border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.08)', width: '30%' }}>
-                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Minimum Package</p>
+                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Founder</p>
                   <p className="font-display text-3xl text-white">£7,500</p>
                   <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
+                  <p className="font-body text-xs mt-2" style={{ color: 'rgba(245,240,235,0.5)' }}>1–2 people</p>
                 </th>
-                {/* Done-For-You Package */}
+                {/* Growth Package */}
                 <th className="relative p-4 text-center border-2" style={{ background: 'linear-gradient(135deg, rgba(26,34,51,0.5), rgba(26,34,51,0.3))', borderColor: 'rgba(197,165,114,0.4)', width: '30%' }}>
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 whitespace-nowrap" style={{ backgroundColor: '#E63946' }}>
                     <span className="font-body text-xs font-bold text-white tracking-wider uppercase">Recommended</span>
                   </div>
-                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#C5A572' }}>Done-For-You</p>
+                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#C5A572' }}>Growth</p>
                   <p className="font-display text-3xl text-white">£15,000</p>
                   <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
+                  <p className="font-body text-xs mt-2" style={{ color: 'rgba(245,240,235,0.5)' }}>2–8 people</p>
                 </th>
               </tr>
             </thead>
@@ -695,10 +699,10 @@ function PricingSection() {
                     </tr>
                   );
                 }
-                const isDiyCheck = row.diy === '✔';
-                const isDfyCheck = row.dfy === '✔';
-                const isDiyX = row.diy === '✖';
-                const isDfyX = row.dfy === '✖';
+                const isDiyCheck = row.founder === '✔';
+                const isDfyCheck = row.growth === '✔';
+                const isDiyX = row.founder === '✖';
+                const isDfyX = row.growth === '✖';
                 return (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.04)' }}>
                     <td className="py-3 px-4 font-body text-sm" style={{ color: 'rgba(245,240,235,0.7)' }}>{row.label}</td>
@@ -708,7 +712,7 @@ function PricingSection() {
                       ) : isDiyX ? (
                         <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.2)' }}>—</span>
                       ) : (
-                        <span className="font-body text-xs" style={{ color: 'rgba(245,240,235,0.5)' }}>{row.diy}</span>
+                        <span className="font-body text-xs" style={{ color: 'rgba(245,240,235,0.5)' }}>{row.founder}</span>
                       )}
                     </td>
                     <td className="py-3 px-4 text-center border-x" style={{ borderColor: 'rgba(197,165,114,0.15)' }}>
@@ -717,7 +721,7 @@ function PricingSection() {
                       ) : isDfyX ? (
                         <span className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.2)' }}>—</span>
                       ) : (
-                        <span className="font-body text-xs font-semibold" style={{ color: '#C5A572' }}>{row.dfy}</span>
+                        <span className="font-body text-xs font-semibold" style={{ color: '#C5A572' }}>{row.growth}</span>
                       )}
                     </td>
                   </tr>
@@ -733,7 +737,7 @@ function PricingSection() {
         <div className="max-w-4xl mx-auto scroll-reveal">
           <div className="text-center mb-12">
             <h3 className="font-display text-2xl md:text-3xl text-white mb-4">
-              What the Done-For-You Package Looks Like
+              What the Programme Looks Like
             </h3>
             <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
               12 weeks of hands-on support. Everything built, customised, and coached into your business.
@@ -772,7 +776,7 @@ function PricingSection() {
               </div>
             </div>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              Need to embed the Sync Selling System across your entire sales team? This is a fully bespoke engagement built around your business, your people, and your goals. Every engagement is scoped individually.
+              For teams of 8 or more, or businesses that need a fully bespoke engagement. Built around your business, your people, and your goals. Every engagement is scoped individually.
             </p>
             <a
               href="https://app.revitk.com/widget/bookings/syncselling"
