@@ -383,7 +383,7 @@ export default function Learn() {
     }
     meta.setAttribute("content", "noindex, nofollow");
 
-    document.title = "Before You Book — Revitk";
+    document.title = "Should I Book A Call? — Revitk";
 
     return () => {
       meta?.setAttribute("content", "");
@@ -398,15 +398,16 @@ export default function Learn() {
       <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
         <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Before You{" "}
+            Should I Book A{" "}
             <span className="italic" style={{ color: "#C5A572" }}>
-              Book
+              Call?
             </span>
           </h1>
-          <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 max-w-2xl mx-auto mb-8">
-            Everything you need to know about how we work, what it costs, and
-            whether it's right for you. Watch the videos. Read the answers. Then
-            decide.
+          <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 max-w-2xl mx-auto mb-4">
+            Of course you want to close more sales. But are we the right partner for you?
+          </p>
+          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/60 max-w-2xl mx-auto mb-8">
+            Below is everything you need to know about Sync Selling. How we work, what it costs, and whether it will work for your business. Watch the videos. Read the answers. Then decide.
           </p>
           <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-12" />
 
