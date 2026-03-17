@@ -21,21 +21,9 @@ const heroVideo = {
 const videoFaqs: VideoFAQ[] = [
   {
     question: "What Happens On The Call?",
-    wistiaId: "qvwddctrhd",
-    aspect: "landscape",
+    wistiaId: "y0qkdxikwz",
+    aspect: "portrait",
     answer: [],
-  },
-  {
-    question: "What is Sync Selling?",
-    wistiaId: "qvwddctrhd",
-    aspect: "landscape",
-    answer: [
-      "Most sales programmes teach you what to say on a call. That's 20% of the problem.",
-      "The other 80% is everything your prospect sees, hears, and reads between conversations. The proposals. The follow-up emails. The assets they share internally. How decisions get made when you're not in the room.",
-      "Sync Selling is the only sales methodology that covers everything you say, send, and show to a prospect — from first contact to signed contract. Built over 25 years. Refined with 300+ founders. £185M in client outcomes.",
-      "What makes it different is the technology layer that runs underneath it. Sync Selling AI sits alongside every part of the process — the assets it builds, the coaching it delivers, the visibility it gives you. Every email, every proposal, every conversation. It tells you what's working, what's at risk, and exactly what to do next.",
-      "A complete sales system backed by an AI companion that works with you permanently. Not just for 90 days.",
-    ],
   },
   {
     question: "Will This Work For My Business?",
@@ -47,6 +35,18 @@ const videoFaqs: VideoFAQ[] = [
       "It probably isn't right if the majority of your revenue is e-commerce, you sell low-margin products, or you resell other people's products.",
       "To get the most from the programme you need to be having regular sales conversations, or be about to invest in lead generation or a salesperson. If you're about to spend money on leads or hiring, now is exactly the right time. Getting the process right first means neither gets wasted.",
       "We don't generate leads. We make your conversations convert. If you're not sure whether you're the right fit, book a call. You'll know within 10 minutes.",
+    ],
+  },
+  {
+    question: "What is Sync Selling?",
+    wistiaId: "zfwiqkw1tc",
+    aspect: "portrait",
+    answer: [
+      "Most sales programmes teach you what to say on a call. That's 20% of the problem.",
+      "The other 80% is everything your prospect sees, hears, and reads between conversations. The proposals. The follow-up emails. The assets they share internally. How decisions get made when you're not in the room.",
+      "Sync Selling is the only sales methodology that covers everything you say, send, and show to a prospect — from first contact to signed contract. Built over 25 years. Refined with 300+ founders. £185M in client outcomes.",
+      "What makes it different is the technology layer that runs underneath it. Sync Selling AI sits alongside every part of the process — the assets it builds, the coaching it delivers, the visibility it gives you. Every email, every proposal, every conversation. It tells you what's working, what's at risk, and exactly what to do next.",
+      "A complete sales system backed by an AI companion that works with you permanently. Not just for 90 days.",
     ],
   },
   {
