@@ -22,13 +22,13 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "What Happens On The Call?",
     wistiaId: "y0qkdxikwz",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [],
   },
   {
     question: "Will This Work For My Business?",
     wistiaId: "qvwddctrhd",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "Sync Selling works for B2B and B2C businesses that sell over the phone, on Zoom, or in person. Consultancies, agencies, service businesses, SaaS, technical, industrial, niche, and high-ticket. If you're selling to sophisticated buyers and deals involve conversations, this was built for you.",
       "It works whether you're a founder doing the sales yourself or managing a sales team.",
@@ -40,7 +40,7 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "What is Sync Selling?",
     wistiaId: "zfwiqkw1tc",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "Most sales programmes teach you what to say on a call. That's 20% of the problem.",
       "The other 80% is everything your prospect sees, hears, and reads between conversations. The proposals. The follow-up emails. The assets they share internally. How decisions get made when you're not in the room.",
@@ -52,7 +52,7 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "Who Are You and Why Should I Listen?",
     wistiaId: "w34zme05l6",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "My name is Joe Milnes. I'm the founder of Revitk.",
       "I've spent 25 years obsessing over one problem: why deals don't close. Not leads. Not branding. Not strategy decks. The specific moment where a qualified prospect goes quiet, ghosts, stalls, or says they need to think about it.",
@@ -64,7 +64,7 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "What Do You Do?",
     wistiaId: "pn2kmih97k",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "We build your complete sales system in 90 days.",
       "It starts with a 90-minute onboarding workshop where we extract everything we need. Then we build everything: scripts, discovery frameworks, proposal templates, follow-up sequences, objection handling playbooks. Built for your business, handed to you to review, yours to keep forever.",
@@ -76,7 +76,7 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "How Much Does It Cost?",
     wistiaId: "3jud616vp2",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "The first step is free. You get a full diagnostic workshop — normally £3,500 — at no charge. You see exactly how we think, where the bottlenecks are, and what your new process would look like before you spend a penny.",
       "If you want to continue, full programmes run for three months. The entry programme starts at £7,500. Bespoke team engagements run to £25,000 and above depending on scope.",
@@ -87,7 +87,7 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "How Long Does It Take To Get Results?",
     wistiaId: "7w60usi946",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "Week one: you'll have things in your hands you can use immediately. On live calls. On deals sitting stalled in your pipeline right now.",
       "Month one: your core sales assets are built and in use.",
@@ -98,7 +98,7 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "How Much Of My Time Would It Take?",
     wistiaId: "5jf0o04l74",
-    aspect: "portrait",
+    aspect: "landscape",
     answer: [
       "We've designed this so we do the heavy lifting.",
       "It starts with one 90-minute onboarding session. That single call, combined with any existing sales and marketing materials you have, gives us everything we need to build your process. We build it. We pass it to you to review. You make final tweaks. The build phase is done.",
@@ -106,11 +106,9 @@ const videoFaqs: VideoFAQ[] = [
       "Some clients are heads-down and mostly self-sufficient, checking in when a deal needs a second opinion. Others want closer involvement throughout. The programme flexes to what you need.",
     ],
   },
-  {
-    question: "I've Tried Sales Training Before And It Didn't Work — Why Are You Different?",
+  {    question: "I've Tried Sales Training Before And It Didn't Work \u2014 Why Are You Different?",
     wistiaId: "w1yyc9hlrg",
-    aspect: "portrait",
-    answer: [
+    aspect: "landscape", answer: [
       "Most sales training fails for the same reason every time. It focuses on the hardest thing to change: human behaviour. You attend a workshop. You feel motivated. Three weeks later you're back to doing it the way you always did. Nothing changed because nothing was actually built.",
       "Sync Selling doesn't rely on behaviour change. We build a process that does the work. You don't need to become a better closer. You don't need to get comfortable with pressure tactics. Your team doesn't need a personality overhaul.",
       "80% of your sales results come from the process you take a prospect through — not the ability of the person running it. We focus on the 80%. We build it once and it works whether you're having a good day or a bad one, whether it's you on the call or someone you hired last month.",
