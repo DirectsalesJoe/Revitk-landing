@@ -15,6 +15,7 @@ import SalesFAQ from "./pages/SalesFAQ";
 import Articles from "./pages/Articles";
 import SalesProcessArticle from "./pages/SalesProcessArticle";
 import Venture from "./pages/Venture";
+import Learn from "./pages/Learn";
 
 function Router() {
   return (
@@ -35,6 +36,8 @@ function Router() {
       <Route path={"/proof"} component={Proof} />
       {/* Hidden Venture Community Accelerator page */}
       <Route path={"/venture"} component={Venture} />
+      {/* Hidden pre-booking page with video FAQs */}
+      <Route path={"/learn"} component={Learn} />
       {/* Legal pages */}
       <Route path={"/privacy"} component={Privacy} />
       <Route path={"/terms"} component={Terms} />
