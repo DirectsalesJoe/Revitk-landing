@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 
 const BOOKING_URL = "https://app.revitk.com/widget/bookings/syncselling";
@@ -8,27 +8,13 @@ const BOOKING_URL = "https://app.revitk.com/widget/bookings/syncselling";
 interface VideoFAQ {
   question: string;
   wistiaId: string;
-  /** portrait = vertical video (9:16), landscape = standard (16:9) */
-  aspect: "landscape" | "portrait";
   answer: string[];
 }
 
-const heroVideo = {
-  wistiaId: "yys95fb9p3",
-  aspect: "landscape" as const,
-};
-
 const videoFaqs: VideoFAQ[] = [
-  {
-    question: "What Happens On The Call?",
-    wistiaId: "y0qkdxikwz",
-    aspect: "landscape",
-    answer: [],
-  },
   {
     question: "Will This Work For My Business?",
     wistiaId: "qvwddctrhd",
-    aspect: "landscape",
     answer: [
       "Sync Selling works for B2B and B2C businesses that sell over the phone, on Zoom, or in person. Consultancies, agencies, service businesses, SaaS, technical, industrial, niche, and high-ticket. If you're selling to sophisticated buyers and deals involve conversations, this was built for you.",
       "It works whether you're a founder doing the sales yourself or managing a sales team.",
@@ -40,7 +26,6 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "What is Sync Selling?",
     wistiaId: "zfwiqkw1tc",
-    aspect: "landscape",
     answer: [
       "Most sales programmes teach you what to say on a call. That's 20% of the problem.",
       "The other 80% is everything your prospect sees, hears, and reads between conversations. The proposals. The follow-up emails. The assets they share internally. How decisions get made when you're not in the room.",
@@ -52,7 +37,6 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "Who Are You and Why Should I Listen?",
     wistiaId: "w34zme05l6",
-    aspect: "landscape",
     answer: [
       "My name is Joe Milnes. I'm the founder of Revitk.",
       "I've spent 25 years obsessing over one problem: why deals don't close. Not leads. Not branding. Not strategy decks. The specific moment where a qualified prospect goes quiet, ghosts, stalls, or says they need to think about it.",
@@ -64,7 +48,6 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "What Do You Do?",
     wistiaId: "pn2kmih97k",
-    aspect: "landscape",
     answer: [
       "We build your complete sales system in 90 days.",
       "It starts with a 90-minute onboarding workshop where we extract everything we need. Then we build everything: scripts, discovery frameworks, proposal templates, follow-up sequences, objection handling playbooks. Built for your business, handed to you to review, yours to keep forever.",
@@ -76,7 +59,6 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "How Much Does It Cost?",
     wistiaId: "3jud616vp2",
-    aspect: "landscape",
     answer: [
       "The first step is free. You get a full diagnostic workshop — normally £3,500 — at no charge. You see exactly how we think, where the bottlenecks are, and what your new process would look like before you spend a penny.",
       "If you want to continue, full programmes run for three months. The entry programme starts at £7,500. Bespoke team engagements run to £25,000 and above depending on scope.",
@@ -87,7 +69,6 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "How Long Does It Take To Get Results?",
     wistiaId: "7w60usi946",
-    aspect: "landscape",
     answer: [
       "Week one: you'll have things in your hands you can use immediately. On live calls. On deals sitting stalled in your pipeline right now.",
       "Month one: your core sales assets are built and in use.",
@@ -98,7 +79,6 @@ const videoFaqs: VideoFAQ[] = [
   {
     question: "How Much Of My Time Would It Take?",
     wistiaId: "5jf0o04l74",
-    aspect: "landscape",
     answer: [
       "We've designed this so we do the heavy lifting.",
       "It starts with one 90-minute onboarding session. That single call, combined with any existing sales and marketing materials you have, gives us everything we need to build your process. We build it. We pass it to you to review. You make final tweaks. The build phase is done.",
@@ -106,9 +86,10 @@ const videoFaqs: VideoFAQ[] = [
       "Some clients are heads-down and mostly self-sufficient, checking in when a deal needs a second opinion. Others want closer involvement throughout. The programme flexes to what you need.",
     ],
   },
-  {    question: "I've Tried Sales Training Before And It Didn't Work \u2014 Why Are You Different?",
+  {
+    question: "I've Tried Sales Training Before And It Didn't Work — Why Are You Different?",
     wistiaId: "w1yyc9hlrg",
-    aspect: "landscape", answer: [
+    answer: [
       "Most sales training fails for the same reason every time. It focuses on the hardest thing to change: human behaviour. You attend a workshop. You feel motivated. Three weeks later you're back to doing it the way you always did. Nothing changed because nothing was actually built.",
       "Sync Selling doesn't rely on behaviour change. We build a process that does the work. You don't need to become a better closer. You don't need to get comfortable with pressure tactics. Your team doesn't need a personality overhaul.",
       "80% of your sales results come from the process you take a prospect through — not the ability of the person running it. We focus on the 80%. We build it once and it works whether you're having a good day or a bad one, whether it's you on the call or someone you hired last month.",
@@ -131,44 +112,16 @@ function useWistia() {
 }
 
 /* ─── WISTIA VIDEO COMPONENT ─── */
-function WistiaVideo({
-  mediaId,
-  aspect,
-}: {
-  mediaId: string;
-  aspect: "landscape" | "portrait";
-}) {
+function WistiaVideo({ mediaId }: { mediaId: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load the embed script for this specific video
     const s = document.createElement("script");
     s.src = `https://fast.wistia.com/embed/${mediaId}.js`;
     s.async = true;
     s.type = "module";
     document.head.appendChild(s);
   }, [mediaId]);
-
-  if (aspect === "portrait") {
-    return (
-      <div className="flex justify-center">
-        <div className="w-full max-w-[360px]">
-          <div
-            ref={containerRef}
-            className="relative rounded-lg overflow-hidden bg-[#0F1923]"
-            style={{ paddingTop: "177.78%" }}
-          >
-            <div
-              className="absolute inset-0"
-              dangerouslySetInnerHTML={{
-                __html: `<wistia-player media-id="${mediaId}" aspect="0.5625" style="width:100%;height:100%;position:absolute;top:0;left:0;"></wistia-player>`,
-              }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div
@@ -186,51 +139,29 @@ function WistiaVideo({
   );
 }
 
-/* ─── FAQ ACCORDION ITEM ─── */
-function VideoFAQItem({ item, index }: { item: VideoFAQ; index: number }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+/* ─── INLINE VIDEO FAQ BLOCK ─── */
+function VideoFAQBlock({ item }: { item: VideoFAQ }) {
   return (
-    <div
-      className={`border border-white/10 rounded-lg overflow-hidden transition-all ${
-        isOpen ? "bg-[#0F1923]/50" : "bg-transparent hover:bg-[#0F1923]/30"
-      }`}
-    >
-      <button
-        className="w-full px-6 py-6 flex items-center justify-between text-left"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="flex items-center gap-4">
-          <span className="text-[#C5A572] font-[family-name:var(--font-display)] text-lg font-bold flex-shrink-0">
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="font-[family-name:var(--font-display)] text-lg md:text-xl font-bold text-white">
-            {item.question}
-          </span>
-        </div>
-        <span className="text-2xl text-[#C5A572] flex-shrink-0 ml-4">
-          {isOpen ? "\u2212" : "+"}
-        </span>
-      </button>
+    <div className="space-y-6">
+      {/* Question heading */}
+      <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-white">
+        {item.question}
+      </h2>
 
-      {isOpen && (
-        <div className="px-6 pb-8 space-y-8">
-          {/* Video */}
-          <WistiaVideo mediaId={item.wistiaId} aspect={item.aspect} />
+      {/* Video */}
+      <WistiaVideo mediaId={item.wistiaId} />
 
-          {/* Written answer */}
-          {item.answer.length > 0 && (
-            <div className="space-y-4 pt-4 border-t border-white/5">
-              {item.answer.map((p, j) => (
-                <p
-                  key={j}
-                  className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/70 leading-relaxed"
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
-          )}
+      {/* Written answer */}
+      {item.answer.length > 0 && (
+        <div className="space-y-4">
+          {item.answer.map((p, j) => (
+            <p
+              key={j}
+              className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/70 leading-relaxed"
+            >
+              {p}
+            </p>
+          ))}
         </div>
       )}
     </div>
@@ -239,7 +170,6 @@ function VideoFAQItem({ item, index }: { item: VideoFAQ; index: number }) {
 
 /* ─── NAVIGATION BAR ─── */
 function NavBar() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav className="sticky top-0 z-50 bg-[#0F1923]/95 backdrop-blur-sm border-b border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -272,61 +202,7 @@ function NavBar() {
             Book a Call
           </a>
         </div>
-        <button
-          className="md:hidden text-[#F5F0EB]"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {menuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
       </div>
-      {menuOpen && (
-        <div className="md:hidden bg-[#0F1923] border-t border-white/10 px-6 pb-4 flex flex-col gap-4">
-          <Link
-            href="/"
-            className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm"
-            onClick={() => setMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/offer"
-            className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm"
-            onClick={() => setMenuOpen(false)}
-          >
-            The Programme
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#E63946] text-white font-[family-name:var(--font-body)] font-medium text-sm px-5 py-2.5 rounded text-center"
-          >
-            Book a Call
-          </a>
-        </div>
-      )}
     </nav>
   );
 }
@@ -396,7 +272,7 @@ export default function Learn() {
 
       {/* Hero */}
       <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
-        <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
+        <div className="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
             Should I Book A{" "}
             <span className="italic" style={{ color: "#C5A572" }}>
@@ -406,37 +282,18 @@ export default function Learn() {
           <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 max-w-2xl mx-auto mb-4">
             Of course you want to close more sales. But are we the right partner for you?
           </p>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/60 max-w-2xl mx-auto mb-8">
+          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/60 max-w-2xl mx-auto">
             Below is everything you need to know about Sync Selling. How we work, what it costs, and whether it will work for your business. Watch the videos. Read the answers. Then decide.
           </p>
-          <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-12" />
-
-          {/* Main hero video */}
-          <div className="max-w-3xl mx-auto">
-            <WistiaVideo
-              mediaId={heroVideo.wistiaId}
-              aspect={heroVideo.aspect}
-            />
-          </div>
         </div>
       </section>
 
-      {/* Video FAQ Section */}
+      {/* Inline Video FAQ Sections */}
       <section className="bg-[#0F1923]">
         <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-white mb-4 text-center">
-            Your Questions,{" "}
-            <span className="italic" style={{ color: "#C5A572" }}>
-              Answered
-            </span>
-          </h2>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/60 mb-12 text-center max-w-xl mx-auto">
-            Tap any question to watch the video and read the full answer.
-          </p>
-
-          <div className="space-y-4">
+          <div className="space-y-20">
             {videoFaqs.map((item, i) => (
-              <VideoFAQItem key={i} item={item} index={i} />
+              <VideoFAQBlock key={i} item={item} />
             ))}
           </div>
         </div>
