@@ -12,11 +12,7 @@ import {
   ChevronDown,
   Shield,
   Quote,
-  BookOpen,
-  Bot,
-  Users,
   CheckCircle2,
-  MessageCircle,
 } from 'lucide-react';
 
 // ─── Hero Section ──────────────────────────────────────────────────
@@ -35,7 +31,6 @@ function HeroSection() {
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(11,17,32,0.9), rgba(11,17,32,0.7), rgba(11,17,32,1))' }} />
 
       <div className="relative z-10 container mx-auto px-4 py-24 md:py-32">
-        {/* Nav */}
         <div className="absolute top-0 left-0 right-0 py-6 px-4 md:px-8">
           <div className="container mx-auto flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -47,7 +42,6 @@ function HeroSection() {
         </div>
 
         <div className="max-w-4xl mt-16 md:mt-0">
-          {/* Exclusive badge */}
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '0.1s' }}>
             <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 border" style={{ borderColor: 'rgba(197,165,114,0.3)', backgroundColor: 'rgba(197,165,114,0.08)' }}>
               <Shield className="w-4 h-4" style={{ color: '#C5A572' }} />
@@ -91,7 +85,7 @@ function HeroSection() {
   );
 }
 
-// ─── The Problem Section (dark) ──────────────────────────────────
+// ─── The Problem Section ──────────────────────────────────────────
 
 function ProblemSection() {
   return (
@@ -116,13 +110,13 @@ function ProblemSection() {
   );
 }
 
-// ─── What You Get — 3 Simple Deliverables (dark) ─────────────────
+// ─── What You Get — Section Header ───────────────────────────────
 
-function WhatYouGetSection() {
+function WhatYouGetHeader() {
   return (
-    <section className="py-20 md:py-28 relative" style={{ backgroundColor: '#0B1120' }}>
+    <section className="pt-20 md:pt-28 pb-8 relative" style={{ backgroundColor: '#0B1120' }}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 scroll-reveal">
+        <div className="text-center scroll-reveal">
           <p className="font-body text-sm tracking-[0.2em] uppercase mb-4" style={{ color: '#E63946' }}>
             Everything Included
           </p>
@@ -134,58 +128,194 @@ function WhatYouGetSection() {
             Venture Community Accelerator members get access to the full Sync Selling Programme — the same system used by 300+ B2B founders generating £185M+ in revenue.
           </p>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        {/* Four deliverables */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto scroll-reveal">
-          {/* 1. Workshop */}
-          <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
-            <Users className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
-            <h3 className="font-display text-xl text-white mb-3">1-Hour Workshop</h3>
-            <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
+// ─── Deliverable 1: 1-Hour Workshop ──────────────────────────────
+
+function WorkshopDeliverable() {
+  return (
+    <section className="py-16 md:py-24 relative" style={{ backgroundColor: '#0B1120' }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center scroll-reveal">
+          <div>
+            <p className="font-body text-xs tracking-[0.2em] uppercase mb-3" style={{ color: '#C5A572' }}>Deliverable 01</p>
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">1-Hour Workshop</h3>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
               One-on-one with Joe Milnes. We diagnose your sales process, identify the gaps, and build your action plan. You walk out knowing exactly what to do.
             </p>
+            <div className="flex items-start gap-3">
+              <div className="w-1 h-full min-h-[40px] flex-shrink-0" style={{ backgroundColor: '#E63946' }} />
+              <p className="font-body text-sm italic" style={{ color: 'rgba(245,240,235,0.5)' }}>
+                Most founders spend months guessing. This gives you clarity in 60 minutes.
+              </p>
+            </div>
           </div>
-
-          {/* 2. Playbooks */}
-          <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
-            <BookOpen className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
-            <h3 className="font-display text-xl text-white mb-3">Up to 5 Playbooks</h3>
-            <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              The playbooks you actually need — chosen based on your stage, your market, and your gaps. Discovery, outreach, proposals, objection handling, lead nurture. No filler.
-            </p>
+          <div className="relative">
+            <img
+              src={IMAGES.diagnosticWorkshopScene}
+              alt="Workshop with Joe Milnes"
+              className="w-full rounded-sm border"
+              style={{ borderColor: 'rgba(197,165,114,0.15)' }}
+            />
           </div>
-
-          {/* 3. Group Calls */}
-          <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
-            <MessageCircle className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
-            <h3 className="font-display text-xl text-white mb-3">2x Group Calls Per Week</h3>
-            <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              Bring your real deals, your real questions, your real scenarios. Get answers and coaching live from Joe and the wider cohort.
-            </p>
-          </div>
-
-          {/* 4. AI Tools */}
-          <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
-            <Bot className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
-            <h3 className="font-display text-xl text-white mb-3">AI Sales Tools</h3>
-            <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              Write proposals, review sales calls, identify deal risk, draft follow-up emails. Purpose-built AI agents trained on the Sync Selling methodology.
-            </p>
-          </div>
-        </div>
-
-        {/* Simple summary line */}
-        <div className="text-center mt-12 scroll-reveal">
-          <p className="font-body text-sm" style={{ color: 'rgba(245,240,235,0.4)' }}>
-            Everything you need to build your sales engine. Nothing you don't.
-          </p>
         </div>
       </div>
     </section>
   );
 }
 
-// ─── Case Study Section (slightly lighter dark) ──────────────────
+// ─── Deliverable 2: Up to 5 Playbooks ───────────────────────────
+
+function PlaybooksDeliverable() {
+  return (
+    <section className="py-16 md:py-24 relative" style={{ backgroundColor: '#0F1923' }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center scroll-reveal">
+          <div className="order-2 md:order-1">
+            <img
+              src={IMAGES.playbookCollection}
+              alt="Sales Playbook Collection"
+              className="w-full rounded-sm border"
+              style={{ borderColor: 'rgba(197,165,114,0.15)' }}
+            />
+          </div>
+          <div className="order-1 md:order-2">
+            <p className="font-body text-xs tracking-[0.2em] uppercase mb-3" style={{ color: '#C5A572' }}>Deliverable 02</p>
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">Up to 5 Playbooks</h3>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              The playbooks you actually need — chosen based on your stage, your market, and your gaps. Discovery, outreach, proposals, objection handling, lead nurture. No filler.
+            </p>
+            <div className="flex items-start gap-3">
+              <div className="w-1 h-full min-h-[40px] flex-shrink-0" style={{ backgroundColor: '#E63946' }} />
+              <p className="font-body text-sm italic" style={{ color: 'rgba(245,240,235,0.5)' }}>
+                Each playbook is built for your business. Not generic templates.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Deliverable 3: 20 Hours of Masterclass Sales Webinars ──────
+
+function MasterclassDeliverable() {
+  return (
+    <section className="py-16 md:py-24 relative" style={{ backgroundColor: '#0B1120' }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center scroll-reveal">
+          <div>
+            <p className="font-body text-xs tracking-[0.2em] uppercase mb-3" style={{ color: '#C5A572' }}>Deliverable 03</p>
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">20 Hours of Masterclass Sales Webinars</h3>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              20 recorded masterclasses covering every stage of the sales process. Discovery, cold calling, objection handling, closing, negotiation, pipeline management, and more. Watch on your schedule.
+            </p>
+            <div className="flex items-start gap-3">
+              <div className="w-1 h-full min-h-[40px] flex-shrink-0" style={{ backgroundColor: '#E63946' }} />
+              <p className="font-body text-sm italic" style={{ color: 'rgba(245,240,235,0.5)' }}>
+                The same training library used by every Sync Selling client.
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src={IMAGES.trainingThumbnails}
+              alt="20 Masterclass Sales Webinars"
+              className="w-full rounded-sm border"
+              style={{ borderColor: 'rgba(197,165,114,0.15)' }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Deliverable 4: Weekly Growth Coaching ──────────────────────
+
+function CoachingDeliverable() {
+  return (
+    <section className="py-16 md:py-24 relative" style={{ backgroundColor: '#0F1923' }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center scroll-reveal">
+          <div className="order-2 md:order-1">
+            <img
+              src={IMAGES.webinarMasterclass}
+              alt="Weekly Group Coaching Calls"
+              className="w-full rounded-sm border"
+              style={{ borderColor: 'rgba(197,165,114,0.15)' }}
+            />
+          </div>
+          <div className="order-1 md:order-2">
+            <p className="font-body text-xs tracking-[0.2em] uppercase mb-3" style={{ color: '#C5A572' }}>Deliverable 04</p>
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">Weekly Growth Coaching</h3>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              2x group calls per week. Bring your real deals, your real questions, your real scenarios. Get answers and coaching live from Joe and the wider cohort.
+            </p>
+            <div className="flex items-start gap-3">
+              <div className="w-1 h-full min-h-[40px] flex-shrink-0" style={{ backgroundColor: '#E63946' }} />
+              <p className="font-body text-sm italic" style={{ color: 'rgba(245,240,235,0.5)' }}>
+                You are never stuck. Every week, you have access to live coaching.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Deliverable 5: AI Sales Tools ──────────────────────────────
+
+function AIToolsDeliverable() {
+  return (
+    <section className="py-16 md:py-24 relative" style={{ backgroundColor: '#0B1120' }}>
+      <div className="container mx-auto px-4">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center scroll-reveal">
+          <div>
+            <p className="font-body text-xs tracking-[0.2em] uppercase mb-3" style={{ color: '#C5A572' }}>Deliverable 05</p>
+            <h3 className="font-display text-2xl md:text-3xl text-white mb-4">AI Sales Tools</h3>
+            <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(245,240,235,0.7)' }}>
+              Write proposals, review sales calls, identify deal risk, draft follow-up emails. Purpose-built AI agents trained on the Sync Selling methodology.
+            </p>
+            <div className="flex items-start gap-3">
+              <div className="w-1 h-full min-h-[40px] flex-shrink-0" style={{ backgroundColor: '#E63946' }} />
+              <p className="font-body text-sm italic" style={{ color: 'rgba(245,240,235,0.5)' }}>
+                Your sales team in your pocket. Available 24/7.
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <img
+              src={IMAGES.aiDashboard}
+              alt="AI Sales Tools Dashboard"
+              className="w-full rounded-sm border"
+              style={{ borderColor: 'rgba(197,165,114,0.15)' }}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Divider ─────────────────────────────────────────────────────
+
+function GoldDivider() {
+  return (
+    <div style={{ backgroundColor: '#0B1120' }}>
+      <div className="container mx-auto px-4">
+        <div className="w-full h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(197,165,114,0.4), transparent)' }} />
+      </div>
+    </div>
+  );
+}
+
+// ─── Case Study Section ──────────────────────────────────────────
 
 function CaseStudySection() {
   return (
@@ -201,7 +331,6 @@ function CaseStudySection() {
           </h2>
         </div>
 
-        {/* Video Embed */}
         <div className="max-w-3xl mx-auto mb-14 scroll-reveal">
           <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
             <iframe
@@ -214,7 +343,6 @@ function CaseStudySection() {
           </div>
         </div>
 
-        {/* Two key quotes only */}
         <div className="max-w-3xl mx-auto space-y-6 scroll-reveal">
           <div className="p-6 border-l-2" style={{ borderColor: '#C5A572', backgroundColor: 'rgba(26,34,51,0.3)' }}>
             <Quote className="w-5 h-5 mb-3" style={{ color: 'rgba(197,165,114,0.4)' }} />
@@ -241,15 +369,15 @@ function CaseStudySection() {
   );
 }
 
-// ─── Value Summary (dark) ────────────────────────────────────────
+// ─── Value Summary ───────────────────────────────────────────────
 
 function ValueSummarySection() {
   const items = [
     { item: '1-Hour Diagnostic Workshop (1-on-1 with Joe)', value: '£1,500' },
     { item: 'Up to 5 Sales Playbooks (tailored to your stage)', value: '£4,500' },
-    { item: 'Training Videos for Each Playbook', value: '£500' },
+    { item: '20 Hours of Masterclass Sales Webinars', value: '£1,000' },
+    { item: 'Weekly Growth Coaching (2x group calls per week)', value: '£2,000' },
     { item: 'AI Sales Tools (proposals, call reviews, deal risk, emails)', value: '£500' },
-    { item: 'Access to Weekly Group Calls', value: '£1,000' },
   ];
 
   return (
@@ -265,7 +393,6 @@ function ValueSummarySection() {
             </h2>
           </div>
 
-          {/* Value Stack Table */}
           <div className="border overflow-hidden mb-8" style={{ borderColor: 'rgba(197,165,114,0.15)', backgroundColor: 'rgba(26,34,51,0.3)' }}>
             <div className="p-4 flex justify-between items-center" style={{ backgroundColor: 'rgba(197,165,114,0.1)' }}>
               <span className="font-body text-sm font-semibold text-white tracking-wider uppercase">What You Get</span>
@@ -282,7 +409,7 @@ function ValueSummarySection() {
             ))}
             <div className="p-6 text-center" style={{ backgroundColor: 'rgba(230,57,70,0.08)' }}>
               <p className="font-body text-xs mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Total standard value</p>
-              <p className="font-display text-2xl mb-3" style={{ color: 'rgba(245,240,235,0.4)', textDecoration: 'line-through', textDecorationColor: '#E63946' }}>£8,000+</p>
+              <p className="font-display text-2xl mb-3" style={{ color: 'rgba(245,240,235,0.4)', textDecoration: 'line-through', textDecorationColor: '#E63946' }}>£9,500+</p>
               <p className="font-body text-sm font-semibold" style={{ color: '#E63946' }}>Over 90% off — exclusive to Venture Community Accelerator members</p>
             </div>
           </div>
@@ -292,7 +419,7 @@ function ValueSummarySection() {
   );
 }
 
-// ─── About Joe (dark) ────────────────────────────────────────────
+// ─── About Joe ───────────────────────────────────────────────────
 
 function AboutSection() {
   return (
@@ -329,7 +456,7 @@ function AboutSection() {
   );
 }
 
-// ─── CTA Section (dark) ──────────────────────────────────────────
+// ─── CTA Section ─────────────────────────────────────────────────
 
 function CTASection() {
   return (
@@ -361,7 +488,7 @@ function CTASection() {
   );
 }
 
-// ─── Footer ────────────────────────────────────────────────────────
+// ─── Footer ──────────────────────────────────────────────────────
 
 function Footer() {
   return (
@@ -382,7 +509,7 @@ function Footer() {
   );
 }
 
-// ─── Main Page ─────────────────────────────────────────────────────
+// ─── Main Page ───────────────────────────────────────────────────
 
 export default function Venture() {
   const scrollRef = useScrollAnimation();
@@ -390,7 +517,13 @@ export default function Venture() {
     <div ref={scrollRef} className="min-h-screen" style={{ backgroundColor: '#0B1120' }}>
       <HeroSection />
       <ProblemSection />
-      <WhatYouGetSection />
+      <WhatYouGetHeader />
+      <WorkshopDeliverable />
+      <PlaybooksDeliverable />
+      <MasterclassDeliverable />
+      <CoachingDeliverable />
+      <AIToolsDeliverable />
+      <GoldDivider />
       <CaseStudySection />
       <ValueSummarySection />
       <AboutSection />
