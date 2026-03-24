@@ -16,6 +16,7 @@ import {
   Bot,
   Users,
   CheckCircle2,
+  MessageCircle,
 } from 'lucide-react';
 
 // ─── Hero Section ──────────────────────────────────────────────────
@@ -134,8 +135,8 @@ function WhatYouGetSection() {
           </p>
         </div>
 
-        {/* Three deliverables */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto scroll-reveal">
+        {/* Four deliverables */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto scroll-reveal">
           {/* 1. Workshop */}
           <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
             <Users className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
@@ -154,7 +155,16 @@ function WhatYouGetSection() {
             </p>
           </div>
 
-          {/* 3. AI Tools */}
+          {/* 3. Group Calls */}
+          <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
+            <MessageCircle className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
+            <h3 className="font-display text-xl text-white mb-3">2x Group Calls Per Week</h3>
+            <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(245,240,235,0.6)' }}>
+              Bring your real deals, your real questions, your real scenarios. Get answers and coaching live from Joe and the wider cohort.
+            </p>
+          </div>
+
+          {/* 4. AI Tools */}
           <div className="p-8 border text-center" style={{ backgroundColor: 'rgba(26,34,51,0.5)', borderColor: 'rgba(197,165,114,0.15)' }}>
             <Bot className="w-10 h-10 mx-auto mb-5" style={{ color: '#C5A572' }} />
             <h3 className="font-display text-xl text-white mb-3">AI Sales Tools</h3>
