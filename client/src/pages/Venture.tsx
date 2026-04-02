@@ -373,11 +373,11 @@ function CaseStudySection() {
 
 function ValueSummarySection() {
   const items = [
-    { item: '1-Hour Diagnostic Workshop (1-on-1 with Joe)', value: '£1,500' },
-    { item: 'Up to 5 Sales Playbooks (tailored to your stage)', value: '£4,500' },
-    { item: '20 Hours of Masterclass Sales Webinars', value: '£1,000' },
-    { item: 'Weekly Growth Coaching (2x group calls per week)', value: '£2,000' },
-    { item: 'AI Sales Tools (proposals, call reviews, deal risk, emails)', value: '£500' },
+    '1-Hour Diagnostic Workshop (1-on-1 with Joe)',
+    'Up to 5 Sales Playbooks (tailored to your stage)',
+    '20 Hours of Masterclass Sales Webinars',
+    'Weekly Growth Coaching (2x group calls per week)',
+    'AI Sales Tools (proposals, call reviews, deal risk, emails)',
   ];
 
   return (
@@ -389,29 +389,23 @@ function ValueSummarySection() {
               Available Through Your Venture Community Expert Add-Ons
             </p>
             <h2 className="font-display text-3xl md:text-5xl text-white mb-4 leading-tight">
-              Over <span className="italic" style={{ color: '#E63946' }}>90% off</span> the standard programme.
+              3 months of support.
             </h2>
+            <p className="font-display text-4xl md:text-6xl text-white mb-6">
+              <span className="italic" style={{ color: '#E63946' }}>1.5 days of credits.</span>
+            </p>
           </div>
 
           <div className="border overflow-hidden mb-8" style={{ borderColor: 'rgba(197,165,114,0.15)', backgroundColor: 'rgba(26,34,51,0.3)' }}>
-            <div className="p-4 flex justify-between items-center" style={{ backgroundColor: 'rgba(197,165,114,0.1)' }}>
-              <span className="font-body text-sm font-semibold text-white tracking-wider uppercase">What You Get</span>
-              <span className="font-body text-sm font-semibold tracking-wider uppercase" style={{ color: '#C5A572' }}>Standard Value</span>
+            <div className="p-4" style={{ backgroundColor: 'rgba(197,165,114,0.1)' }}>
+              <span className="font-body text-sm font-semibold text-white tracking-wider uppercase">Everything Included</span>
             </div>
-            {items.map((row, i) => (
-              <div key={i} className="flex justify-between items-start p-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
-                <div className="flex items-start gap-3 flex-1 pr-4">
-                  <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#E63946' }} />
-                  <span className="font-body text-sm text-white">{row.item}</span>
-                </div>
-                <span className="font-body text-sm font-semibold whitespace-nowrap" style={{ color: 'rgba(245,240,235,0.35)', textDecoration: 'line-through' }}>{row.value}</span>
+            {items.map((item, i) => (
+              <div key={i} className="flex items-start gap-3 p-4 border-b" style={{ borderColor: 'rgba(255,255,255,0.05)' }}>
+                <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: '#E63946' }} />
+                <span className="font-body text-sm text-white">{item}</span>
               </div>
             ))}
-            <div className="p-6 text-center" style={{ backgroundColor: 'rgba(230,57,70,0.08)' }}>
-              <p className="font-body text-xs mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Total standard value</p>
-              <p className="font-display text-2xl mb-3" style={{ color: 'rgba(245,240,235,0.4)', textDecoration: 'line-through', textDecorationColor: '#E63946' }}>£9,500+</p>
-              <p className="font-body text-sm font-semibold" style={{ color: '#E63946' }}>Over 90% off — exclusive to Venture Community Accelerator members</p>
-            </div>
           </div>
         </div>
       </div>
