@@ -66,7 +66,7 @@ function HeroSection() {
 
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '0.7s' }}>
             <a
-              href="https://app.revitk.com/widget/bookings/syncselling"
+              href="https://app.revitk.com/widget/booking/bSmPMYL8QhG7ZDIwDmg9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-5 font-body font-semibold text-sm tracking-wider uppercase text-white transition-opacity hover:opacity-80"
@@ -468,7 +468,7 @@ function CTASection() {
             Book a workshop with Joe to get started.
           </p>
           <a
-            href="https://app.revitk.com/widget/bookings/syncselling"
+            href="https://app.revitk.com/widget/booking/bSmPMYL8QhG7ZDIwDmg9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-10 py-5 font-body font-semibold text-sm tracking-wider uppercase text-white transition-opacity hover:opacity-80"
@@ -476,6 +476,15 @@ function CTASection() {
           >
             Book Your Workshop
           </a>
+          <p className="mt-8">
+            <a
+              href="/answers"
+              className="font-body text-sm underline transition-opacity hover:opacity-70"
+              style={{ color: 'rgba(245,240,235,0.5)' }}
+            >
+              Want more info? Your questions answered here.
+            </a>
+          </p>
         </div>
       </div>
     </section>
