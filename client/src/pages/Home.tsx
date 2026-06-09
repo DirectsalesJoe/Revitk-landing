@@ -645,7 +645,7 @@ function PricingSection() {
     { label: 'Direct 1-on-1 Slack with Joe', founder: '✔', growth: '✔' },
     { label: 'Monthly Executive CEO Strategy Sessions', founder: '✔', growth: '✔' },
     { section: 'Team Workshops' },
-    { label: '3 Personalised Sales Workshops', founder: '✖', growth: '✔' },
+    { label: 'Monthly Workshops', founder: '✖', growth: '✔' },
   ];
 
   return (
@@ -671,20 +671,18 @@ function PricingSection() {
                 <th className="text-left p-4 font-body text-sm" style={{ color: 'rgba(245,240,235,0.4)', width: '40%' }}></th>
                 {/* Founder Package */}
                 <th className="p-4 text-center border" style={{ backgroundColor: 'rgba(26,34,51,0.3)', borderColor: 'rgba(255,255,255,0.08)', width: '30%' }}>
-                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Founder</p>
-                  <p className="font-display text-3xl text-white">£7,500</p>
+                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: 'rgba(245,240,235,0.5)' }}>Single Founders Discount</p>
+                  <p className="font-display text-3xl text-white">£9,000</p>
                   <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
-                  <p className="font-body text-xs mt-2" style={{ color: 'rgba(245,240,235,0.5)' }}>1–2 people</p>
                 </th>
-                {/* Growth Package */}
+                {/* Teams Package */}
                 <th className="relative p-4 text-center border-2" style={{ background: 'linear-gradient(135deg, rgba(26,34,51,0.5), rgba(26,34,51,0.3))', borderColor: 'rgba(197,165,114,0.4)', width: '30%' }}>
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 whitespace-nowrap" style={{ backgroundColor: '#E63946' }}>
                     <span className="font-body text-xs font-bold text-white tracking-wider uppercase">Recommended</span>
                   </div>
-                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#C5A572' }}>Growth</p>
-                  <p className="font-display text-3xl text-white">£15,000</p>
+                  <p className="font-body text-xs tracking-wider uppercase mb-2" style={{ color: '#C5A572' }}>Teams</p>
+                  <p className="font-display text-3xl text-white">£18,000</p>
                   <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
-                  <p className="font-body text-xs mt-2" style={{ color: 'rgba(245,240,235,0.5)' }}>2–8 people</p>
                 </th>
               </tr>
             </thead>
@@ -771,12 +769,12 @@ function PricingSection() {
                 <h3 className="font-display text-2xl md:text-3xl text-white">Team Implementation</h3>
               </div>
               <div className="text-left md:text-right">
-                <p className="font-display text-3xl md:text-4xl text-white">£25,000+</p>
+                <p className="font-display text-3xl md:text-4xl text-white">£18,000</p>
                 <p className="font-body text-xs mt-1" style={{ color: 'rgba(197,165,114,0.7)' }}>+ VAT</p>
               </div>
             </div>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: 'rgba(245,240,235,0.6)' }}>
-              For teams of 8 or more, or businesses that need a fully bespoke engagement. Built around your business, your people, and your goals. Every engagement is scoped individually.
+              For teams that need a fully bespoke engagement with monthly workshops. Built around your business, your people, and your goals. Every engagement is scoped individually.
             </p>
             <a
               href="https://app.revitk.com/widget/bookings/syncselling"
