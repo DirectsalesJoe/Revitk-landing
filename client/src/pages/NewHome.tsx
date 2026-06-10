@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { NavBar, Footer, BOOKING_URL } from "@/components/NavBar";
 
