@@ -239,24 +239,6 @@ ${faqEntities}
 }
 
 
-/* ─── BREADCRUMB ─── */
-function Breadcrumb() {
-  return (
-    <nav className="bg-[#0B1120] border-b border-white/5 py-3">
-      <div className="max-w-6xl mx-auto px-6">
-        <ol className="flex items-center gap-2 text-sm font-[family-name:var(--font-body)]">
-          <li>
-            <Link href="/" className="text-[#F5F0EB]/50 hover:text-[#C5A572]">
-              Home
-            </Link>
-          </li>
-          <li className="text-[#F5F0EB]/30">/</li>
-          <li className="text-[#C5A572]">Sales FAQs</li>
-        </ol>
-      </div>
-    </nav>
-  );
-}
 
 /* ─── FAQ ACCORDION COMPONENT ─── */
 function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
@@ -319,7 +301,6 @@ export default function SalesFAQ() {
     <>
       <SchemaInjection />
       <NavBar />
-      <Breadcrumb />
 
       {/* Hero */}
       <section className="bg-[#0B1120] border-t-4 border-[#E63946]">

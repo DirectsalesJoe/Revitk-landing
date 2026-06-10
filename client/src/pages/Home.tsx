@@ -878,16 +878,18 @@ function FAQSection() {
 export default function Home() {
   const scrollRef = useScrollAnimation();
   return (
-    <div ref={scrollRef} className="min-h-screen" style={{ backgroundColor: '#0B1120' }}>
+    <>
       <NavBar />
-      <HeroSection />
-      <PhaseOverview />
-      <Phase1Section />
-      <Phase2Section />
-      <Phase3Section />
-      <PricingSection />
-      <FAQSection />
+      <div ref={scrollRef} style={{ backgroundColor: '#0B1120' }}>
+        <HeroSection />
+        <PhaseOverview />
+        <Phase1Section />
+        <Phase2Section />
+        <Phase3Section />
+        <PricingSection />
+        <FAQSection />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
