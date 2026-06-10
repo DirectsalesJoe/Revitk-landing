@@ -1,11 +1,10 @@
-import { Header } from '@/components/legacy/Header';
 import { SocialProof } from '@/components/legacy/SocialProof';
-import { Footer } from '@/components/legacy/Footer';
+import { NavBar, Footer } from '@/components/NavBar';
 
 export default function Proof() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <NavBar />
       <SocialProof />
       <Footer />
     </div>

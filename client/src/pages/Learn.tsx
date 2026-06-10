@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-const BOOKING_URL = "https://app.revitk.com/widget/bookings/syncselling";
+import { NavBar, Footer, BOOKING_URL } from "@/components/NavBar";
 
 /* ─── VIDEO + FAQ DATA ─── */
 
@@ -168,82 +168,6 @@ function VideoFAQBlock({ item }: { item: VideoFAQ }) {
   );
 }
 
-/* ─── NAVIGATION BAR ─── */
-function NavBar() {
-  return (
-    <nav className="sticky top-0 z-50 bg-[#0F1923]/95 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/">
-          <img
-            src="/revitk-logo-white.png"
-            alt="Revitk"
-            className="h-12 w-auto cursor-pointer"
-          />
-        </Link>
-        <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/"
-            className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="/offer"
-            className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors"
-          >
-            The Programme
-          </Link>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#E63946] text-white font-[family-name:var(--font-body)] font-medium text-sm px-5 py-2.5 rounded hover:bg-[#d32f3c] transition-colors"
-          >
-            Book a Call
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-/* ─── FOOTER ─── */
-function Footer() {
-  return (
-    <footer className="bg-[#0B1120] py-12 border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <img
-          src="/revitk-logo-white.png"
-          alt="Revitk"
-          className="h-10 w-auto opacity-50"
-        />
-        <div className="flex gap-8">
-          <Link
-            href="/privacy"
-            className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="/terms"
-            className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]"
-          >
-            Terms & Conditions
-          </Link>
-          <a
-            href="mailto:joe@revitk.com"
-            className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572]"
-          >
-            Contact Us
-          </a>
-        </div>
-        <p className="text-[#F5F0EB]/30 text-xs">
-          &copy; {new Date().getFullYear()} Revitk. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
-}
 
 /* ─── PAGE ASSEMBLY ─── */
 export default function Learn() {

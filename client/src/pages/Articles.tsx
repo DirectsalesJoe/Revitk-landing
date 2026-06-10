@@ -4,8 +4,7 @@ import { Link } from 'wouter';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/card';
 import { Button } from '../components/ui/button';
 import { ArrowRight, Clock, Calendar, User } from 'lucide-react';
-import { NavBar } from './NewHome';
-import { Footer } from './NewHome';
+import { NavBar, Footer } from '@/components/NavBar';
 
 const articles = [
   {

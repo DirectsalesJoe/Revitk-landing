@@ -9,7 +9,7 @@
 import { IMAGES } from '@/lib/constants';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { useEffect, useState } from 'react';
-import { Link } from 'wouter';
+import { NavBar, Footer } from '@/components/NavBar';
 import {
   ChevronDown,
   Target,
@@ -63,19 +63,7 @@ function HeroSection() {
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(11,17,32,0.85), rgba(11,17,32,0.6), rgba(11,17,32,1))' }} />
 
       <div className="relative z-10 container mx-auto px-4 py-24 md:py-32">
-        {/* Nav */}
-        <div className="absolute top-0 left-0 right-0 py-6 px-4 md:px-8">
-          <div className="container mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="font-body text-lg font-bold tracking-[0.15em] text-white uppercase">REVITK</span>
-              <span style={{ color: 'rgba(197,165,114,0.6)' }}>|</span>
-              <span className="font-body text-sm tracking-wide" style={{ color: 'rgba(197,165,114,0.8)' }}>The Sync Selling System</span>
-            </div>
-            <Link href="/" className="font-body text-sm text-white hover:text-[#C5A572] transition-colors">← Back to Home</Link>
-          </div>
-        </div>
-
-        <div className="max-w-4xl mt-16 md:mt-0">
+        <div className="max-w-4xl">
           <div className="transition-all duration-700" style={{ opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(20px)', transitionDelay: '0.2s' }}>
             <p className="font-body text-sm md:text-base tracking-[0.2em] uppercase mb-6" style={{ color: '#C5A572' }}>
               The Sync Selling System
@@ -885,33 +873,13 @@ function FAQSection() {
   );
 }
 
-// ─── Footer ────────────────────────────────────────────────────────
-
-function Footer() {
-  return (
-    <footer className="py-12" style={{ backgroundColor: '#0B1120', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="font-body text-sm font-bold tracking-[0.15em] text-white uppercase">REVITK</span>
-            <span style={{ color: 'rgba(197,165,114,0.4)' }}>|</span>
-            <span className="font-body text-xs" style={{ color: 'rgba(245,240,235,0.4)' }}>The Sync Selling System</span>
-          </div>
-          <p className="font-body text-xs" style={{ color: 'rgba(245,240,235,0.3)' }}>
-            &copy; {new Date().getFullYear()} Revitk. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 // ─── Main Page ─────────────────────────────────────────────────────
 
 export default function Home() {
   const scrollRef = useScrollAnimation();
   return (
     <div ref={scrollRef} className="min-h-screen" style={{ backgroundColor: '#0B1120' }}>
+      <NavBar />
       <HeroSection />
       <PhaseOverview />
       <Phase1Section />

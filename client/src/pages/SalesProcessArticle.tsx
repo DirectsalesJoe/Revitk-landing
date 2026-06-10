@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { NavBar, Footer } from './NewHome';
+import { NavBar, Footer } from '@/components/NavBar';
 import { Button } from '../components/ui/button';
 import { Calendar, Clock, User, ArrowLeft, PlayCircle, CheckCircle2, ChevronRight } from 'lucide-react';
 import { Link } from 'wouter';

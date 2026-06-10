@@ -1,11 +1,10 @@
 import { TermsAndConditions } from '@/components/legacy/TermsAndConditions';
-import { Header } from '@/components/legacy/Header';
-import { Footer } from '@/components/legacy/Footer';
+import { NavBar, Footer } from '@/components/NavBar';
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <NavBar />
       <TermsAndConditions />
       <Footer />
     </div>
