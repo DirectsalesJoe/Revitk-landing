@@ -5,6 +5,7 @@
 // ("we diagnose and solve your biggest sales bottleneck, free") is the front end.
 import { useEffect } from 'react';
 import { IMAGES } from '@/lib/constants';
+import { NavBar, Footer } from '@/components/NavBar';
 
 const styles = `
   .ofr {
@@ -135,8 +136,6 @@ const styles = `
   .ofr .final { background: var(--black); text-align: center; padding: 110px 0; }
   .ofr .final h2 { font-size: clamp(32px, 5vw, 52px); }
 
-  .ofr footer { background: var(--black); border-top: 1px solid rgba(245, 240, 235, 0.08); padding: 28px 0; font-size: 13px; color: var(--cream-dim); }
-
   @media (max-width: 720px) {
     .ofr section { padding: 64px 0; }
     .ofr .hero { padding: 72px 0 64px; }
@@ -151,7 +150,9 @@ export default function Offer() {
   }, []);
 
   return (
-    <div className="ofr">
+    <>
+      <NavBar />
+      <div className="ofr">
       <style dangerouslySetInnerHTML={{ __html: styles }} />
 
       {/* ================= HERO ================= */}
@@ -431,9 +432,8 @@ export default function Offer() {
         </div>
       </div>
 
-      <footer>
-        <div className="wrap">Revitk Ltd · The Sync Selling System · © 2026</div>
-      </footer>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 }
