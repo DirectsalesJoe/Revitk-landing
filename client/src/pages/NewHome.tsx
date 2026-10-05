@@ -11,7 +11,7 @@ function Hero() {
           Transform Your Sales Performance. <span className="italic" style={{ color: '#C5A572' }}>Risk Free.</span>
         </h1>
         <p className="font-[family-name:var(--font-body)] text-lg md:text-xl text-[#F5F0EB]/80 mb-4 max-w-3xl mx-auto">
-          We build complete sales systems for B2B founders and sales teams. Bespoke playbooks, sales assets and training engineered for instant results.
+          We build complete sales systems for founders who still do the selling, and the sales teams they lead, in B2C and high-tech B2B. Bespoke playbooks, sales assets and training engineered for instant results.
         </p>
         <p className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] mb-12">
           300+ founders coached. £185M+ in client revenue.
@@ -253,7 +253,7 @@ function AboutJoe() {
 
 /* ─── SECTION 6: WHO THIS IS FOR ─── */
 const forYou = [
-  "You're a B2B founder or sales leader doing £500K-£5M in revenue",
+  "You're a founder who still leads the selling, in a B2C or B2B business doing £500K to £5M",
   "You're generating leads but your close rate is painful",
   "Deals stall after demos and proposals disappear into inboxes",
   "You've tried hiring salespeople and they can't replicate your results",
