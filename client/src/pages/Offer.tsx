@@ -371,7 +371,7 @@ export default function Offer() {
             <div className="fit yes">
               <h4>This is for you if</h4>
               <ul>
-                <li>You run a founder-led B2B business doing £500k to £10M</li>
+                <li>You run a founder-led B2C or B2B business doing £500k to £10M</li>
                 <li>You have leads, but too few become customers</li>
                 <li>You are still the best salesperson in the business</li>
                 <li>You want deals to close without you on every call</li>
