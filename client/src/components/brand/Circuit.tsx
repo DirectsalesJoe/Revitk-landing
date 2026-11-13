@@ -111,13 +111,18 @@ export function PixelCircuit({
       setGeo({ w: origin.width, h: origin.height, anchors, clear });
     };
     measure();
+    // Watch the words as well as the section: when the web font swaps in, the
+    // headline's lines move even if the section keeps its height.
     const ro = new ResizeObserver(measure);
-    if (container.current) ro.observe(container.current);
-    document.fonts?.ready.then(measure);
-    window.addEventListener("resize", measure);
+    for (const el of [container.current, ...targets.map(t => t.ref.current), ...keepClear.map(r => r.current)]) {
+      if (el) ro.observe(el);
+    }
+    const fonts = document.fonts;
+    fonts?.ready.then(measure);
+    fonts?.addEventListener?.("loadingdone", measure);
     return () => {
       ro.disconnect();
-      window.removeEventListener("resize", measure);
+      fonts?.removeEventListener?.("loadingdone", measure);
     };
   }, [container]);
 
