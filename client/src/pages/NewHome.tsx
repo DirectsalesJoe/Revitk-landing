@@ -1,36 +1,47 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { NavBar, Footer, BOOKING_URL } from "@/components/NavBar";
+import { NavBar, Footer } from "@/components/NavBar";
+import { PixelCircuit, TickBox } from "@/components/brand/Circuit";
+import { BookButton, Card, PLAYER_COLOR, Section, T } from "@/components/brand/ui";
 
 /* ─── SECTION 1: HERO (With Integrated Video) ─── */
 function Hero() {
+  const section = useRef<HTMLElement>(null);
+  const h1 = useRef<HTMLHeadingElement>(null);
+  const proof = useRef<HTMLParagraphElement>(null);
+  const words = useRef<HTMLDivElement>(null);
+  const video = useRef<HTMLDivElement>(null);
   return (
-    <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
-      <div className="max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
-        <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-          Transform Your Sales Performance. <span className="italic" style={{ color: '#C5A572' }}>Risk Free.</span>
-        </h1>
-        <p className="font-[family-name:var(--font-body)] text-lg md:text-xl text-[#F5F0EB]/80 mb-4 max-w-3xl mx-auto">
-          We build complete sales systems for founders who still do the selling, and the sales teams they lead, in B2C and high-tech B2B. Bespoke playbooks, sales assets and training engineered for instant results.
-        </p>
-        <p className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] mb-12">
-          300+ founders coached. £185M+ in client revenue.
-        </p>
-        
-        {/* Integrated Introduction Video */}
-        <div className="max-w-3xl mx-auto mb-12 aspect-video rounded-lg overflow-hidden border border-[#C5A572]/30 shadow-2xl">
-          {/* @ts-ignore */}
-          <wistia-player media-id="vf22l691dk" aspect="1.7777777777777777"></wistia-player>
+    <section ref={section} className="relative overflow-hidden bg-ss-ink">
+      <PixelCircuit
+        container={section}
+        targets={[
+          { ref: h1, line: 0 },
+          { ref: h1, line: -1 },
+          { ref: proof, line: 0 },
+        ]}
+        keepClear={[words, video]}
+      />
+      <div className="relative max-w-4xl mx-auto px-6 pt-16 pb-20 md:pt-28 md:pb-24 text-center">
+        <div ref={words}>
+          <h1 ref={h1} className={`${T.h1} mb-6`}>
+            Transform Your Sales Performance. <span className={T.accent}>Risk Free.</span>
+          </h1>
+          <p className={`${T.lead} mb-5 max-w-3xl mx-auto`}>
+            We build complete sales systems for founders who still do the selling, and the sales teams they lead, in B2C and high-tech B2B. Bespoke playbooks, sales assets and training engineered for instant results.
+          </p>
+          <p ref={proof} className="text-base md:text-lg font-semibold text-ss-proof mb-12">
+            <span className="text-white font-extrabold">300+</span> founders coached. <span className="text-white font-extrabold">£185M+</span> in client revenue.
+          </p>
         </div>
 
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-        >
-          Book Your Free Qualification Call
-        </a>
+        {/* Integrated Introduction Video */}
+        <div ref={video} className="relative max-w-3xl mx-auto mb-12 aspect-video rounded-[4px] overflow-hidden bg-black">
+          {/* @ts-ignore */}
+          <wistia-player media-id="vf22l691dk" aspect="1.7777777777777777" player-color={PLAYER_COLOR}></wistia-player>
+        </div>
+
+        <BookButton className="relative">Book Your Free Qualification Call</BookButton>
       </div>
     </section>
   );
@@ -63,26 +74,26 @@ const problems = [
 
 function ProblemIdentification() {
   return (
-    <section className="bg-[#F5F0EB]">
-      <div className="max-w-4xl mx-auto px-6 py-16 md:py-20">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-[#0F1923] mb-12 text-center">
+    <Section>
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        <h2 className={`${T.h2} mb-10 md:mb-12 text-center`}>
           Sound Familiar?
         </h2>
-        <div className="space-y-10">
+        <Card className="divide-y divide-ss-feint">
           {problems.map((p, i) => (
-            <div key={i}>
-              <h3 className="font-[family-name:var(--font-display)] text-xl md:text-2xl font-bold text-[#0F1923] mb-3">
+            <div key={i} className="px-6 py-7 md:px-10 md:py-9">
+              <h3 className={`${T.cardH3} mb-3`}>
                 {p.title}
               </h3>
-              <p className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/80 leading-relaxed">
+              <p className="text-base md:text-[17px] text-ss-muted-paper leading-relaxed">
                 {p.symptom}{p.symptom ? " " : ""}
-                <span className="font-semibold text-[#0F1923]">{p.rootCause}</span>
+                <span className={T.cardStrong}>{p.rootCause}</span>
               </p>
             </div>
           ))}
-        </div>
+        </Card>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -107,53 +118,46 @@ const phases = [
 
 function HowItWorks() {
   return (
-    <section className="bg-[#0F1923]">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mb-8" />
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-6 text-center">
+    <Section>
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <h2 className={`${T.h2} mb-6 text-center`}>
           How You Can Work With Us
         </h2>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 text-center max-w-3xl mx-auto mb-12">
+        <p className={`${T.lead} text-center max-w-3xl mx-auto mb-12`}>
           We're selective about who we work with. If we don't think we can help, we'll tell you. If we do think we can help, we'll offer Phase 1 of our diagnostic, valued at well over £5,000, completely risk-free.
         </p>
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-6 mb-12">
           {phases.map((phase, i) => (
-            <div key={i} className="bg-white/5 border border-white/10 rounded-lg p-8">
-              <span className="font-[family-name:var(--font-body)] text-sm text-[#C5A572] font-medium tracking-wider uppercase">
+            <Card key={i} className="p-7 md:p-8">
+              <span className={T.cardKicker}>
                 {phase.label}
               </span>
-              <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-white mt-2 mb-4">
+              <h3 className={`${T.cardH3} mt-2 mb-3`}>
                 {phase.title}
               </h3>
-              <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/70 leading-relaxed">
+              <p className="text-[15px] text-ss-muted-paper leading-relaxed">
                 {phase.body}
               </p>
-            </div>
+            </Card>
           ))}
         </div>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 text-center mb-8">
+        <p className="text-base text-ss-muted-ink text-center mb-8">
           Want the full breakdown of what's included?{" "}
-          <Link href="/offer" className="text-[#E63946] hover:underline">
+          <Link href="/offer" className={T.linkOnInk}>
             See the programme →
           </Link>
         </p>
         <div className="text-center">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-          >
-            Book Your Free Qualification Call
-          </a>
+          <BookButton>Book Your Free Qualification Call</BookButton>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 /* ─── SECTION 4: RESULTS & SOCIAL PROOF ─── */
 /* CORRECTED MAPPING: wpge7ym6pc=Jordan, h4akkgj8si=Vohkus, iyot7g3u08=Matej, iu0mwb1pri=Steve */
+/* Added 12 Nov 2026: 38848fuss2=Brooks (landscape since 12 Nov; named by his company only, per _revitk-ip/case-study-bank.md), la5vjca3pm=Luke at Swiftbrick (cleared to name) */
 const testimonials = [
   {
     name: "Jordan, FE Growth Partner",
@@ -175,79 +179,83 @@ const testimonials = [
     result: "£100K in new business. £50K profit from four new clients.",
     mediaId: "iu0mwb1pri",
   },
+  {
+    name: "Pipeline Formula",
+    result: "25 years in enterprise sales. Within two sessions he had million-pound questions he now uses on every call.",
+    mediaId: "38848fuss2",
+  },
+  {
+    name: "Luke, Swiftbrick",
+    result: "Won a £50K job the day after his workshop.",
+    mediaId: "la5vjca3pm",
+  },
 ];
 
 function SocialProof() {
   return (
-    <section className="bg-[#F5F0EB]">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-[#0F1923] mb-4 text-center">
+    <Section>
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <h2 className={`${T.h2} mb-4 text-center`}>
           Results From Founders Like You
         </h2>
-        <p className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/70 text-center mb-12">
-          300+ founders. £185M+ in revenue generated using this system.
+        <p className="text-base md:text-lg font-semibold text-ss-proof text-center mb-12">
+          <span className="text-white font-extrabold">300+</span> founders. <span className="text-white font-extrabold">£185M+</span> in revenue generated using this system.
         </p>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {testimonials.map((t, i) => (
-            <div key={i} className="bg-white border border-[#0F1923]/10 rounded-lg overflow-hidden">
-              <div className="aspect-video">
+            <Card key={i} className="overflow-hidden flex flex-col">
+              <div className="aspect-video bg-black">
                 {/* @ts-ignore */}
-                <wistia-player media-id={t.mediaId} aspect="1.7777777777777777"></wistia-player>
+                <wistia-player media-id={t.mediaId} aspect="1.7777777777777777" player-color={PLAYER_COLOR}></wistia-player>
               </div>
               <div className="p-6">
-                <h3 className="font-[family-name:var(--font-display)] text-lg font-bold text-[#0F1923] mb-2">
+                <h3 className="text-xl font-extrabold tracking-[-0.01em] text-ss-ink mb-2">
                   {t.name}
                 </h3>
-                <p className="font-[family-name:var(--font-body)] text-sm text-[#0F1923]/70 leading-relaxed">
+                <p className="text-[15px] text-ss-muted-paper leading-relaxed">
                   {t.result}
                 </p>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 /* ─── SECTION 5: ABOUT JOE ─── */
 function AboutJoe() {
   return (
-    <section id="about" className="bg-[#0F1923]">
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <Section id="about">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="flex-shrink-0">
+          {/* Joe's profile picture, the pixel split (5 Nov 2026), shown whole in its circle */}
+          <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-[5px] border-white">
             <img
-              src="/joe-about.png"
+              src="/joe-profile.jpg"
               alt="Joe Milnes"
-              className="w-64 md:w-80 rounded-full"
+              className="w-full h-full object-cover"
             />
           </div>
           <div className="flex-1 text-center md:text-left">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-6">
+            <h2 className={`${T.h2} mb-6`}>
               About Joe Milnes — Founder of Revitk
             </h2>
-            <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-4">
+            <p className={`${T.body} mb-4`}>
               25 years in B2B sales. Built and scaled the sales engine at Vohkus as they went from £50M to £100M in under five years. Coached 300+ founders across SaaS, consultancies, agencies, and technical services. Trained teams of graduates who outsold experienced reps within months.
             </p>
-            <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-4">
+            <p className={`${T.body} mb-4`}>
               The Sync Selling system grew out of one observation: most deals die because the buyer can't get to "yes," and by not being able to decide, they default to "no." The salesperson hasn't given them the tools to decide. Every script, framework, and playbook we build is designed to eliminate "maybe" and help buyers decide. Sync Selling works across everything you say, show, or send to your prospects.
             </p>
-            <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-8">
+            <p className={`${T.body} mb-8`}>
               If you're frustrated and feel something isn't quite right, we should talk.
             </p>
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-            >
-              Book Your Call With Joe
-            </a>
+            <BookButton>Book Your Call With Joe</BookButton>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -268,80 +276,73 @@ const notForYou = [
 
 function WhoThisIsFor() {
   return (
-    <section className="bg-[#F5F0EB]">
-      <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-[#0F1923] mb-12 text-center">
+    <Section>
+      <div className="max-w-5xl mx-auto px-6 py-16 md:py-24">
+        <h2 className={`${T.h2} mb-10 md:mb-12 text-center`}>
           Is This Right for You?
         </h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#0F1923] mb-6">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <Card className="p-7 md:p-9">
+            <h3 className="text-xl font-extrabold tracking-[-0.01em] text-ss-ink mb-4">
               This is for you if:
             </h3>
-            <ul className="space-y-4">
+            <ul className="divide-y divide-ss-feint">
               {forYou.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#C5A572] mt-1">✓</span>
-                  <span className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/80">
+                <li key={i} className="flex items-start gap-3 py-3.5">
+                  <TickBox ticked />
+                  <span className="text-base text-ss-ink">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <h3 className="font-[family-name:var(--font-display)] text-xl font-bold text-[#0F1923] mb-6">
+          </Card>
+          <Card className="p-7 md:p-9">
+            <h3 className="text-xl font-extrabold tracking-[-0.01em] text-ss-ink mb-4">
               This isn't for you if:
             </h3>
-            <ul className="space-y-4">
+            <ul className="divide-y divide-ss-feint">
               {notForYou.map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="text-[#E63946] mt-1">✗</span>
-                  <span className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/80">
+                <li key={i} className="flex items-start gap-3 py-3.5">
+                  <TickBox crossed />
+                  <span className="text-base text-ss-muted-paper">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
-          </div>
+          </Card>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 
 /* ─── SECTION 7: THE DIAGNOSTIC OFFER ─── */
 function Diagnostic() {
   return (
-    <section className="bg-[#0F1923]">
-      <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-6">
+    <Section>
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24 text-center">
+        <h2 className={`${T.h2} mb-6`}>
           Start With a Risk-Free Diagnostic. Decide After.
         </h2>
-        <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 mb-8">
+        <p className={`${T.lead} mb-10`}>
           Before you commit to anything, we'll diagnose your entire sales process — completely risk-free.
         </p>
-        <div className="bg-white/5 border border-white/10 rounded-lg p-8 mb-10 text-left">
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-6">
+        <Card className="px-7 py-8 md:px-10 md:py-9 mb-10 text-left divide-y divide-ss-feint">
+          <p className="text-base md:text-[17px] text-ss-ink leading-relaxed pb-5">
             You get a 90-minute workshop with Joe, a full diagnostic report, 80+ hours of market research on your buyers and competitors, and a wireframed sales playbook showing exactly what needs to happen at each stage.
           </p>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed mb-6">
+          <p className="text-base md:text-[17px] text-ss-ink leading-relaxed py-5">
             If you're not convinced, walk away. Keep the report. No charge. No awkward conversation.
           </p>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/80 leading-relaxed">
+          <p className="text-base md:text-[17px] text-ss-ink leading-relaxed pt-5">
             85% of people who take the diagnostic continue into the full programme. We let the work speak for itself.
           </p>
-        </div>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-        >
-          Book Your Qualification Call
-        </a>
+        </Card>
+        <BookButton>Book Your Qualification Call</BookButton>
       </div>
-    </section>
+    </Section>
   );
 }
 
@@ -450,31 +451,31 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="bg-[#F5F0EB]">
-      <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-[#0F1923] mb-12 text-center">
+    <Section>
+      <div className="max-w-3xl mx-auto px-6 py-16 md:py-24">
+        <h2 className={`${T.h2} mb-10 md:mb-12 text-center`}>
           Frequently Asked Questions
         </h2>
-        <div className="space-y-4">
+        <Card className="divide-y divide-ss-feint">
           {faqs.map((faq, i) => (
-            <div key={i} className="border-b border-[#0F1923]/10">
+            <div key={i}>
               <button
-                className="w-full py-6 flex items-center justify-between text-left"
+                className="w-full px-6 md:px-8 py-5 flex items-center justify-between gap-6 text-left min-h-[64px]"
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
               >
-                <span className="font-[family-name:var(--font-display)] text-lg font-bold text-[#0F1923]">
+                <span className="text-lg font-bold tracking-[-0.01em] text-ss-ink">
                   {faq.q}
                 </span>
-                <span className="text-2xl text-[#C5A572]">
+                <span className="text-2xl leading-none text-ss-biro flex-none">
                   {openIndex === i ? "−" : "+"}
                 </span>
               </button>
               {openIndex === i && (
-                <div className="pb-6 space-y-3">
+                <div className="px-6 md:px-8 pb-6 space-y-3">
                   {faq.a.map((paragraph, j) => (
                     <p
                       key={j}
-                      className="font-[family-name:var(--font-body)] text-base text-[#0F1923]/70 leading-relaxed"
+                      className={T.cardBody}
                     >
                       {paragraph}
                     </p>
@@ -483,29 +484,35 @@ function FAQ() {
               )}
             </div>
           ))}
-        </div>
+        </Card>
       </div>
-    </section>
+    </Section>
   );
 }
 
 /* ─── SECTION 9: FINAL CTA ─── */
 function FinalCTA() {
+  const section = useRef<HTMLElement>(null);
+  const h2 = useRef<HTMLHeadingElement>(null);
+  const words = useRef<HTMLDivElement>(null);
   return (
-    <section className="bg-[#0F1923] border-t border-white/10">
-      <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-4xl font-bold text-white mb-8">
+    <section ref={section} className="relative overflow-hidden bg-ss-ink border-t border-ss-hairline">
+      <PixelCircuit
+        container={section}
+        targets={[
+          { ref: h2, line: 0 },
+          { ref: h2, line: -1 },
+        ]}
+        keepClear={[words]}
+        seed={31}
+        dust={60}
+      />
+      <div ref={words} className="relative max-w-4xl mx-auto px-6 py-20 md:py-28 text-center">
+        <h2 ref={h2} className={`${T.h2} mb-8`}>
           If deals are stalling after great conversations, we should talk.
         </h2>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors mb-6"
-        >
-          Book Your Free Qualification Call
-        </a>
-        <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/60">
+        <BookButton className="mb-6">Book Your Free Qualification Call</BookButton>
+        <p className="text-sm text-ss-muted-ink">
           30 minutes. No obligation. If we can help, you'll know. If we can't, we'll tell you.
         </p>
       </div>

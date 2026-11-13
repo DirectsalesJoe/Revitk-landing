@@ -13,49 +13,55 @@ export const BOOKING_URL = "https://app.revitk.com/widget/bookings/syncselling";
  *  - Mobile dropdown has top padding and a darker bg so it reads
  *    as a distinct layer rather than blending with the page body
  * ─────────────────────────────────────────────────────────────────── */
-export function NavBar() {
+/* resourcePage: the pre-booking pages (/learn) book through book.revitk.com
+ * as a strategy session. Added in Manus on 11 Nov 2026 and carried over here. */
+const RESOURCE_BOOKING_URL = "https://book.revitk.com/";
+
+export function NavBar({ resourcePage = false }: { resourcePage?: boolean } = {}) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const ctaHref = resourcePage ? RESOURCE_BOOKING_URL : BOOKING_URL;
+  const ctaLabel = resourcePage ? "Book Your Strategy Session" : "Book a Call";
   return (
-    <nav className="sticky top-0 z-50 bg-[#0F1923]/95 backdrop-blur-sm border-b border-white/10">
+    <nav className="sticky top-0 z-50 bg-ss-ink border-b border-ss-hairline">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/">
           <img
-            src="/revitk-logo-white.png"
-            alt="Revitk"
-            className="h-12 w-auto cursor-pointer"
+            src="/brand/sync-selling-on-ink.png"
+            alt="Sync Selling by Joe Milnes"
+            className="h-11 md:h-12 w-auto cursor-pointer -ml-3"
           />
         </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+          <Link href="/" className="text-ss-muted-ink font-[family-name:var(--font-body)] text-[15px] font-medium hover:text-white transition-colors">
             Home
           </Link>
-          <Link href="/offer" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+          <Link href="/offer" className="text-ss-muted-ink font-[family-name:var(--font-body)] text-[15px] font-medium hover:text-white transition-colors">
             The Programme
           </Link>
-          <a href="/#about" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+          <a href="/#about" className="text-ss-muted-ink font-[family-name:var(--font-body)] text-[15px] font-medium hover:text-white transition-colors">
             About
           </a>
-          <Link href="/articles" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+          <Link href="/articles" className="text-ss-muted-ink font-[family-name:var(--font-body)] text-[15px] font-medium hover:text-white transition-colors">
             Articles
           </Link>
-          <Link href="/sales-faq" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm hover:text-[#C5A572] transition-colors">
+          <Link href="/sales-faq" className="text-ss-muted-ink font-[family-name:var(--font-body)] text-[15px] font-medium hover:text-white transition-colors">
             Sales FAQ
           </Link>
           <a
-            href={BOOKING_URL}
+            href={ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#E63946] text-white font-[family-name:var(--font-body)] font-medium text-sm px-5 py-2.5 rounded hover:bg-[#d32f3c] transition-colors"
+            className="bg-ss-biro text-white font-[family-name:var(--font-body)] font-bold text-[15px] px-5 py-2.5 rounded-[4px] hover:bg-ss-biro-hover transition-colors"
           >
-            Book a Call
+            {ctaLabel}
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[#F5F0EB]"
+          className="md:hidden text-white"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -69,31 +75,31 @@ export function NavBar() {
         </button>
       </div>
 
-      {/* Mobile menu — #0a1118 is darker than the nav bg so it reads as a distinct panel */}
+      {/* Mobile menu: a hairline above it so it reads as its own panel */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0a1118] border-t border-white/15 px-6 pt-4 pb-6 flex flex-col gap-1">
-          <Link href="/" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm py-2.5 border-b border-white/5" onClick={() => setMenuOpen(false)}>
+        <div className="md:hidden bg-ss-ink border-t border-ss-hairline px-6 pt-4 pb-6 flex flex-col gap-1">
+          <Link href="/" className="text-white font-[family-name:var(--font-body)] text-base py-3 border-b border-ss-hairline" onClick={() => setMenuOpen(false)}>
             Home
           </Link>
-          <Link href="/offer" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm py-2.5 border-b border-white/5" onClick={() => setMenuOpen(false)}>
+          <Link href="/offer" className="text-white font-[family-name:var(--font-body)] text-base py-3 border-b border-ss-hairline" onClick={() => setMenuOpen(false)}>
             The Programme
           </Link>
-          <a href="/#about" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm py-2.5 border-b border-white/5" onClick={() => setMenuOpen(false)}>
+          <a href="/#about" className="text-white font-[family-name:var(--font-body)] text-base py-3 border-b border-ss-hairline" onClick={() => setMenuOpen(false)}>
             About
           </a>
-          <Link href="/articles" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm py-2.5 border-b border-white/5" onClick={() => setMenuOpen(false)}>
+          <Link href="/articles" className="text-white font-[family-name:var(--font-body)] text-base py-3 border-b border-ss-hairline" onClick={() => setMenuOpen(false)}>
             Articles
           </Link>
-          <Link href="/sales-faq" className="text-[#F5F0EB] font-[family-name:var(--font-body)] text-sm py-2.5 border-b border-white/5" onClick={() => setMenuOpen(false)}>
+          <Link href="/sales-faq" className="text-white font-[family-name:var(--font-body)] text-base py-3 border-b border-ss-hairline" onClick={() => setMenuOpen(false)}>
             Sales FAQ
           </Link>
           <a
-            href={BOOKING_URL}
+            href={ctaHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#E63946] text-white font-[family-name:var(--font-body)] font-medium text-sm px-5 py-3 rounded text-center mt-3"
+            className="bg-ss-biro text-white font-[family-name:var(--font-body)] font-bold text-base px-5 py-3 rounded-[4px] text-center mt-3"
           >
-            Book a Call
+            {ctaLabel}
           </a>
         </div>
       )}
@@ -104,17 +110,18 @@ export function NavBar() {
 /* ─── SHARED FOOTER ─────────────────────────────────────────────────
  * Full footer with legal links and contact. Use on every page.
  * ─────────────────────────────────────────────────────────────────── */
-export function Footer() {
+export function Footer({ resourcePage = false }: { resourcePage?: boolean } = {}) {
+  void resourcePage; // same footer either way; kept so /learn matches the live page's API
   return (
-    <footer className="bg-[#0B1120] py-12 border-t border-white/5">
+    <footer className="bg-ss-ink py-12 border-t border-ss-hairline">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
-        <img src="/revitk-logo-white.png" alt="Revitk" className="h-10 w-auto opacity-50" />
+        <img src="/brand/sync-selling-on-ink.png" alt="Sync Selling by Joe Milnes" className="h-10 w-auto -ml-2.5" />
         <div className="flex gap-8">
-          <Link href="/privacy" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572] transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572] transition-colors">Terms & Conditions</Link>
-          <a href="mailto:joe@revitk.com" className="text-[#F5F0EB]/40 text-xs hover:text-[#C5A572] transition-colors">Contact Us</a>
+          <Link href="/privacy" className="text-ss-muted-ink text-sm hover:text-white transition-colors">Privacy Policy</Link>
+          <Link href="/terms" className="text-ss-muted-ink text-sm hover:text-white transition-colors">Terms & Conditions</Link>
+          <a href="mailto:joe@revitk.com" className="text-ss-muted-ink text-sm hover:text-white transition-colors">Contact Us</a>
         </div>
-        <p className="text-[#F5F0EB]/30 text-xs">
+        <p className="text-ss-muted-ink/70 text-sm">
           © {new Date().getFullYear()} Revitk. All rights reserved.
         </p>
       </div>

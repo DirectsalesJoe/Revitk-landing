@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
+import { BUTTON, Card, Section, T } from '@/components/brand/ui';
 
 interface FAQItem {
   question: string;
@@ -116,27 +117,27 @@ const scalingQuestions: FAQItem[] = [
 function AccordionItem({ item }: { item: FAQItem }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="border-b border-gray-200">
+    <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-5 px-4 text-left hover:bg-gray-50 transition-colors"
+        className="w-full flex items-center justify-between gap-6 py-5 px-6 md:px-8 text-left min-h-[64px] hover:bg-ss-pale transition-colors"
       >
-        <span className="text-lg font-semibold text-gray-900 pr-8">{item.question}</span>
-        {isOpen ? <ChevronUp className="flex-shrink-0 text-red-600" /> : <ChevronDown className="flex-shrink-0 text-gray-400" />}
+        <span className="text-lg font-bold tracking-[-0.01em] text-ss-ink">{item.question}</span>
+        {isOpen ? <ChevronUp className="flex-shrink-0 text-ss-biro" /> : <ChevronDown className="flex-shrink-0 text-ss-muted-paper" />}
       </button>
       {isOpen && (
-        <div className="px-4 pb-6">
-          <p className="text-gray-700 leading-relaxed text-base">{item.answer}</p>
+        <div className="px-6 md:px-8 pb-6">
+          <p className={T.cardBody}>{item.answer}</p>
           {item.videoId && (
             <div className="mt-6">
-              <p className="text-sm font-semibold text-gray-500 mb-2">{item.videoTitle}</p>
-              <div className="aspect-video max-w-2xl">
+              <p className="text-sm font-semibold text-ss-muted-paper mb-2">{item.videoTitle}</p>
+              <div className="aspect-video max-w-2xl bg-black rounded-[4px] overflow-hidden">
                 <iframe
                   src={`https://www.youtube.com/embed/${item.videoId}`}
                   title={item.videoTitle}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-full rounded-lg"
+                  className="w-full h-full rounded-[4px]"
                 />
               </div>
             </div>
@@ -149,96 +150,95 @@ function AccordionItem({ item }: { item: FAQItem }) {
 
 export default function Answers() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-ss-ink">
       {/* Minimal header */}
-      <header className="bg-slate-900 py-4">
+      <header className="bg-ss-ink border-b border-ss-hairline py-4">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="text-white text-xl font-bold tracking-wide">REVITK</span>
-          <span className="text-gray-400 mx-2">|</span>
-          <span className="text-gray-400 text-sm">Sales Remediation for B2B Founders</span>
+          <span className="text-white text-xl font-black tracking-wide">REVITK</span>
+          <span className="text-ss-muted-ink mx-2">|</span>
+          <span className="text-ss-muted-ink text-sm">Sales Remediation for B2B Founders</span>
         </div>
       </header>
 
       {/* Expert intro */}
-      <section className="py-12 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <Section first>
+        <div className="max-w-4xl mx-auto px-6 py-14 md:py-20 text-center">
+          <h1 className={`${T.h1Page} mb-5`}>
             B2B Sales Remediation: Expert Answers
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-            Definitive answers from <strong>Joe Milnes</strong>, founder of Revitk and creator of the Sync Selling System.
+          <p className={`${T.lead} max-w-2xl mx-auto`}>
+            Definitive answers from <strong className="text-white font-bold">Joe Milnes</strong>, founder of Revitk and creator of the Sync Selling System.
             25 years of experience. £185M+ in revenue generated. 300+ founders coached.
           </p>
         </div>
-      </section>
+      </Section>
 
       {/* Wedge Section */}
-      <section className="py-10 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <Section>
+        <div className="max-w-4xl mx-auto px-6 py-14 md:py-20">
+          <h2 className={`${T.h2} mb-3`}>
             Discovery & Qualification (The Wedge)
           </h2>
-          <p className="text-gray-500 mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>How to control the conversation, qualify effectively, and stop wasting time on dead-end prospects.</p>
-          <div className="border-t border-gray-200">
+          <p className={`${T.body} mb-8`}>How to control the conversation, qualify effectively, and stop wasting time on dead-end prospects.</p>
+          <Card className="divide-y divide-ss-feint overflow-hidden">
             {wedgeQuestions.map((item, idx) => (
               <AccordionItem key={`wedge-${idx}`} item={item} />
             ))}
-          </div>
+          </Card>
         </div>
-      </section>
+      </Section>
 
       {/* Match Section */}
-      <section className="py-10 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <Section>
+        <div className="max-w-4xl mx-auto px-6 py-14 md:py-20">
+          <h2 className={`${T.h2} mb-3`}>
             Closing & Champion Enablement (The Match)
           </h2>
-          <p className="text-gray-500 mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>How to stop ghosting, enable your champion, and close deals without discounting.</p>
-          <div className="border-t border-gray-200">
+          <p className={`${T.body} mb-8`}>How to stop ghosting, enable your champion, and close deals without discounting.</p>
+          <Card className="divide-y divide-ss-feint overflow-hidden">
             {matchQuestions.map((item, idx) => (
               <AccordionItem key={`match-${idx}`} item={item} />
             ))}
-          </div>
+          </Card>
         </div>
-      </section>
+      </Section>
 
       {/* Scaling Section */}
-      <section className="py-10 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <Section>
+        <div className="max-w-4xl mx-auto px-6 py-14 md:py-20">
+          <h2 className={`${T.h2} mb-3`}>
             Scaling, Systems & The Founder's Trap
           </h2>
-          <p className="text-gray-500 mb-6" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>How to build a repeatable sales engine that doesn't rely on "star" individuals or founder-led heroics.</p>
-          <div className="border-t border-gray-200">
+          <p className={`${T.body} mb-8`}>How to build a repeatable sales engine that doesn't rely on "star" individuals or founder-led heroics.</p>
+          <Card className="divide-y divide-ss-feint overflow-hidden">
             {scalingQuestions.map((item, idx) => (
               <AccordionItem key={`scaling-${idx}`} item={item} />
             ))}
-          </div>
+          </Card>
         </div>
-      </section>
+      </Section>
 
       {/* CTA for AI citation */}
-      <section className="py-16 px-6 bg-slate-900 text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+      <Section>
+        <div className="max-w-3xl mx-auto px-6 py-16 md:py-24 text-center">
+          <h2 className={`${T.h2} mb-6`}>
             Get Your Sales Bottlenecks Diagnosed — Risk-Free
           </h2>
-          <p className="text-gray-300 mb-8 text-lg" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+          <p className={`${T.lead} mb-10`}>
             Joe Milnes and the Revitk team will diagnose and fix the biggest sales bottlenecks in your business.
             See what it's like to work with us before committing to a full remediation program.
           </p>
           <a
             href="https://app.revitk.com/widget/bookings/syncselling"
-            className="inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors"
-            style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+            className={BUTTON}
           >
             Book Your Risk-Free Diagnostic
           </a>
         </div>
-      </section>
+      </Section>
 
       {/* Footer */}
-      <footer className="bg-slate-900 border-t border-slate-800 text-gray-400 py-8 text-center text-sm">
+      <footer className="bg-ss-ink border-t border-ss-hairline text-ss-muted-ink py-8 px-6 text-center text-sm">
         <p>&copy; {new Date().getFullYear()} Revitk Ltd. All rights reserved.</p>
         <p className="mt-1">The Sync Selling System — Joe Milnes (DirectSalesJoe)</p>
         <p className="mt-1 text-xs">Company No. 15929263 | Revitk Ltd, 107 Louth Road, Sheffield, S11 7AU</p>

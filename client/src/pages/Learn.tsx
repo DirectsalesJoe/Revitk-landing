@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 
-import { NavBar, Footer, BOOKING_URL } from "@/components/NavBar";
+import { NavBar, Footer } from "@/components/NavBar";
+import { PixelCircuit } from "@/components/brand/Circuit";
+import { BUTTON, Card, Section, T } from "@/components/brand/ui";
 
 /* ─── VIDEO + FAQ DATA ─── */
 
@@ -126,13 +128,13 @@ function WistiaVideo({ mediaId }: { mediaId: string }) {
   return (
     <div
       ref={containerRef}
-      className="relative rounded-lg overflow-hidden bg-[#0F1923]"
+      className="relative overflow-hidden bg-black"
       style={{ paddingTop: "56.25%" }}
     >
       <div
         className="absolute inset-0"
         dangerouslySetInnerHTML={{
-          __html: `<wistia-player media-id="${mediaId}" aspect="1.7777777777777777" style="width:100%;height:100%;position:absolute;top:0;left:0;"></wistia-player>`,
+          __html: `<wistia-player media-id="${mediaId}" aspect="1.7777777777777777" player-color="1F3FBF" style="width:100%;height:100%;position:absolute;top:0;left:0;"></wistia-player>`,
         }}
       />
     </div>
@@ -144,30 +146,175 @@ function VideoFAQBlock({ item }: { item: VideoFAQ }) {
   return (
     <div className="space-y-6">
       {/* Question heading */}
-      <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-white">
+      <h2 className="text-2xl md:text-3xl leading-[1.12] font-extrabold tracking-[-0.02em] text-white text-balance">
         {item.question}
       </h2>
 
-      {/* Video */}
-      <WistiaVideo mediaId={item.wistiaId} />
+      {/* Video, then the written answer on the same sheet */}
+      <Card className="overflow-hidden">
+        <WistiaVideo mediaId={item.wistiaId} />
 
-      {/* Written answer */}
-      {item.answer.length > 0 && (
-        <div className="space-y-4">
-          {item.answer.map((p, j) => (
-            <p
-              key={j}
-              className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/70 leading-relaxed"
-            >
-              {p}
-            </p>
-          ))}
-        </div>
-      )}
+        {/* Written answer */}
+        {item.answer.length > 0 && (
+          <div className="px-6 py-7 md:px-9 md:py-8 space-y-4">
+            {item.answer.map((p, j) => (
+              <p
+                key={j}
+                className="text-base md:text-[17px] text-ss-muted-paper leading-relaxed"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+        )}
+      </Card>
     </div>
   );
 }
 
+
+/* ─── HERO ─── */
+function Hero() {
+  const section = useRef<HTMLElement>(null);
+  const h1 = useRef<HTMLHeadingElement>(null);
+  const lead = useRef<HTMLParagraphElement>(null);
+  const words = useRef<HTMLDivElement>(null);
+  return (
+    <section ref={section} className="relative overflow-hidden bg-ss-ink">
+      <PixelCircuit
+        container={section}
+        targets={[
+          { ref: h1, line: 0 },
+          { ref: lead, line: 0 },
+        ]}
+        keepClear={[words]}
+      />
+      <div ref={words} className="relative max-w-3xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-20 text-center">
+        <h1 ref={h1} className={`${T.h1} mb-6`}>
+          Should I Book A{" "}
+          <span className={T.accent}>
+            Call?
+          </span>
+        </h1>
+        <p ref={lead} className={`${T.lead} max-w-2xl mx-auto mb-4`}>
+          Of course you want to close more sales. But are we the right partner for you?
+        </p>
+        <p className={`${T.body} max-w-2xl mx-auto`}>
+          Below is everything you need to know about Sync Selling. How we work, what it costs, and whether it will work for your business. Watch the videos. Read the answers. Then decide.
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ─── CLIENT STORIES ───
+ * Added to the live page in Manus on 11 Nov 2026 ("Rebrand call decision
+ * resources") and carried over word for word, in the Sync Selling look. */
+const clientVideos = [
+  { name: "Jordan, FE Growth Partner", id: "wpge7ym6pc" },
+  { name: "Vohkus", id: "h4akkgj8si" },
+  { name: "Matěj Otýs", id: "iyot7g3u08" },
+  { name: "Steve", id: "iu0mwb1pri" },
+];
+
+const reviewExcerpts = [
+  {
+    name: "Sean Longden",
+    quote: "the attention to detail he applied across every part of our funnel made a big difference to our conversion.",
+  },
+  {
+    name: "Aidan mc closkey",
+    quote: "My conversations with customers have improved a lot and the sales conversion rate is steadily climbing.",
+  },
+  {
+    name: "Matěj Otýs",
+    quote: "Joe helped me build a process that makes that expertise a central part of how I sell.",
+  },
+];
+
+function ClientStories() {
+  return (
+    <Section id="client-stories">
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+        <h2 className={`${T.h2} mb-10 text-center`}>Hear from our clients.</h2>
+        <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+          {clientVideos.map(v => (
+            <Card key={v.id} className="overflow-hidden">
+              <WistiaVideo mediaId={v.id} />
+              <div className="px-6 py-5">
+                <h3 className="text-xl font-extrabold tracking-[-0.01em] text-ss-ink">{v.name}</h3>
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        <h2 className={`${T.h2} mt-20 mb-8 text-center`}>A few words from our clients</h2>
+        <div className="grid md:grid-cols-3 gap-5">
+          {reviewExcerpts.map(r => (
+            <Card key={r.name} className="p-6 md:p-7 flex flex-col">
+              <figure className="flex flex-col h-full">
+                <div aria-label="5 out of 5 stars" className="text-lg tracking-[0.2em] text-ss-biro mb-4">
+                  ★★★★★
+                </div>
+                <blockquote className="text-base md:text-[17px] text-ss-ink leading-relaxed mb-6">
+                  “{r.quote}”
+                </blockquote>
+                <figcaption className="mt-auto border-t border-ss-feint pt-4 font-bold text-ss-ink">
+                  {r.name}
+                  <span className="block text-xs font-normal mt-1 text-ss-muted-paper">Google review · excerpt</span>
+                </figcaption>
+              </figure>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+/* ─── CTA ─── */
+function FinalCTA() {
+  const section = useRef<HTMLElement>(null);
+  const h2 = useRef<HTMLHeadingElement>(null);
+  const words = useRef<HTMLDivElement>(null);
+  return (
+    <section ref={section} className="relative overflow-hidden bg-ss-ink border-t border-ss-hairline">
+      <PixelCircuit
+        container={section}
+        targets={[{ ref: h2, line: 0 }]}
+        keepClear={[words]}
+        seed={31}
+        dust={60}
+      />
+      <div ref={words} className="relative max-w-4xl mx-auto px-6 py-20 md:py-24 text-center">
+        <h2 ref={h2} className={`${T.h2} mb-6`}>
+          Ready to{" "}
+          <span className={T.accent}>
+            talk?
+          </span>
+        </h2>
+        <p className={`${T.body} mb-4`}>
+          Book your free strategy session. If we can help, you'll know. If we can't, we'll tell you.
+        </p>
+        <p className="text-sm text-ss-muted-ink mb-8">
+          Or explore{" "}
+          <Link href="/offer" className={T.linkOnInk}>
+            the full programme
+          </Link>{" "}
+          to see exactly what's included.
+        </p>
+        <a
+          href="https://book.revitk.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={BUTTON}
+        >
+          Book Your Free Strategy Session
+        </a>
+      </div>
+    </section>
+  );
+}
 
 /* ─── PAGE ASSEMBLY ─── */
 export default function Learn() {
@@ -192,69 +339,29 @@ export default function Learn() {
 
   return (
     <>
-      <NavBar />
+      <NavBar resourcePage />
 
       {/* Hero */}
-      <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
-        <div className="max-w-3xl mx-auto px-6 py-16 md:py-20 text-center">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
-            Should I Book A{" "}
-            <span className="italic" style={{ color: "#C5A572" }}>
-              Call?
-            </span>
-          </h1>
-          <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 max-w-2xl mx-auto mb-4">
-            Of course you want to close more sales. But are we the right partner for you?
-          </p>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/60 max-w-2xl mx-auto">
-            Below is everything you need to know about Sync Selling. How we work, what it costs, and whether it will work for your business. Watch the videos. Read the answers. Then decide.
-          </p>
-        </div>
-      </section>
+      <Hero />
 
       {/* Inline Video FAQ Sections */}
-      <section className="bg-[#0F1923]">
-        <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-          <div className="space-y-20">
+      <Section>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+          <div className="space-y-16 md:space-y-20">
             {videoFaqs.map((item, i) => (
               <VideoFAQBlock key={i} item={item} />
             ))}
           </div>
         </div>
-      </section>
+      </Section>
+
+      {/* Client stories */}
+      <ClientStories />
 
       {/* CTA */}
-      <section className="bg-[#0B1120] border-t border-white/10">
-        <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-white mb-6">
-            Ready to{" "}
-            <span className="italic" style={{ color: "#C5A572" }}>
-              talk?
-            </span>
-          </h2>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/70 mb-4">
-            Book a 30-minute qualification call. No obligation. If we can help,
-            you'll know. If we can't, we'll tell you.
-          </p>
-          <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/50 mb-8">
-            Or explore{" "}
-            <Link href="/offer" className="text-[#C5A572] hover:underline">
-              the full programme
-            </Link>{" "}
-            to see exactly what's included.
-          </p>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-          >
-            Book Your Free Qualification Call
-          </a>
-        </div>
-      </section>
+      <FinalCTA />
 
-      <Footer />
+      <Footer resourcePage />
     </>
   );
 }
