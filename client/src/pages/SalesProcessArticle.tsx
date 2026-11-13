@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 import { NavBar, Footer } from '@/components/NavBar';
-import { Button } from '../components/ui/button';
+import { BUTTON, Card, Section, T } from '@/components/brand/ui';
 import { Calendar, Clock, User, ArrowLeft, PlayCircle, CheckCircle2, ChevronRight } from 'lucide-react';
 import { Link } from 'wouter';
 
@@ -42,47 +42,51 @@ const SalesProcessArticle: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0F1923] text-[#F5F0EB] font-sans selection:bg-[#C5A572] selection:text-[#0F1923]">
+    <div className="min-h-screen bg-ss-ink text-white selection:bg-ss-biro selection:text-white">
 
 
       <NavBar />
 
-      <main className="pt-32 pb-20">
-        <article className="max-w-4xl mx-auto px-6">
+      <main>
+        <article>
+          <Section first>
+          <div className="max-w-4xl mx-auto px-6 pt-12 pb-10 md:pt-20 md:pb-14">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm text-[#C5A572] mb-8">
-            <Link to="/articles" className="hover:underline">Articles</Link>
+          <nav className="flex items-center gap-2 text-sm text-ss-muted-ink mb-8">
+            <Link to="/articles" className={T.linkOnInk}>Articles</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-[#F5F0EB]/50">Building a Sales Process</span>
+            <span className="text-ss-muted-ink">Building a Sales Process</span>
           </nav>
 
           {/* Header */}
-          <header className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight">
+          <header>
+            <h1 className={`${T.h1Page} mb-8`}>
               How to Build a Sales Process That Closes One in Two Prospects
             </h1>
             
-            <div className="flex flex-wrap items-center gap-6 text-sm text-[#F5F0EB]/60 border-y border-[#C5A572]/20 py-6">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-4 text-sm text-ss-muted-ink border-y border-ss-hairline py-6">
               <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-[#C5A572]/20 flex items-center justify-center text-[#C5A572]">
+                <div className="w-10 h-10 rounded-[4px] bg-ss-hairline flex items-center justify-center text-white">
                   <User className="w-5 h-5" />
                 </div>
-                <span>By Joe Milnes</span>
+                <span className="text-white font-semibold">By Joe Milnes</span>
               </div>
               <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4 text-[#C5A572]" />
+                <Calendar className="w-4 h-4 text-ss-muted-ink" />
                 <span>1 March 2026</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-[#C5A572]" />
+                <Clock className="w-4 h-4 text-ss-muted-ink" />
                 <span>9 min read</span>
               </div>
             </div>
           </header>
+          </div>
 
           {/* Content */}
-          <div className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:text-white prose-p:text-[#F5F0EB]/80 prose-strong:text-white prose-a:text-[#C5A572] hover:prose-a:text-[#C5A572]/80 transition-colors">
-            <p className="text-xl leading-relaxed mb-8 text-[#F5F0EB]">
+          <div className="max-w-4xl mx-auto px-4 md:px-6 pb-12 md:pb-20">
+          <Card className="px-6 py-9 md:px-14 md:py-14 text-ss-ink text-[17px] md:text-lg leading-[1.7]">
+            <p className="text-xl md:text-[22px] leading-relaxed mb-8 font-medium text-ss-ink">
               When I took over the sales team at Vohkus Academy, there was no pipeline. No playbook. No repeatable anything. Just a group of people making calls and hoping something would stick. Ten months later that team was generating £1.2 million a month. The product didn't change. The market didn't change. What changed was we installed a process.
             </p>
 
@@ -90,9 +94,9 @@ const SalesProcessArticle: React.FC = () => {
               That same process went on to take the wider Vohkus business from £40 million to £100 million in revenue before their exit. After dealing with over 300 founders who are trying to break free of networking, word of mouth and referrals as their only source of revenue, the patterns are impossible to ignore. The ones who install a process scale. The ones who keep winging it stay stuck. Every time.
             </p>
 
-            <p className="mb-8 font-bold text-white">So here it is. Five stages. No fluff.</p>
+            <p className="mb-8 font-bold text-ss-ink">So here it is. Five stages. No fluff.</p>
 
-            <h2 className="text-3xl mt-16 mb-6">Most Founders Sell on Conviction Alone</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">Most Founders Sell on Conviction Alone</h2>
             <p className="mb-6">
               If you started your business, chances are you closed your first few deals on pure product knowledge. Someone came through your network, you talked passionately about what you do, they bought. Brilliant. But then you tried going outbound. Cold emails. Ads. LinkedIn. And the same pitch that worked on warm referrals fell completely flat with strangers.
             </p>
@@ -103,11 +107,11 @@ const SalesProcessArticle: React.FC = () => {
               This is where most founders get stuck. They try to hire a salesperson thinking that will fix it. Except the salesperson arrives, finds no process, no content, no structure, and fails. The founder blames the hire. Wastes thousands. Tries again. Same result.
             </p>
 
-            <div className="bg-[#16222E] border-l-4 border-[#C5A572] p-8 my-12 italic text-xl text-white">
+            <div className="border-l-4 border-ss-ink pl-6 md:pl-8 py-1 my-12 text-xl md:text-2xl font-extrabold tracking-[-0.015em] leading-snug text-ss-ink">
               "The hire was never the problem. The missing process was."
             </div>
 
-            <h2 className="text-3xl mt-16 mb-6">Stage One: Start With Your Customers, Not Your Product</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">Stage One: Start With Your Customers, Not Your Product</h2>
             <p className="mb-6">
               Before you write a single piece of copy or build a single slide deck, talk to the people who already pay you. This is the highest leverage activity a founder can do and almost nobody bothers.
             </p>
@@ -127,7 +131,7 @@ const SalesProcessArticle: React.FC = () => {
               Most founders try to sell the big thing to cold traffic straight away. It rarely works because the trust isn't there yet. A front-end offer builds that trust with cash on the table, not just content. And once they've paid you once and got a result, the second purchase is infinitely easier.
             </p>
 
-            <h2 className="text-3xl mt-16 mb-6">Stage Two: Pick Your Channel and Commit</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">Stage Two: Pick Your Channel and Commit</h2>
             <p className="mb-6">
               There are four ways to reach prospects. One-to-one when they know you, which is networking and referrals. One-to-one when they don't, which is cold calling, cold email, LinkedIn outreach. One-to-many paid, which is advertising. One-to-many organic, which is content.
             </p>
@@ -141,7 +145,7 @@ const SalesProcessArticle: React.FC = () => {
               We've used most channels at different stages. Right now, Meta ads are our primary acquisition channel because the targeting is absurdly precise and the cost per qualified conversation is lower than anything else we've tested. But I've cold called for years and it works too. The channel matters less than the process you run once someone enters your world.
             </p>
 
-            <h2 className="text-3xl mt-16 mb-6">Stage Three: The Discovery Framework</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">Stage Three: The Discovery Framework</h2>
             <p className="mb-6">
               This is where most sales fall apart. And it's where the biggest opportunity sits.
             </p>
@@ -164,7 +168,7 @@ const SalesProcessArticle: React.FC = () => {
               Think of it like being a dressmaker. You wouldn't ask someone their measurements at a dinner party. But if someone walks into your shop wanting a suit made, you'd be failing them if you didn't take precise measurements. Discovery works the same way. If you're there to diagnose whether you can help, asking direct questions isn't rude. It's your job.
             </p>
 
-            <h2 className="text-3xl mt-16 mb-6">Stage Four: Match Your Solution to Their Problem</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">Stage Four: Match Your Solution to Their Problem</h2>
             <p className="mb-6">
               Once you've done proper discovery, the next stage becomes almost mechanical. Whether you're building a proposal, running a demo, or presenting a recommendation, the content should be built entirely around what the prospect told you in the previous conversation.
             </p>
@@ -181,7 +185,7 @@ const SalesProcessArticle: React.FC = () => {
               And here's the thing about closing that most people overcomplicate. If you've done the discovery properly and matched your solution to what they actually need, closing is just confirming there's no reason not to proceed. "Given what we've discussed, can you see anything missing from this?" No. "Is there any reason we wouldn't be able to get started?" No. "What would you suggest as appropriate next steps?" Let them tell you. They're in control. That's how you close without being a closer.
             </p>
 
-            <h2 className="text-3xl mt-16 mb-6">Stage Five: Automate the Bits That Don't Need You</h2>
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">Stage Five: Automate the Bits That Don't Need You</h2>
             <p className="mb-6">
               Once your process is working and you can see what objections come up repeatedly, you start front-loading those answers into content that prospects consume before they ever speak to you.
             </p>
@@ -195,19 +199,24 @@ const SalesProcessArticle: React.FC = () => {
               And record every call. We use Fathom because it's cheap and the transcripts are good enough to feed into AI tools for proposal drafting and follow-up notes. But whatever tool you pick, the recording habit alone will improve your sales. You'll catch things you missed. You'll spot patterns. You'll get better faster because you can actually review the tape instead of relying on memory.
             </p>
 
-            <h2 className="text-3xl mt-16 mb-6">What Actually Matters</h2>
-            <p className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-extrabold tracking-[-0.02em] leading-tight text-ss-ink mt-14 mb-5">What Actually Matters</h2>
+            <p>
               The framework is five stages: research your customers, pick your channel, run a proper discovery, match your solution to their problem, then automate the repetitive bits. That sequence has worked across 60+ industries and over £185 million in revenue. Not because it's clever or complicated. Because it forces you to understand the buyer before you try to sell to them. And that, honestly, is what 90% of founders skip.
             </p>
 
+          </Card>
+          </div>
+          </Section>
+
             {/* Video Section */}
-            <div className="my-20 bg-[#16222E] border border-[#C5A572]/20 rounded-2xl p-8 md:p-12">
-              <div className="flex items-center gap-3 text-[#C5A572] mb-6">
+            <Section>
+            <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
+              <div className="flex items-center gap-3 text-ss-yellow mb-5">
                 <PlayCircle className="w-6 h-6" />
-                <span className="uppercase tracking-widest text-sm font-bold">Watch the Full Breakdown</span>
+                <span className={T.kicker}>Watch the Full Breakdown</span>
               </div>
-              <h3 className="text-3xl font-serif text-white mb-8">Deep Dive: Building Your Sales Engine</h3>
-              <div className="aspect-video rounded-xl overflow-hidden border border-[#C5A572]/30 shadow-2xl mb-8">
+              <h3 className={`${T.h2} mb-8`}>Deep Dive: Building Your Sales Engine</h3>
+              <div className="aspect-video rounded-[4px] overflow-hidden bg-black mb-8">
                 <iframe 
                   width="100%" 
                   height="100%" 
@@ -218,37 +227,39 @@ const SalesProcessArticle: React.FC = () => {
                   allowFullScreen
                 ></iframe>
               </div>
-              <p className="text-[#F5F0EB]/70 italic">
+              <p className={T.body}>
                 This article is based on a deep dive from my YouTube channel where I walk through each stage with live examples.
               </p>
             </div>
+            </Section>
 
             {/* CTA Section */}
-            <div className="my-20 bg-gradient-to-br from-[#16222E] to-[#0F1923] border border-[#C5A572]/30 rounded-2xl p-10 text-center">
-              <h3 className="text-3xl md:text-4xl font-serif text-white mb-6">Want This Built For Your Business?</h3>
-              <p className="text-xl text-[#F5F0EB]/80 mb-10 max-w-2xl mx-auto">
+            <Section>
+            <div className="max-w-4xl mx-auto px-6 py-16 md:py-24 text-center">
+              <h3 className={`${T.h2} mb-6`}>Want This Built For Your Business?</h3>
+              <p className={`${T.lead} mb-10 max-w-2xl mx-auto`}>
                 If you're a founder doing the sales yourself and you want a process that converts one in every two prospects you quote, let's talk.
               </p>
               <div className="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://app.revitk.com/widget/bookings/syncselling" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-[#C5A572] hover:bg-[#D4B98B] text-[#0F1923] px-10 py-7 text-lg font-bold rounded-full transition-all duration-300 shadow-lg shadow-[#C5A572]/20">
+                <a href="https://app.revitk.com/widget/bookings/syncselling" target="_blank" rel="noopener noreferrer" className={BUTTON}>
                     Book Your Free Consultation
-                  </Button>
                 </a>
               </div>
-              <p className="mt-8 text-sm text-[#F5F0EB]/50 flex items-center justify-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#C5A572]" /> No results, no pay guarantee.
+              <p className="mt-8 text-sm text-ss-muted-ink flex items-center justify-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-white" /> No results, no pay guarantee.
               </p>
             </div>
-          </div>
+            </Section>
 
           {/* Footer Navigation */}
-          <footer className="mt-20 pt-10 border-t border-[#C5A572]/20 flex justify-between items-center">
-            <Link to="/articles" className="flex items-center gap-2 text-[#C5A572] hover:text-white transition-colors">
+          <footer className="border-t border-ss-hairline">
+            <div className="max-w-4xl mx-auto px-6 py-10 flex justify-between items-center">
+            <Link to="/articles" className="flex items-center gap-2 text-white font-semibold hover:text-ss-muted-ink transition-colors">
               <ArrowLeft className="w-4 h-4" /> Back to Articles
             </Link>
             <div className="flex gap-4">
               {/* Social Share Placeholders */}
+            </div>
             </div>
           </footer>
         </article>

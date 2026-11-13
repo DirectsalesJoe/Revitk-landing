@@ -58,44 +58,62 @@
   --color-brand-gold: #fffbeb;
   --color-brand-goldBorder: #fcd34d;
 
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  /* Sync Selling skin D (locked 11 Oct 2026) and the pixel circuit look (6 Nov 2026) */
+  --color-ss-ink: #111D4A;
+  --color-ss-paper: #FFFFFF;
+  --color-ss-pale: #EEF2F8;
+  --color-ss-biro: #1F3FBF;
+  --color-ss-biro-hover: #2A4FD6;
+  --color-ss-feint: #C9D8EE;
+  --color-ss-edge: #D3DDEB;
+  --color-ss-yellow: #FFE414;
+  --color-ss-red: #E63946;
+  --color-ss-proof: #AAB6DC;
+  --color-ss-muted-ink: #AEB8DC;
+  --color-ss-muted-paper: #4B5680;
+  --color-ss-hairline: #1A2760;
+  --color-ss-dust: #243476;
+  --color-ss-dust-bright: #3C50A0;
+
+  --font-display: 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-body: 'Schibsted Grotesk', system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.5rem;
-  --background: oklch(0.10 0.02 250);
-  --foreground: oklch(0.95 0.005 75);
-  --card: oklch(0.15 0.03 250);
-  --card-foreground: oklch(0.95 0.005 75);
-  --popover: oklch(0.15 0.03 250);
-  --popover-foreground: oklch(0.95 0.005 75);
-  --primary: oklch(0.58 0.22 25);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.20 0.03 250);
-  --secondary-foreground: oklch(0.97 0.005 75);
-  --muted: oklch(0.20 0.03 250);
-  --muted-foreground: oklch(0.65 0.02 250);
-  --accent: oklch(0.72 0.08 75);
-  --accent-foreground: oklch(0.15 0.03 250);
-  --destructive: oklch(0.58 0.22 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.25 0.02 250);
-  --input: oklch(0.25 0.02 250);
-  --ring: oklch(0.58 0.22 25);
-  --chart-1: oklch(0.58 0.22 25);
-  --chart-2: oklch(0.72 0.08 75);
-  --chart-3: oklch(0.15 0.03 250);
-  --chart-4: oklch(0.45 0.02 250);
-  --chart-5: oklch(0.35 0.02 250);
-  --sidebar: oklch(0.15 0.03 250);
-  --sidebar-foreground: oklch(0.97 0.005 75);
-  --sidebar-primary: oklch(0.58 0.22 25);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.20 0.03 250);
-  --sidebar-accent-foreground: oklch(0.97 0.005 75);
-  --sidebar-border: oklch(0.25 0.03 250);
-  --sidebar-ring: oklch(0.58 0.22 25);
+  /* Sync Selling skin D, ink look (12 Nov 2026). Shared by the shadcn components. */
+  --radius: 0.25rem;
+  --background: #111D4A;
+  --foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #111D4A;
+  --popover: #FFFFFF;
+  --popover-foreground: #111D4A;
+  --primary: #1F3FBF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #1A2760;
+  --secondary-foreground: #FFFFFF;
+  --muted: #1A2760;
+  --muted-foreground: #AEB8DC;
+  --accent: #FFE414;
+  --accent-foreground: #111D4A;
+  --destructive: #E63946;
+  --destructive-foreground: #FFFFFF;
+  --border: #1A2760;
+  --input: #1A2760;
+  --ring: #1F3FBF;
+  --chart-1: #1F3FBF;
+  --chart-2: #FFE414;
+  --chart-3: #AEB8DC;
+  --chart-4: #3C50A0;
+  --chart-5: #C9D8EE;
+  --sidebar: #111D4A;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #1F3FBF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1A2760;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #1A2760;
+  --sidebar-ring: #1F3FBF;
 }
 
 @layer base {
@@ -104,7 +122,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'DM Sans', system-ui, sans-serif;
+    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -120,7 +138,7 @@
     @apply cursor-pointer;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Schibsted Grotesk', system-ui, sans-serif;
   }
 }
 
@@ -156,7 +174,7 @@
   /* Gold divider line */
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, oklch(0.72 0.08 75), transparent);
+    background: #1A2760;
   }
 
   /* 
@@ -210,12 +228,12 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: oklch(0.10 0.02 250);
+  background: #111D4A;
 }
 ::-webkit-scrollbar-thumb {
-  background: oklch(0.30 0.03 250);
+  background: #243476;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: oklch(0.40 0.03 250);
+  background: #3C50A0;
 }

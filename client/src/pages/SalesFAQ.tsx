@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { NavBar, Footer, BOOKING_URL } from "@/components/NavBar";
+import { NavBar, Footer } from "@/components/NavBar";
+import { BookButton, Card, Section as Band, T } from "@/components/brand/ui";
 
 /* ─── FAQ DATA ─── */
 
@@ -244,26 +245,26 @@ ${faqEntities}
 function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
-    <div className="space-y-4">
+    <Card className="divide-y divide-ss-feint">
       {faqs.map((faq, i) => (
-        <div key={i} className="border-b border-white/10">
+        <div key={i}>
           <button
-            className="w-full py-6 flex items-center justify-between text-left"
+            className="w-full px-6 md:px-8 py-5 flex items-center justify-between gap-6 text-left min-h-[64px]"
             onClick={() => setOpenIndex(openIndex === i ? null : i)}
           >
-            <span className="font-[family-name:var(--font-display)] text-lg font-bold text-white pr-4">
+            <span className="text-lg font-bold tracking-[-0.01em] text-ss-ink">
               {faq.q}
             </span>
-            <span className="text-2xl text-[#C5A572] flex-shrink-0">
+            <span className="text-2xl leading-none text-ss-biro flex-none">
               {openIndex === i ? "\u2212" : "+"}
             </span>
           </button>
           {openIndex === i && (
-            <div className="pb-6 space-y-4">
+            <div className="px-6 md:px-8 pb-6 space-y-3">
               {faq.a.map((paragraph, j) => (
                 <p
                   key={j}
-                  className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/70 leading-relaxed"
+                  className={T.cardBody}
                 >
                   {paragraph}
                 </p>
@@ -272,7 +273,7 @@ function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
           )}
         </div>
       ))}
-    </div>
+    </Card>
   );
 }
 
@@ -280,14 +281,7 @@ function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
 function SectionCTA() {
   return (
     <div className="mt-12 text-center">
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-      >
-        Book a Call
-      </a>
+      <BookButton>Book a Call</BookButton>
     </div>
   );
 }
@@ -295,86 +289,75 @@ function SectionCTA() {
 
 /* ─── PAGE ASSEMBLY ─── */
 export default function SalesFAQ() {
-  const bgColors = ["#0F1923", "#0B1120"];
-
   return (
     <>
       <SchemaInjection />
       <NavBar />
 
       {/* Hero */}
-      <section className="bg-[#0B1120] border-t-4 border-[#E63946]">
-        <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
-          <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+      <Band first>
+        <div className="max-w-4xl mx-auto px-6 pt-16 pb-16 md:pt-24 md:pb-20 text-center">
+          <h1 className={`${T.h1} mb-6`}>
             Sales{" "}
-            <span className="italic" style={{ color: "#C5A572" }}>
+            <span className={T.accent}>
               FAQs
             </span>
           </h1>
-          <p className="font-[family-name:var(--font-body)] text-lg text-[#F5F0EB]/80 max-w-3xl mx-auto mb-4">
+          <p className={`${T.lead} max-w-3xl mx-auto mb-4`}>
             Answers to the sales questions founders ask most. Why deals go
             quiet, why price comes up as an objection, how to qualify properly,
             and why messaging breaks down.
           </p>
-          <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/50 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-ss-muted-ink max-w-2xl mx-auto">
             Every answer is grounded in the{" "}
-            <Link href="/" className="text-[#C5A572] hover:underline">
+            <Link href="/" className={T.linkOnInk}>
               Sync Selling methodology
             </Link>{" "}
             and backed by results from 300+ founders.
           </p>
-          <div className="w-16 h-0.5 bg-[#C5A572] mx-auto mt-8" />
         </div>
-      </section>
+      </Band>
 
       {/* FAQ Sections */}
-      {sections.map((section, idx) => (
-        <section
+      {sections.map((section) => (
+        <Band
           key={section.id}
           id={section.id}
-          style={{ backgroundColor: bgColors[idx % 2] }}
         >
           <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
-            <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-white mb-12">
+            <h2 className={`${T.h2} mb-10 md:mb-12`}>
               {section.heading}
             </h2>
             <FAQAccordion faqs={section.faqs} />
             <SectionCTA />
           </div>
-        </section>
+        </Band>
       ))}
 
       {/* Final CTA */}
-      <section className="bg-[#0F1923] border-t border-white/10">
-        <div className="max-w-4xl mx-auto px-6 py-16 text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-2xl md:text-3xl font-bold text-white mb-6">
+      <Band>
+        <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 text-center">
+          <h2 className={`${T.h2} mb-6`}>
             Still have questions? Let's talk.
           </h2>
-          <p className="font-[family-name:var(--font-body)] text-base text-[#F5F0EB]/70 mb-4">
+          <p className={`${T.body} mb-4`}>
             Book a 30-minute qualification call. No obligation. If we can help,
             you'll know. If we can't, we'll tell you.
           </p>
-          <p className="font-[family-name:var(--font-body)] text-sm text-[#F5F0EB]/50 mb-8">
+          <p className="text-sm md:text-base text-ss-muted-ink mb-8">
             Or explore{" "}
-            <Link href="/offer" className="text-[#C5A572] hover:underline">
+            <Link href="/offer" className={T.linkOnInk}>
               the full programme
             </Link>{" "}
             to see how the{" "}
-            <Link href="/" className="text-[#C5A572] hover:underline">
+            <Link href="/" className={T.linkOnInk}>
               Sync Selling system
             </Link>{" "}
             works.
           </p>
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#E63946] text-white font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 rounded hover:bg-[#d32f3c] transition-colors"
-          >
-            Book Your Free Qualification Call
-          </a>
+          <BookButton>Book Your Free Qualification Call</BookButton>
         </div>
-      </section>
+      </Band>
 
       <Footer />
     </>

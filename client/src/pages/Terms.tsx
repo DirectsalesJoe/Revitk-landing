@@ -1,11 +1,11 @@
-import { TermsAndConditions } from '@/components/legacy/TermsAndConditions';
+import { TermsSection } from '@/components/brand/TermsSection';
 import { NavBar, Footer } from '@/components/NavBar';
 
 export default function Terms() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-ss-ink">
       <NavBar />
-      <TermsAndConditions />
+      <TermsSection />
       <Footer />
     </div>
   );
