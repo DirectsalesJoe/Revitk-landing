@@ -21,7 +21,10 @@
   to = "/llms.txt"
   status = 200
 
+# Every page is its own file now (scripts/prerender.mjs writes offer.html and so
+# on), so an address with no file is a real "not found" and says so. Before, any
+# address at all was sent the homepage shell with a 200.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404

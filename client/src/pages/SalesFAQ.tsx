@@ -259,18 +259,18 @@ function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
               {openIndex === i ? "\u2212" : "+"}
             </span>
           </button>
-          {openIndex === i && (
-            <div className="px-6 md:px-8 pb-6 space-y-3">
-              {faq.a.map((paragraph, j) => (
-                <p
-                  key={j}
-                  className={T.cardBody}
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </div>
-          )}
+          {/* Always in the page, closed or open, so a reader that doesn't
+              run JavaScript gets the answer. */}
+          <div className={openIndex === i ? "px-6 md:px-8 pb-6 space-y-3" : "hidden"}>
+            {faq.a.map((paragraph, j) => (
+              <p
+                key={j}
+                className={T.cardBody}
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
         </div>
       ))}
     </Card>
