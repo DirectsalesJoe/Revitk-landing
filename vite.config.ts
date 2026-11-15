@@ -150,7 +150,10 @@ function vitePluginManusDebugCollector(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector()];
+// The Manus runtime is a 366 KB inline script. By default it is placed first in
+// <body>, ahead of the page's words. "body" places it after them, so a reader
+// that stops part-way through the file still gets the words.
+const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime({ injectTo: "body" }), vitePluginManusDebugCollector()];
 
 export default defineConfig({
   plugins,

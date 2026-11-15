@@ -125,12 +125,14 @@ function AccordionItem({ item }: { item: FAQItem }) {
         <span className="text-lg font-bold tracking-[-0.01em] text-ss-ink">{item.question}</span>
         {isOpen ? <ChevronUp className="flex-shrink-0 text-ss-biro" /> : <ChevronDown className="flex-shrink-0 text-ss-muted-paper" />}
       </button>
-      {isOpen && (
-        <div className="px-6 md:px-8 pb-6">
-          <p className={T.cardBody}>{item.answer}</p>
-          {item.videoId && (
-            <div className="mt-6">
-              <p className="text-sm font-semibold text-ss-muted-paper mb-2">{item.videoTitle}</p>
+      {/* The answer is always in the page, closed or open, so a reader that
+          doesn't run JavaScript gets it. The video only loads once it's open. */}
+      <div className={isOpen ? "px-6 md:px-8 pb-6" : "hidden"}>
+        <p className={T.cardBody}>{item.answer}</p>
+        {item.videoId && (
+          <div className="mt-6">
+            <p className="text-sm font-semibold text-ss-muted-paper mb-2">{item.videoTitle}</p>
+            {isOpen && (
               <div className="aspect-video max-w-2xl bg-black rounded-[4px] overflow-hidden">
                 <iframe
                   src={`https://www.youtube.com/embed/${item.videoId}`}
@@ -140,10 +142,10 @@ function AccordionItem({ item }: { item: FAQItem }) {
                   className="w-full h-full rounded-[4px]"
                 />
               </div>
-            </div>
-          )}
-        </div>
-      )}
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
